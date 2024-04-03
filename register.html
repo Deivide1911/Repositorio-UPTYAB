@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de persona</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="logo">
+        <a href="index.html"><img src="img/logo.png" alt="logo" width="150px" height="100px"></a>
+        <h1>Registros de proyectos de la UPTYAB</h1>
+    </div>
+
+    <form class="todo">
+        <h3>Registra tu cuenta</h3>
+        <input class="hola" type="text" name="primer-nombre" id="primer-nombre" placeholder="Ingresa tu Primer Nombre">
+        <input class="hola" type="text" name="segundo-nombre" id="segundo-nombre" placeholder="Ingresa tu Segundo Nombre">
+        <input class="hola" type="text" name="primer-apellido" id="primer-apellido" placeholder="Ingresa tu Primer Apellido">
+        <input class="hola" type="text" name="segundo-apellido" id="segundo-apellido" placeholder="Ingresa tu Segundo Apellido">
+        <input class="hola" type="text" name="cedula" id="cedula" placeholder="Ingresa tu Cedula">
+        <p class="parrafo">Seleccione su sexo</p>
+        <label for="sexo1" class="gen">
+        <input type="radio" id="sexo1" name="sexo" value="M">
+        Hombre
+        </label>
+            
+            
+        <label for="sexo2" class="gen">
+        <input type="radio" id="sexo2" name="sexo" value="F">
+        Mujer
+        </label>
+        <p class="parrafo">Ingrese su fecha de nacimiento</p>
+        <input class="hola" type="date" id="fecha" name="fecha">
+        <input class="hola" type="password" name="contraseña" id="pass" placeholder="Ingresa tu Contraseña">
+        <input type="checkbox" name="mostrar" id="mostrar">
+        <label for="mostrar">Mostrar Contraseña</label>
+        <input class="botonregreso" type="submit" value="Registrar">
+        <a href="index.html">Tengo cuenta</a>
+    </form>
+    </body>
+    <script src="./js/mostrar.js"></script>
+    </html>

@@ -1,0 +1,184 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+body{
+    background: url('img/background.JPG');
+    background-position: center;
+    background-attachment: contain;
+    background-size: cover;
+}
+.todo{
+    width: 400px;
+    background-color: #37418a;
+    padding: 30px;
+    margin: auto;
+    margin-top: 20px;
+    justify-content: center;
+    border-radius: 4px;
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    color: white;
+    box-shadow: 7px 13px 37px #7e7e7e;
+}
+h3{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: "Urbanist", sans-serif;
+}
+.hola{
+    width: 100%;
+    background-color: #a3bcf8;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #A8CD9F;
+    font-family: 'calibri';
+    font-size: 15px;
+}
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover{
+    color: #00e1ff;
+    text-decoration: underline;
+}
+a:active{
+    color: #0051ff;
+    text-decoration: underline;
+}
+.boton{
+    width: 100%;
+    background-color: #1f1e53;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin: 12px 0;
+    font-size: 15px;
+}
+.boton:hover{
+    background-color: #11112e;
+}
+.boton:active{
+    background-color: #2e112e;
+}
+.logo{
+    font-family: "Urbanist", sans-serif;
+    background-color: #37418a;
+    display: flex;
+    margin: 0px;
+    width: 100%;
+    height: 100px;
+}
+h1{
+    color: white;
+    margin: 0px;
+    padding: 5px;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap
+}
+.logo img{
+    text-align: start;
+}
+.parrafo{
+    text-align: center;
+    padding: 5px;
+    align-items: center;
+    margin: 12px;
+}
+.gen{
+    align-items: center;
+    margin: 0px 50px;
+    padding: 0;
+    padding-bottom: 0px;
+    text-align: center;
+    background-color: #a3bcf8;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    color: #000000;
+    font-family: 'calibri';
+}
+.botonregreso{
+    width: 100%;
+    background-color: #1f1e53;
+    color: white;
+    border: none;
+    padding: 12px;
+    margin: 12px 0;
+    font-size: 15px;
+}
+.botonregreso:hover{
+    background-color: #11112e;
+}
+.botonregreso:active{
+    background-color: #2e112e;
+}
+.todo-2{
+    width: 400px;
+    background-color: #37418a;
+    padding: 30px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    color: white;
+    box-shadow: 7px 13px 37px #7e7e7e;
+}
+.pnf{
+    text-align: center;
+    font-size: 20px;
+    display: block;
+    width: 100%;
+}
+.todo-3{
+    width: 400px;
+    background-color: #37418a;
+    padding: 10px;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    color: white;
+    box-shadow: 7px 13px 37px #7e7e7e;
+    justify-content: space-around;
+    display: flex;
+}
+i{
+    font-size: 22px;
+}
+.re{
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+.dropmenu{
+    margin-left: 55%;
+    display: inline-block;
+    position: relative;
+}
+.contenido{
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    background-color: #3b3edd;
+    text-align: center;
+}
+.dropmenu:hover .contenido{
+    display: block;
+}
+.iconomenu{
+    font-size: 18px;
+}
+ul{
+    list-style: none;
+}
