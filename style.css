@@ -4,11 +4,29 @@
     padding: 0;
 }
 /* Recordatorio de hacer un mejor background */
-body{
-    background: url('img/background.JPG');
-    background-position: center;
-    background-attachment: contain;
-    background-size: cover;
+body{ 
+    display: grid;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to bottom right,
+        #ecf0e9 0%,
+        #c3dfdb 20%,
+        #a1cadf 40%,
+        #6895bd 60%,
+        #bdcee9 80%
+    );
+    background-size: 200% 200%;
+    animation: movimiento 5s  infinite alternate;
+}
+@keyframes movimiento {
+    from{
+        background-position: 0 0 ;
+    }
+    to{
+        background-position: 100% 50%;
+    }
+    
 }
 /* Inicio, esto comparte clases reclicladas con index.html y register.html */
 .todo{
@@ -16,13 +34,14 @@ body{
     background-color: #37418a;
     padding: 30px;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 30px;
     justify-content: center;
     border-radius: 4px;
     font-family: "Urbanist", sans-serif;
     font-optical-sizing: auto;
     color: white;
-    box-shadow: 7px 13px 37px #7e7e7e;
+    box-shadow: 7px 13px 37px #ffffff;
+    
 }
 h3{
     text-align: center;
