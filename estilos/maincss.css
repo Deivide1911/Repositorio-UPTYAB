@@ -1,3 +1,4 @@
+/* Separé el css de main.html de los otros para poder darle otro fondo y no colapse*/
 *{
     margin: 0;
     box-sizing: border-box;
@@ -10,16 +11,24 @@ body{
 }    
 /* Parte del main.html */
 .todo-2{
-    width: 400px;
-    background-color: #37418a;
+    width: 100%;
+    background-color: #00000080;
     padding: 30px;
     margin: auto;
-    margin-top: 20px;
-    border-radius: 4px;
+    margin-top: 0px;
+    border-radius: 0px;
     font-family: "Urbanist", sans-serif;
     font-optical-sizing: auto;
     color: white;
-    box-shadow: 7px 13px 37px #7e7e7e;
+    box-shadow: 0px 5px 5px 0px#7a7a7a;
+    
+}
+.fondouni{
+    background: url(../img/ejemplo.png);
+    background-position: center;
+    background-size: 100%;
+    background-attachment: contain;
+    background-size: cover;
 }
 .pnf{
     text-align: center;
@@ -53,7 +62,8 @@ ul{
 }
 
 .re{
-    font-size: 40px;
+    font-size: 25px;
+    padding: 5px 5px;
 }
 /* Reutilizable*/
 .cerrarsesion{
@@ -109,9 +119,8 @@ h1{
     font-size: 40px;
     display: flex;
     align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin-left: 150px;
+    text-align: center;
+    margin-left: 35%;
 }
 .logo img{
     text-align: start;
@@ -121,6 +130,7 @@ h1{
     padding: 5px;
     align-items: center;
     margin: 12px;
+    font-size: 20px;
 }
 h2{
     color: white;

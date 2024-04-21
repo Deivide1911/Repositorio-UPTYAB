@@ -43,12 +43,16 @@ body{
     box-shadow: 7px 13px 37px #ffffff;
     
 }
+::placeholder{
+    color: #23314e;
+}
 h3{
     text-align: center;
     font-size: 30px;
     margin-bottom: 20px;
     font-family: "Urbanist", sans-serif;
 }
+
 /* Parte del register */
 .hola{
     width: 100%;
@@ -93,20 +97,21 @@ a:active{
     font-family: "Urbanist", sans-serif;
     background-color: #37418a;
     display: flex;
-    margin: 0px;
+    margin: 0;
     width: 100%;
-    height: 100px;
+    height: 90%;
+    text-align: center;
+    align-items: center;
 }
 h1{
     color: white;
     margin: 0px;
-    padding: 5px;
+    padding: 0px;
     font-size: 40px;
     display: flex;
+    text-align: center;
     align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    margin-left: 150px;
+    margin-left: 20%;
 }
 .logo img{
     text-align: start;
@@ -146,3 +151,88 @@ h1{
 .botonregreso:active{
     background-color: #2e112e;
 }
+/* //////////////// */
+
+/* FOOTER */
+footer{
+    background: #37418abd;
+    margin-top: 200px;
+    height: 200px;
+    font-family: "Urbanist", sans-serif;
+}
+.container{
+    width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+.footer-content{
+    width: 30%;
+}
+.footer-content p{
+    width: 190px;
+    margin: auto;
+    padding: 7px;
+}
+.footer-content ul{
+    text-align: center;
+}
+.list{
+    padding: 0;
+}
+.list li{
+    width: auto;
+    text-align: center;
+    list-style-type:none;
+    padding: 2px;
+    position: relative;
+}
+.list li::before{
+    content: '';
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background: #30baf1;
+    transition-duration: .5s;
+}
+.list li:hover::before{
+    width: 70px;
+}
+.social-icons{
+    text-align: center;
+    padding: 0;
+}
+.social-icons li{
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+}
+.social-icons i{
+    color: white;
+    font-size: 25px;
+}
+.social-icons i:hover{
+    color: #309af1;
+}
+.bottom-bar{
+    background: #aaaaaa;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 0px;
+}
+.bottom-bar p{
+    color: #343434;
+    margin: 0;
+    font-size: 16px;
+    padding: 7px;
+}
+.footerh3{
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: white;
+}
+/* ///////////////////////// */
