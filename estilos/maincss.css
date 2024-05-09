@@ -111,7 +111,7 @@ ul{
 }
 /* Reutilizable*/
 .cerrarsesion{
-    margin-left: 20%;
+    margin-left: 22%;
     display: inline;
     margin-top: 3%;
     padding: 5px;
@@ -296,7 +296,7 @@ h2{
 .fieldset{
     background-color: white;
     border: 1px solid #333;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 20px;
     padding: 0 0 0 40px;
 }
@@ -318,6 +318,7 @@ h2{
 .botondebusqueda{
     width: 50px;
     border: none;
+    border-radius: 5px;
     background-color: #333;
     font-size: 20px;
     transform: translate(2000px,0);
@@ -334,4 +335,61 @@ h2{
 .buscador:focus + .botondebusqueda .fa-magnifying-glass{
     transform: translate(0,0);
     transition-duration: 0.5s;
+}
+/* ///////////// */
+/* Sección de los pnfslide y proyectos recientes */
+.h2list{
+    color: #242286;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+.listarecientes{
+    font-family: "Urbanist", sans-serif;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.list-list{
+    font-size: 20px;
+    padding: 10px;
+}
+.sliderframe{
+    width: 1180px;
+    height: auto;
+    margin: 10px auto 0;
+    overflow: hidden;
+}
+.sliderframe ul{
+    display: flex;
+    padding: 0;
+    width: 600%;
+    animation: slide 18s infinite alternate ease-in-out;
+}
+.sliderframe li{
+    list-style: none;
+    width: 100%;
+}
+.sliderframe img{
+    width: 100%;
+}
+
+@keyframes slide {
+    0%{margin-left: 0%;}
+    20%{margin-left: 0%;}
+    
+    25%{margin-left: -100%;}
+    30%{margin-left: -100%;}
+    
+    35%{margin-left: -200%;}
+    40%{margin-left: -200%;}
+    
+    45%{margin-left: -300%;}
+    50%{margin-left: -300%;}
+
+    55%{margin-left: -400%;}
+    60%{margin-left: -400%;}
+
+    65%{margin-left: -500%;}
+    70%{margin-left: -500%;}
 }
