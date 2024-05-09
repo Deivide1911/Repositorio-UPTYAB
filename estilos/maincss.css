@@ -295,7 +295,7 @@ h2{
 }
 .fieldset{
     background-color: white;
-    border: 1px solid #333;
+    border: none;
     border-radius: 10px;
     font-size: 20px;
     padding: 0 0 0 40px;
@@ -318,7 +318,7 @@ h2{
 .botondebusqueda{
     width: 50px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #333;
     font-size: 20px;
     transform: translate(2000px,0);
@@ -364,7 +364,7 @@ h2{
     display: flex;
     padding: 0;
     width: 600%;
-    animation: slide 18s infinite alternate ease-in-out;
+    animation: slide 19s infinite alternate ease-in-out;
 }
 .sliderframe li{
     list-style: none;
