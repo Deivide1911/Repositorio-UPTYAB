@@ -111,9 +111,10 @@ ul{
 }
 /* Reutilizable*/
 .cerrarsesion{
-    margin-left: 22%;
+    margin-left: 12%;
     display: inline;
-    margin-top: 3%;
+    margin-top: 0;
+    width: 150px;
     padding: 5px;
 }
 h3{
@@ -310,7 +311,7 @@ h2{
 .buscador{
     border: none;
     color: #333;
-    padding: 5px 300px;
+    width: 500px;
 }
 .buscador:focus{
     outline: none;
