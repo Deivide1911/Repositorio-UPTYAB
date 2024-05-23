@@ -110,12 +110,13 @@ ul{
     margin: 5px;
 }
 /* Reutilizable*/
-.cerrarsesion{
-    margin-left: 12%;
-    display: inline;
-    margin-top: 0;
-    width: 150px;
-    padding: 5px;
+.usericon{
+    color: white;
+    font-size: 30px;
+    margin: 10px;
+    background-color: #2f3775;
+    border-radius: 10px;
+    display: flex;
 }
 h3{
     text-align: center;
@@ -322,7 +323,7 @@ h2{
     border-radius: 6px;
     background-color: #333;
     font-size: 20px;
-    transform: translate(2000px,0);
+    transform: translate(0px,0);
     transition-duration: 0.8s;
     
 }
@@ -340,7 +341,7 @@ h2{
 /* ///////////// */
 /* Sección de los pnfslide y proyectos recientes */
 .h2list{
-    color: #242286;
+    color: #ffffff;
     display: flex;
     justify-content: center;
     padding: 10px;
@@ -350,15 +351,16 @@ h2{
     list-style: none;
     margin: 0;
     padding: 0;
+    background-color: #ff7b3e;
 }
 .list-list{
     font-size: 20px;
     padding: 10px;
 }
 .sliderframe{
-    width: 1180px;
+    width: 100%;
     height: auto;
-    margin: 10px auto 0;
+    margin: 0px 0 0;
     overflow: hidden;
 }
 .sliderframe ul{

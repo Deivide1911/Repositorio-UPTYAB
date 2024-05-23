@@ -23,7 +23,9 @@
     <article class="msj">
         <h3>Registro exitoso</h3>
 
-        <p class="parrafo">Insertar info, si desea volver para iniciar sesion puede darle click al boton de abajo</p>
+        <p class="parrafo"><?php 
+        echo $_REQUEST['primer-nombre']," ",$_REQUEST['primer-apellido']; 
+        ?>, con la cedula <?php echo $_REQUEST['cedula'];?> si desea volver para iniciar sesion puede darle click al boton de abajo</p>
         <a href="index.html" class="btn10">
             <span>Volver</span>
             <div class="transition"></div>
