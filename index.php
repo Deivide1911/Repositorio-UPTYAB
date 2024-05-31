@@ -21,16 +21,20 @@
         <h1>REPOSITORIO DE LA UPTYAB</h1>
     </div>
 
-    <form class="todo" method="post" action="login.php">
+    <form class="todo" method="post">
         <h3>Ingresa con tu cuenta</h3>
-        <input class="hola" type="text" name="cedula" id="cedula" placeholder="Ingresa tu Cedula" required>
-        <input class="hola" type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu Contraseña"
+        <?php 
+            include("login.php");
+        ?>  
+        <input class="hola" type="text" name="ci" id="cedula" placeholder="Ingresa tu Cedula" required>
+        <input class="hola" type="password" name="contrasena" id="contraseña" placeholder="Ingresa tu Contraseña"
         required>
-        <input class="boton" type="submit" value="Entrar">
-        <a href="main.html">¿No tienes cuenta?</a>
+        <input class="boton" type="submit" value="Entrar" name="btn">
+        <a href="register.html">¿No tienes cuenta?</a>
     </form>
-    
-
+    <?php 
+    include("validar.php");
+    ?>  
     <footer>
         <div class="container">
             <div class="footer-content">
