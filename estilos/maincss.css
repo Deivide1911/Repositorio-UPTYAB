@@ -21,7 +21,7 @@ body{
         #6895bd 60%,
         #bdcee9 80%
     );
-    background-size: 200% 300%;
+    background-size: 200% 400%;
     animation: movimiento 5s  infinite alternate;
 }
 @keyframes movimiento {
@@ -92,9 +92,14 @@ body{
     box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
     background-color: #3b3edd;
     text-align: center;
+    
 }
 .dropmenu:hover .contenido{
     display: block;
+    position: absolute;
+}
+.cerrarsesion{
+    margin-left: 15%;
 }
 /* //////////////////////////////// */
 ul{

@@ -17,7 +17,7 @@ Este proyecto tiene la finalidad de ser un repositorio insitucional para la UPTY
 Como ejemplo tenemos el repositorio de UCAB, este tiene la finalidad de almacenar el material cientifico y academico de sus estudiantes libre de acceso y facil de accerder. 
 
 -Características principales. 
-1. Como todo repositorio tendra su categorias y estas son los PNF (rogramas Nacionales de Formación), se puede buscar tu proyecto mediante la carrera que necesites.
+1. Como todo repositorio tendra su categorias y estas son los PNF (Programas Nacionales de Formación), se puede buscar tu proyecto mediante la carrera que necesites.
 2. Los archivos no estarán disponibles al publico fuera de la comunidad universitaria, esto con el fin de proteger, preservar intacto por temas de plagio, en cambio se mostrará una vista previa del resumen del proyecto.
 3. Interfaz intuitiva y facil de usar, contando con un formulario y un logueo facil.
 
