@@ -29,4 +29,4 @@ La creacion de este proyecto fue mediante una necesidad de los estudiante y medi
 --------------------------------------------------------------------------------------------------
 /////////////// Recursos ///////////////
 
-¡¡No necesitas recursos!! Solo un navegador donde poder acceder
+¡¡No necesitas recursos!! Solo un navegador donde poder acceder.
