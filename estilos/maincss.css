@@ -350,13 +350,17 @@ h2{
     display: flex;
     justify-content: center;
     padding: 10px;
+    background-color: #ff7b3e;
 }
 .listarecientes{
     font-family: "Urbanist", sans-serif;
     list-style: none;
     margin: 0;
     padding: 0;
-    background-color: #ff7b3e;
+}
+.proyectosre{
+    background-color: #e7e1e1;
+    color: #13112e;
 }
 .list-list{
     font-size: 20px;

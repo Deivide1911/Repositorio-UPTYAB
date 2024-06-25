@@ -12,7 +12,7 @@ if(isset($_POST['btn'])){
             $contrasena = trim($_POST['contrasena']);
             $consulta = "INSERT INTO registro(pnombre, snombre, papellido, sapellido, ci, sexo, fecha, contrasena) VALUES ('$pnombre','$snombre','$papellido','$sapellido','$ci','$sexo','$fecha','$contrasena')";
             $res = mysqli_query($conexion,$consulta);
-            header('Location: msj.html');
+            header('Location: ../pnf/msj.html');
     }
     else{
         echo "<p class='text3'>Faltan datos</p>";

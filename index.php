@@ -17,23 +17,23 @@
 <body>
     
     <div class="logo">
-        <a href="index.html"><img src="img/logo.png" alt="logo" width="150px" height="100px"></a>
+        <a href="index.php"><img src="img/logo.png" alt="logo" width="150px" height="100px"></a>
         <h1>REPOSITORIO DE LA UPTYAB</h1>
     </div>
 
     <form class="todo" method="post">
         <h3>Ingresa con tu cuenta</h3>
         <?php 
-            include("login.php");
+            include("control/login.php");
         ?>  
         <input class="hola" type="text" name="ci" id="cedula" placeholder="Ingresa tu Cedula" required>
         <input class="hola" type="password" name="contrasena" id="contraseña" placeholder="Ingresa tu Contraseña"
         required>
         <input class="boton" type="submit" value="Entrar" name="btn">
-        <a href="register.html">¿No tienes cuenta?</a>
+        <a href="pnf/register.html">¿No tienes cuenta?</a>
     </form>
     <?php 
-    include("validar.php");
+    include("control/validar.php");
     ?>  
     <footer>
         <div class="container">

@@ -1,7 +1,8 @@
 /////////////// Este es nuestro Proyecto Sociotecnologico Universitario ///////////////
-
+--------------------------------------------------------------------------------------------------
 Objetivo general:
 	Desarrollar un repositorio institucional para el registro de los proyectos socioproductivos y comunitarios del aula territorial Peña de la Universidad Politécnica Territorial Yaracuy Arístides Bastidas (UPTYAB)
+--------------------------------------------------------------------------------------------------
 Específicos: 
 Diagnosticar la situación actual acerca del registro de los proyectos sociotecnológicos y comunitarios producidos en la UPTYAB.
 
@@ -11,9 +12,9 @@ Establecer los requerimientos funcionales o no funcionales para el desarrollo de
 
 Desarrollar la aplicación en función de la estructura diseñada.
 Implementar el repositorio institucional de la UPTYAB.
---------------------------------------------------------------------------------------------------
+
 Este proyecto tiene la finalidad de ser un repositorio insitucional para la UPTYAB, un repositorio es un espacio centralizado donde se almacena, organiza, mantiene y difunde información digital, habitualmente archivos informáticos, que pueden contener trabajos científicos, conjuntos de datos o software. Acorde a los requirimientos que nos dieron.
---------------------------------------------------------------------------------------------------
+
 Como ejemplo tenemos el repositorio de UCAB, este tiene la finalidad de almacenar el material cientifico y academico de sus estudiantes libre de acceso y facil de accerder. 
 
 -Características principales. 

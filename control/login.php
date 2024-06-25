@@ -9,7 +9,7 @@ if($conexion){
         $sql = $conexion -> query("SELECT * from registro where ci='$ci'");
         $id = mysqli_fetch_array($sql);
         if($datos = $consulta->fetch_object()){
-                header("Location: ./main.html");
+                header("Location: ../pnf/main.html");
                 session_start();
                 $_SESSION['sesion'] = 1;
         }

@@ -7,13 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/all.css">
-    <link rel="stylesheet" href="estilos/maincss.css">
-    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../estilos/maincss.css">
+    <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
 <body>
     <header class="logo">
-        <a href="main.html"><img src="img/logomin.png" alt="logo" width="150px" height="70px"></a>
+        <a href="main.html"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
         <ul>
             <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li>
@@ -36,7 +36,7 @@
             Admin</a>
         <ul>
             <ul class="contenido">
-                <li><a href="logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+                <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
                 <li><a href="#"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
             </ul>
         </ul>
@@ -52,7 +52,7 @@
     </article>
     </main>
 
-    <form action="pnf/search.html" method="get" class="barradebusqueda">
+    <form action="search.html" method="get" class="barradebusqueda">
         <fieldset class="fieldset">
             <input type="text" name="search" id="search" placeholder="Buscar en el repositorio..." class="buscador">
             <button type="submit" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -62,16 +62,19 @@
         <h2 class="h2list">PNF</h2>
         <div class="sliderframe">
             <ul>
-                <li><a href=""><img src="img/slider1.png" alt=""></a></li>
-                <li><a href=""><img src="img/slider2.png" alt=""></a></li>
-                <li><a href=""><img src="img/slider3.png" alt=""></a></li>
-                <li><a href=""><img src="img/slider4.png" alt=""></a></li>
-                <li><a href=""><img src="img/slider5.png" alt=""></a></li>
-                <li><a href=""><img src="img/slider6.png" alt=""></a></li>
+                <li><a href=""><img src="../img/slider1.png" alt=""></a></li>
+                <li><a href=""><img src="../img/slider2.png" alt=""></a></li>
+                <li><a href=""><img src="../img/slider3.png" alt=""></a></li>
+                <li><a href=""><img src="../img/slider4.png" alt=""></a></li>
+                <li><a href=""><img src="../img/slider5.png" alt=""></a></li>
+                <li><a href=""><img src="../img/slider6.png" alt=""></a></li>
             </ul>
         </div>
-        <h2 class="h2list">Proyectos recientes</h2>
-        <div class="list-list">
+        
+        <div class="proyectosre">
+            <h2 class="h2list proyectosre">Proyectos recientes</h2>
+            <div class="list-list">
+            </div>
         </div>
     </section>
 </body>
