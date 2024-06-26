@@ -1,5 +1,5 @@
 <?php 
-$conexion = mysqli_connect("localhost","root","","proyectosdb");
+$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
 if(isset($_POST['btn'])){
     if(strlen($_POST['pnombre']) > 1 && strlen($_POST['snombre']) > 1 && strlen($_POST['papellido']) > 1 && strlen($_POST['sapellido']) > 1 && strlen($_POST['fecha']) > 1 && strlen($_POST['ci']) > 1 && strlen($_POST['contrasena']) && isset($_POST['sexo'])){
             $pnombre = ucfirst(trim($_POST['pnombre']));
@@ -9,9 +9,11 @@ if(isset($_POST['btn'])){
             $fecha = trim($_POST['fecha']);
             $ci = trim($_POST['ci']);
             $sexo = trim($_POST['sexo']);
-            $contrasena = trim($_POST['contrasena']);
-            $consulta = "INSERT INTO registro(pnombre, snombre, papellido, sapellido, ci, sexo, fecha, contrasena) VALUES ('$pnombre','$snombre','$papellido','$sapellido','$ci','$sexo','$fecha','$contrasena')";
+            $contraseña = trim($_POST['contrasena']);
+            $consulta = "INSERT INTO usuario(id, contraseña) VALUES ('$ci','$contraseña')";
+            $consulta2 = "INSERT INTO usuarioinformacion(usuarioinfoid,primernombre,segundonombre,primerapellido,segundoapellido,sexo,fecha ) VALUES ('$ci','$pnombre','$snombre','$papellido','$sapellido','$sexo','$fecha')";
             $res = mysqli_query($conexion,$consulta);
+            $res2 = mysqli_query($conexion,$consulta2);
             header('Location: msj.html');
     }
     else{

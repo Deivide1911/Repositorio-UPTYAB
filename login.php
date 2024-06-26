@@ -1,12 +1,12 @@
 <?php 
-$conexion = mysqli_connect("localhost","root","","proyectosdb");
+$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
 if($conexion){
     if(isset($_POST['btn'])){
-        $ci = $_POST['ci'];
-        $contrasena = $_POST['contrasena'];
-        $consulta = $conexion ->query("SELECT * FROM registro where ci='$ci' and contrasena='$contrasena'");
-        $consu = $conexion ->query("SELECT * FROM registro where ci='$ci' and rango=0");
-        $sql = $conexion -> query("SELECT * from registro where ci='$ci'");
+        $id = $_POST['id'];
+        $contraseña = $_POST['contraseña'];
+        $consulta = $conexion ->query("SELECT * FROM usuario where id='$id' and contraseña='$contraseña'");
+        $consu = $conexion ->query("SELECT * FROM usuario where id='$id' and rango=0");
+        $sql = $conexion -> query("SELECT * from usuario where id='$id'");
         $id = mysqli_fetch_array($sql);
         if($datos = $consulta->fetch_object()){
                 header("Location: ./main.html");

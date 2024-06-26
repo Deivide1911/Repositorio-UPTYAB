@@ -26,8 +26,8 @@
         <?php 
             include("login.php");
         ?>  
-        <input class="hola" type="text" name="ci" id="cedula" placeholder="Ingresa tu Cedula" required>
-        <input class="hola" type="password" name="contrasena" id="contraseña" placeholder="Ingresa tu Contraseña"
+        <input class="hola" type="text" name="id" id="cedula" placeholder="Ingresa tu Cedula" required>
+        <input class="hola" type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu Contraseña"
         required>
         <input class="boton" type="submit" value="Entrar" name="btn">
         <a href="register.html">¿No tienes cuenta?</a>
