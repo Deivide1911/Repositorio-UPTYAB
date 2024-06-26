@@ -14,7 +14,7 @@ if(isset($_POST['btn'])){
             $consulta2 = "INSERT INTO usuarioinformacion(usuarioinfoid,primernombre,segundonombre,primerapellido,segundoapellido,sexo,fecha ) VALUES ('$ci','$pnombre','$snombre','$papellido','$sapellido','$sexo','$fecha')";
             $res = mysqli_query($conexion,$consulta);
             $res2 = mysqli_query($conexion,$consulta2);
-            header('Location: msj.html');
+            header('Location: ../pnf/msj.html');
     }
     else{
         echo "<p class='text3'>Faltan datos</p>";

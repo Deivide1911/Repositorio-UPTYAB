@@ -9,7 +9,7 @@ if($conexion){
         $sql = $conexion -> query("SELECT * from usuario where id='$id'");
         $id = mysqli_fetch_array($sql);
         if($datos = $consulta->fetch_object()){
-                header("Location: ./main.html");
+                header("Location: ../pnf/main.html");
                 session_start();
                 $_SESSION['sesion'] = 1;
         }
