@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="estilos/style.css">
     <link rel="icon" type="image/x-icon" href="img/icon.png">
 </head>
-
 <body>
     
     <div class="logo">
@@ -24,7 +23,7 @@
     <form class="todo" method="post">
         <h3>Ingresa con tu cuenta</h3>
         <?php 
-            include("control/login.php");
+            include("./control/login.php");
         ?>  
         <input class="hola" type="text" name="id" id="cedula" placeholder="Ingresa tu Cedula" required>
         <input class="hola" type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu Contraseña"
@@ -33,7 +32,7 @@
         <a href="pnf/register.html">¿No tienes cuenta?</a>
     </form>
     <?php 
-    include("control/validar.php");
+    include("./control/validar.php");
     ?>  
     <footer>
         <div class="container">
@@ -67,5 +66,5 @@
         </div>
     </footer>
 </body>
-
+<a href="prueba.html">aver</a>
 </html>
