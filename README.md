@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-Este es nuestro Proyecto Sociotecnologico Universitario
-=======
+
 /////////////// Este es nuestro Proyecto Sociotecnologico Universitario ///////////////
 --------------------------------------------------------------------------------------------------
 Objetivo general:
@@ -34,4 +32,3 @@ La creacion de este proyecto fue mediante una necesidad de los estudiante y medi
 /////////////// Recursos ///////////////
 
 ¡¡No necesitas recursos!! Solo un navegador donde poder acceder.
->>>>>>> 37095aa463e03e2ed90e2916624ea7cd21c3d928
