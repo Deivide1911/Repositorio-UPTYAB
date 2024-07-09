@@ -1,17 +1,24 @@
 <?php 
-$conexion = mysqli_connect("localhost","root","12345678","proyectosdbnew");
+$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
 if($conexion){
     if(isset($_POST['btn'])){
         $id = $_POST['id'];
         $contraseña = $_POST['contraseña'];
         $consulta = $conexion ->query("SELECT * FROM usuario where id='$id' and contraseña='$contraseña'");
-        $consu = $conexion ->query("SELECT * FROM usuario where id='$id' and rango=0");
-        $sql = $conexion -> query("SELECT * from usuario where id='$id'");
-        $id = mysqli_fetch_array($sql);
-        if($datos = $consulta->fetch_object()){
-                header("Location: ../pnf/main.php");
-                session_start();
-                $_SESSION['sesion'] = 1;
+        if($consulta->fetch_object()){
+                $rango_consulta = $conexion->query("SELECT * FROM usuario where id='$id' and rango=0");
+                $select = $conexion->query("SELECT * FROM usuarioinformacion where usuarioinfoid='$id'");
+                $mostrar = mysqli_fetch_array($select);
+                $nombre = $mostrar['primernombre'];
+                $apellido = $mostrar['primerapellido'];
+                $hora = date("H:i:s");
+                $fecha = date("Y-m-d");
+                $reporte = $conexion->query("INSERT INTO entradas (id,hora,fecha,nombre,apellido) values ('$id','$hora','$fecha','$nombre','$apellido')");
+                if($rango_consulta->fetch_object()){
+                    session_start();
+                    $_SESSION['sesion'] = 1;
+                    header("Location: ../pnf/main.php");
+                }
         }
         else{
             echo "<p style=color:red;>Datos Incorrectos!</p>";

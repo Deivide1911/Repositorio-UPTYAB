@@ -30,7 +30,7 @@
         </nav>
         <a href="#" class="re">Nosotros</a>
         <a href="#" class="re">Estadistica</a>
-        <a href="#" class="re">Relleno</a>
+        <a href="../reportes/reporte.php" class="re">Reportes</a>
         <nav class="dropmenu">
         <a class="usericon"><i class="fa-solid fa-user"></i>
             Admin</a>
