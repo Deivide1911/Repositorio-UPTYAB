@@ -11,6 +11,7 @@ if($conexion){
                 $mostrar = mysqli_fetch_array($select);
                 $nombre = $mostrar['primernombre'];
                 $apellido = $mostrar['primerapellido'];
+                date_default_timezone_set("America/Caracas");
                 $hora = date("H:i:s");
                 $fecha = date("Y-m-d");
                 $reporte = $conexion->query("INSERT INTO entradas (id,hora,fecha,nombre,apellido) values ('$id','$hora','$fecha','$nombre','$apellido')");

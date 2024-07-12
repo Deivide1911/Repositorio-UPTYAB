@@ -1,6 +1,6 @@
 <?php 
 $conexion = mysqli_connect("localhost","root","","proyectosdbnew");
-$consulta = $conexion->query("SELECT * FROM entradas order by fecha,hora desc");
+$consulta = $conexion->query("SELECT * FROM entradas order by fecha desc");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -17,5 +17,6 @@ $consulta = $conexion->query("SELECT * FROM entradas order by fecha,hora desc");
     <?php 
         }
     ?>
+    <a href="../pnf/main.php">Volver</a>
 </body>
 </html>
