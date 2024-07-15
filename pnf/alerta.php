@@ -39,6 +39,6 @@ $consulta = $conexion->query("SELECT * from $pnf where titulo = '$titulo'");
     </table>
     <label>Desea subir su proyecto? haga click <a href="upload2.html">aquí</a></label>
     <br>
-    <a href="upload.html">Volver</a>
+    <a href="upload.php">Volver</a>
 </body>
 </html>

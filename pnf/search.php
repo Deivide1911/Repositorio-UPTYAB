@@ -1,6 +1,7 @@
 <?php
 $conexion = mysqli_connect("localhost","root","","proyectosdbnew");
-$consulta = $conexion->query("SELECT * FROM informatica where estado = 'Habilitado' order by trayecto asc ");
+$buscar = $_POST['buscar'];
+$consulta =$conexion->query("SELECT * from informatica where trayecto like '$buscar' '%' or titulo like  '$buscar' '%' or tipoproyecto like '$buscar' '%' or archivo like '$buscar' '%' or etiquetas like '$buscar' '%' or autores like '$buscar' '%' order by trayecto asc"); 
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,10 +12,12 @@ $consulta = $conexion->query("SELECT * FROM informatica where estado = 'Habilita
 </head>
 <body>
     <a href="upload.php">Subir mi proyecto</a>
+    <br>
     <form action="search.php" method="POST">
         <input type="search" placeholder="Buscar en el repositorio..." name="buscar">
         <input type="submit" name="btn">
     </form>
+    <br>
     <table>
         <tr>
             <th>Título</th>

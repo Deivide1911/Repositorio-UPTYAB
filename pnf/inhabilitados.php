@@ -1,6 +1,6 @@
 <?php
 $conexion = mysqli_connect("localhost","root","","proyectosdbnew");
-$consulta = $conexion->query("SELECT * FROM informatica where estado = 'Habilitado' order by trayecto asc ");
+$consulta = $conexion->query("SELECT * FROM informatica where estado = 'Inhabilitado' order by trayecto asc ");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -11,10 +11,6 @@ $consulta = $conexion->query("SELECT * FROM informatica where estado = 'Habilita
 </head>
 <body>
     <a href="upload.php">Subir mi proyecto</a>
-    <form action="search.php" method="POST">
-        <input type="search" placeholder="Buscar en el repositorio..." name="buscar">
-        <input type="submit" name="btn">
-    </form>
     <table>
         <tr>
             <th>Título</th>
@@ -36,10 +32,10 @@ $consulta = $conexion->query("SELECT * FROM informatica where estado = 'Habilita
             <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
             <td><a href="#">Descargar</a></td>
             <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
-            <td><a href="delete.php?id=<?php echo $mostrar['id']?>">Eliminar</a></td>
+            <td><a href="recuperacion.php?id=<?php echo $mostrar['id']?>">Deshacer el eliminar</a></td>
         </tr>
         <?php  } ?>
     </table>
-    <a href="inhabilitados.php">Ver proyectos eliminados</a>
+    <a href="informatica.php">Ver proyectos</a>
 </body>
 </html>
