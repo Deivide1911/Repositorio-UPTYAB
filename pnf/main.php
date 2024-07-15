@@ -56,10 +56,10 @@ include('../control/validacionmain.php');
     </article>
     </main>
 
-    <form action="search.html" method="get" class="barradebusqueda">
+    <form action="search.php" method="post" class="barradebusqueda">
         <fieldset class="fieldset">
-            <input type="text" name="search" id="search" placeholder="Buscar en el repositorio..." class="buscador">
-            <button type="submit" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" name="buscar" id="search" placeholder="Buscar en el repositorio..." class="buscador">
+            <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
         </fieldset>
     </form>
     <section class="listarecientes">
