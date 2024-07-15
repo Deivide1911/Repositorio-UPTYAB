@@ -66,7 +66,7 @@ include('../control/validacionmain.php');
         <h2 class="h2list">PNF</h2>
         <div class="sliderframe">
             <ul>
-                <li><a href=""><img src="../img/slider1.png" alt=""></a></li>
+                <li><a href="informatica.php"><img src="../img/slider1.png" alt=""></a></li>
                 <li><a href=""><img src="../img/slider2.png" alt=""></a></li>
                 <li><a href=""><img src="../img/slider3.png" alt=""></a></li>
                 <li><a href=""><img src="../img/slider4.png" alt=""></a></li>
