@@ -8,14 +8,62 @@ $consulta = $conexion->query("SELECT * FROM informatica where estado = 'Habilita
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informática</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../estilos/maincss.css">
+    <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
+
 <body>
-    <a href="upload.php">Subir mi proyecto</a>
-    <form action="search.php" method="POST">
-        <input type="search" placeholder="Buscar en el repositorio..." name="buscar">
-        <input type="submit" name="btn">
+    
+<header class="logo">
+        <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
+        <nav class="dropmenu">
+        <ul>
+            <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li>
+            <li>
+        <ul class="contenido">
+            <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
+            <li><a href="#" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
+            <li><a href="#" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
+            <li><a href="#" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
+            <li><a href="#" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene Laboral</a></li>
+            <li><a href="#" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
+        </ul>
+        </li>
+        <ul>
+        </ul>
+        
+        </nav>
+        <a href="#" class="re">Nosotros</a>
+        <a href="#" class="re">Estadistica</a>
+        <a href="#" class="re">Relleno</a>
+        <nav class="dropmenu cerrarsesion">
+        <a class="usericon"><i class="fa-solid fa-user"></i>
+            Admin</a>
+        <ul>
+            <ul class="contenido">
+            <li><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <li><a href="#"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+            <li><a href="upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
+            </ul>
+        </ul>
+        </nav>
+    
+    </header>
+    <form action="search.php" method="POST" class="barradebusqueda">
+        <fieldset class="fieldset">
+        <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="buscador">
+        <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </fieldset>
     </form>
-    <table>
+
+    <a href="upload.php" class="linkupload">Subir mi proyecto</a>
+    <a href="inhabilitados.php" class="linkupload">Ver proyectos eliminados</a>
+    <h2>Informática</h2>
+    <table class="tablasearch">
         <tr>
             <th>Título</th>
             <th>Trayecto</th>
@@ -40,6 +88,42 @@ $consulta = $conexion->query("SELECT * FROM informatica where estado = 'Habilita
         </tr>
         <?php  } ?>
     </table>
-    <a href="inhabilitados.php">Ver proyectos eliminados</a>
+    
 </body>
+<style>
+        /* No agarró los cambios en maincss.css los tuve que poner aqui */
+    /* search.php */
+.tablasearch{
+    font-family: "Urbanist", sans-serif;
+    font-size: 16px;
+    background-color: #e7e1e1;
+    padding: 10px;
+    text-align: center;
+    
+}
+.tablasearch td{
+    border-bottom: 1px solid black;
+    padding-top: 10px;
+}
+    .tablasearch a{
+    color: blue;
+}
+    .linkupload{
+    color: #e7e1e1;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #4954b9;
+    width: 100%;
+    font-family: "Urbanist", sans-serif;
+ }
+    .linkupload:hover{
+    color: blue;
+}
+h2{
+    color: #13112e;
+    margin: auto;
+    font-family: "Urbanist", sans-serif;
+}
+</style>
 </html>

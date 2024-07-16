@@ -41,7 +41,7 @@ include('../control/validacionmain.php');
             <ul class="contenido">
                 <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
                 <li><a href="#"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
-                <li><a href="upload.html"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
+                <li><a href="upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
             </ul>
         </ul>
         </nav>
