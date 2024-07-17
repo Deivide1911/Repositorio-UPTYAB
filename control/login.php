@@ -7,6 +7,7 @@ if($conexion){
         $consulta = $conexion ->query("SELECT * FROM usuario where id='$id' and contraseña='$contraseña'");
         if($consulta->fetch_object()){
                 $rango_consulta = $conexion->query("SELECT * FROM usuario where id='$id' and rango=0");
+                $rango_consulta2 = $conexion->query("SELECT * FROM usuario where id='$id' and rango=1");
                 $select = $conexion->query("SELECT * FROM usuarioinformacion where usuarioinfoid='$id'");
                 $mostrar = mysqli_fetch_array($select);
                 $nombre = $mostrar['primernombre'];
@@ -18,7 +19,11 @@ if($conexion){
                 if($rango_consulta->fetch_object()){
                     session_start();
                     $_SESSION['sesion'] = 1;
+                    $_SESSION['rango'] = 1;
                     header("Location: ../pnf/main.php");
+                }
+                else if($rango_consulta2->fetch_object()){
+                    echo "<p style=color:red;>En construcción rango usuario!</p>";
                 }
         }
         else{

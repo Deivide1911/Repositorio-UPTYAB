@@ -20,17 +20,18 @@
         <h1>REPOSITORIO DE LA UPTYAB</h1>
     </div>
 
-    <form class="todo" method="post" action="./control/login.php">
+    <form class="todo" method="post">
         <h3>Ingresa con tu cuenta</h3>
         <input class="hola" type="text" name="id" id="cedula" placeholder="Ingresa tu Cedula" required>
         <input class="hola" type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu Contraseña"
         required>
         <input class="boton" type="submit" value="Entrar" name="btn">
-        <a href="pnf/register.html">¿No tienes cuenta?</a>
+        <a href="pnf/register.php">¿No tienes cuenta?</a>
     </form>
-    <?php 
+    <?php
+    include("./control/login.php");
     include("./control/validar.php");
-    ?>  
+    ?>
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -63,4 +64,5 @@
         </div>
     </footer>
 </body>
+<a href="prueba.html">aver</a>
 </html>

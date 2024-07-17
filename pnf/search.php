@@ -1,7 +1,57 @@
 <?php
 $conexion = mysqli_connect("localhost","root","","proyectosdbnew");
+include('../control/validacionmain.php');
+if(@$_POST['buscar']){
 $buscar = $_POST['buscar'];
-$consulta =$conexion->query("SELECT * from informatica where trayecto like '$buscar' '%' or titulo like  '$buscar' '%' or tipoproyecto like '$buscar' '%' or archivo like '$buscar' '%' or etiquetas like '$buscar' '%' or autores like '$buscar' '%' order by trayecto asc"); 
+$consulta = $conexion->query("    SELECT *
+    FROM informatica
+    WHERE trayecto LIKE '%$buscar%'
+        OR titulo LIKE '%$buscar%'
+        OR tipoproyecto LIKE '%$buscar%'
+        OR archivo LIKE '%$buscar%'
+        OR etiquetas LIKE '%$buscar%'
+        OR autores LIKE '%$buscar%'
+    UNION
+    SELECT * FROM enfermeria
+    WHERE trayecto LIKE '%$buscar%'
+        OR titulo LIKE '%$buscar%'
+        OR tipoproyecto LIKE '%$buscar%'
+        OR archivo LIKE '%$buscar%'
+        OR etiquetas LIKE '%$buscar%'
+        OR autores LIKE '%$buscar%'
+            UNION
+    SELECT * FROM avanzado
+    WHERE trayecto LIKE '%$buscar%'
+        OR titulo LIKE '%$buscar%'
+        OR tipoproyecto LIKE '%$buscar%'
+        OR archivo LIKE '%$buscar%'
+        OR etiquetas LIKE '%$buscar%'
+        OR autores LIKE '%$buscar%'
+            UNION
+    SELECT * FROM higiene_laboral
+    WHERE trayecto LIKE '%$buscar%'
+        OR titulo LIKE '%$buscar%'
+        OR tipoproyecto LIKE '%$buscar%'
+        OR archivo LIKE '%$buscar%'
+        OR etiquetas LIKE '%$buscar%'
+        OR autores LIKE '%$buscar%'
+            UNION
+    SELECT * FROM administracion
+    WHERE trayecto LIKE '%$buscar%'
+        OR titulo LIKE '%$buscar%'
+        OR tipoproyecto LIKE '%$buscar%'
+        OR archivo LIKE '%$buscar%'
+        OR etiquetas LIKE '%$buscar%'
+        OR autores LIKE '%$buscar%'
+            UNION
+    SELECT * FROM agroalimentacion
+    WHERE trayecto LIKE '%$buscar%'
+        OR titulo LIKE '%$buscar%'
+        OR tipoproyecto LIKE '%$buscar%'
+        OR archivo LIKE '%$buscar%'
+        OR etiquetas LIKE '%$buscar%'
+        OR autores LIKE '%$buscar%'
+");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -39,13 +89,13 @@ $consulta =$conexion->query("SELECT * from informatica where trayecto like '$bus
         </nav>
         <a href="#" class="re">Nosotros</a>
         <a href="#" class="re">Estadistica</a>
-        <a href="#" class="re">Relleno</a>
+        <a href="../reportes/reporte.php" class="re">Reportes</a>
         <nav class="dropmenu cerrarsesion">
         <a class="usericon"><i class="fa-solid fa-user"></i>
             Admin</a>
         <ul>
             <ul class="contenido">
-            <li><a href="../logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
             <li><a href="#"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
             <li><a href="upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
             </ul>
@@ -84,7 +134,7 @@ $consulta =$conexion->query("SELECT * from informatica where trayecto like '$bus
             <td><?php echo $mostrar['autores'] ?></td>
             <td><?php echo $mostrar['etiquetas'] ?></td>
             <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-            <td><a href="#">Descargar</a></td>
+            <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
             <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
             <td><a href="delete.php?id=<?php echo $mostrar['id']?>">Eliminar</a></td>
         </tr>
@@ -127,3 +177,14 @@ $consulta =$conexion->query("SELECT * from informatica where trayecto like '$bus
 
 </style>
 </html>
+
+<?php
+ }
+ else{
+    echo "Ha ocurrido un error, realiza nuevamente la búsqueda!<br>";
+    echo "<a href='main.php'>Volver</a>";
+ }
+?>
+<script>
+    history.replaceState(null,null,location.pathname);
+</script>

@@ -1,3 +1,6 @@
+<?php
+include('../control/validacionmain.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -44,7 +47,7 @@
         </nav>
     </header>
 
-    <form action="upload2().php" class="upload" method="post" enctype="multipart/form-data">
+    <form class="upload" method="post" enctype="multipart/form-data">
         <h2>Formulario</h2>
         <p>Título</p>
     <input type="text" name="titulo" placeholder="Ingrese el título del proyecto" required>
@@ -83,5 +86,8 @@
         <br>
         <input type="submit" name="btn">
     </form>
+    <?php
+        include("upload2().php");
+    ?>
 </body>
 </html>

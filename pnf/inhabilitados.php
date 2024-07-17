@@ -30,7 +30,7 @@ $consulta = $conexion->query("SELECT * FROM informatica where estado = 'Inhabili
             <td><?php echo $mostrar['autores'] ?></td>
             <td><?php echo $mostrar['etiquetas'] ?></td>
             <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-            <td><a href="#">Descargar</a></td>
+            <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
             <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
             <td><a href="recuperacion.php?id=<?php echo $mostrar['id']?>">Deshacer el eliminar</a></td>
         </tr>

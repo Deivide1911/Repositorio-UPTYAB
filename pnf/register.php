@@ -18,7 +18,7 @@
         <h1>REPOSITORIO DE LA UPTYAB</h1>
     </div>
 
-    <form class="todo" action="../control/registro.php" method="post">
+    <form class="todo" method="post">
         <h3>Registra tu cuenta</h3>
         <input class="hola" type="text" name="pnombre" id="primer-nombre" placeholder="Ingresa tu Primer Nombre" required>
         <input class="hola" type="text" name="snombre" id="segundo-nombre" placeholder="Ingresa tu Segundo Nombre" required>
@@ -42,6 +42,9 @@
         <input class="botonregreso" type="submit" name="btn" value="Registrar">
         <a href="../index.php">Tengo cuenta</a>
     </form>
+    <?php
+        include("../control/registro.php");
+    ?>
     </body>
     <script src="../js/mostrar.js"></script>
     </html>

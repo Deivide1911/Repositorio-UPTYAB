@@ -1,8 +1,5 @@
 <?php
-@session_start();
-if(@$_SESSION['sesion'] !== 1 || !@$_SESSION['sesion']){
-    header("Location: ../index.php");
-}
+include('../control/validacionmain.php');
 ?>
 
 <!DOCTYPE html>
@@ -54,41 +51,42 @@ if(@$_SESSION['sesion'] !== 1 || !@$_SESSION['sesion']){
     <form action="upload().php" class="upload" method="post" enctype="multipart/form-data">
         <h2>Formulario</h2>
         <p>Título</p>
-    <input type="text" name="titulo" placeholder="Ingrese el título del proyecto" required>
-    <label for="pnfselect">PNF</label> 
-    <select id="pnfselect" name="pnf" required> 
-        <option value="informatica">Informática</option>
-        <option value="agroalimentacion">Agroalimentación</option>
-        <option value="enfermeria">Enfermería</option>
-        <option value="administracion">Administración</option>
-        <option value="higiene laboral">Higiene Laboral</option>
-        <option value="avanzado">Avanzado</option>
-    </select>
-
-        <label>Tipo de Proyecto</label>
-        <select name="tipoproyecto" id="tipoproyecto">
-            <option>Sociotecnologico</option>
-            <option>Comunitario</option>
-        </select>
-
-        <div class="archivopdf">
-            <label for="file">Seleccione su documento (PDF)</label>
-            <input type="file" id="document" name="file" accept=".pdf">
-        </div>
-        <label for="etiquetas">Etiquetas de su proyecto Ej. #Ambiental</label>
-        <input type="text" placeholder="Ingrese etiquetas para encontrar facilmente su proyecto" name="etiquetas">
-        <label for="autores">Ingrese por favor los autores de este proyecto</label>
-        <input type="text" placeholder="Autores" name="autores">
-        <br>
-        <label for="trayecto">Seleccione su trayecto</label>
-        <select name="trayecto" id="trayecto">
-            <option>1</option>
-            <option >2</option>
-            <option>3</option>
-            <option>4</option>
-        </select>
-        <br>
-        <input type="submit" name="btn">
+        <input type="text" name="titulo" placeholder="Ingrese el título del proyecto" required>
+        <label for="pnfselect">PNF</label> 
+            <select id="pnfselect" name="pnf" required> 
+                <option value="informatica">Informática</option>
+                <option value="agroalimentacion">Agroalimentación</option>
+                <option value="enfermeria">Enfermería</option>
+                <option value="administracion">Administración</option>
+                <option value="higiene laboral">Higiene Laboral</option>
+                <option value="avanzado">Avanzado</option>
+            </select>
+            <label>Tipo de Proyecto</label>
+                <select name="tipoproyecto" id="tipoproyecto">
+                    <option>Sociotecnologico</option>
+                    <option>Comunitario</option>
+                </select>
+            <div class="archivopdf">
+                <label for="file">Seleccione su documento (PDF)</label>
+                <input type="file" id="document" name="file" accept=".pdf">
+            </div>
+            <label for="etiquetas">Etiquetas de su proyecto Ej. #Ambiental</label>
+                <input type="text" placeholder="Ingrese etiquetas para encontrar facilmente su proyecto" name="etiquetas">
+            <label for="autores">Ingrese por favor los autores de este proyecto</label>
+                <input type="text" placeholder="Autores" name="autores">
+            <br>
+            <label for="trayecto">Seleccione su trayecto</label>
+                <select name="trayecto" id="trayecto">
+                    <option>1</option>
+                    <option >2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            <br>
+            <input type="submit" name="btn">
     </form>
+    <?php
+        include("upload().php");
+    ?>
 </body>
 </html>
