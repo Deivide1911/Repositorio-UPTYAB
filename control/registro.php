@@ -1,5 +1,5 @@
 <?php 
-$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
+include("conexion.php");
 if($conexion){
 if(isset($_POST['btn'])){
     if(strlen($_POST['pnombre']) > 1 && strlen($_POST['snombre']) > 1 && strlen($_POST['papellido']) > 1 && strlen($_POST['sapellido']) > 1 && strlen($_POST['fecha']) > 1 && strlen($_POST['ci']) > 1 && strlen($_POST['contrasena']) && isset($_POST['sexo'])){

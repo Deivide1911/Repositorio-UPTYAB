@@ -1,5 +1,5 @@
-<?php 
-$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
+<?php
+include("conexion.php");
 if($conexion){
     if(isset($_POST['btn'])){
         $id = $_POST['id'];

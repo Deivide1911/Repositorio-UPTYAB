@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
+include("../control/conexion.php");
 $consulta = $conexion->query("SELECT * FROM informatica where estado = 'Habilitado' order by trayecto asc ");
 include('../control/validacionmain.php');
 ?>
@@ -88,7 +88,7 @@ include('../control/validacionmain.php');
                 <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
                 <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
                 <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
-                <td><a href="delete.php?id=<?php echo $mostrar['id']?>">Eliminar</a></td>
+                <td><a href="delete.php?id=<?php echo $mostrar['id']?>">Inhabilitar</a></td>
             </tr>
             <?php  } ?>
         </table>

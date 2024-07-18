@@ -1,5 +1,5 @@
 <?php 
-$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
+include("../control/conexion.php");
 if($conexion){
     if(isset($_POST['btn'])){
         $archivo = $_FILES['file']['name'];
@@ -11,14 +11,18 @@ if($conexion){
         $autores = $_POST['autores'];
         $etiquetas = $_POST['etiquetas'];
         $pnf = $_POST['pnf'];
+        $verificar_archivo =  $conexion->query("SELECT * FROM $pnf where archivo = '$archivo'");
         if(empty($titulo) || empty($autores)|| empty($etiquetas) || empty($pnf)){
-            echo "<p style=color:red;>Debes rellenar todos los datos!</p>";
+            echo "<h2>Debes rellenar todos los datos!</h2>";
         }
         else if(empty($archivo) || empty($ruta_tmp) ){
-            echo "<p style=color:red;>Debes adjuntar un archivo PDF!</p>";
+            echo "<p style='color:red; font-weight:bold;'>Debes adjuntar un archivo PDF!</p>";
+        }
+        else if ($verificar_archivo->fetch_object()){
+            echo "<p style='color:red; font-weight:bold;'>Cambia el nombre del archivo para poder continuar!</p>";
         }
         else{
-            $verificacion = $conexion->query("SELECT * FROM $pnf where titulo = '$titulo' or archivo = '$archivo'");
+            $verificacion = $conexion->query("SELECT * FROM $pnf where titulo = '$titulo'");
                 if($verificacion->fetch_object()){
                     header("Location: alerta.php?titulo=$titulo&archivo=$archivo&pnf=$pnf");
                 }
@@ -33,9 +37,6 @@ if($conexion){
                 }
         }
         }
-    else{
-        echo "No se ha enviado ninguna consulta!";
-    }
 }
 else{
     echo "No se pudo establecer conexión con la base de datos";

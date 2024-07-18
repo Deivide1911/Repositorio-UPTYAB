@@ -48,7 +48,7 @@ include('../control/validacionmain.php');
         </nav>
     </header>
 
-    <form action="upload().php" class="upload" method="post" enctype="multipart/form-data">
+    <form class="upload" method="post" enctype="multipart/form-data">
         <h2>Formulario</h2>
         <p>Título</p>
         <input type="text" name="titulo" placeholder="Ingrese el título del proyecto" required>
@@ -70,6 +70,9 @@ include('../control/validacionmain.php');
                 <label for="file">Seleccione su documento (PDF)</label>
                 <input type="file" id="document" name="file" accept=".pdf">
             </div>
+            <?php
+                include("upload().php");
+            ?>
             <label for="etiquetas">Etiquetas de su proyecto Ej. #Ambiental</label>
                 <input type="text" placeholder="Ingrese etiquetas para encontrar facilmente su proyecto" name="etiquetas">
             <label for="autores">Ingrese por favor los autores de este proyecto</label>
@@ -85,8 +88,6 @@ include('../control/validacionmain.php');
             <br>
             <input type="submit" name="btn">
     </form>
-    <?php
-        include("upload().php");
-    ?>
+
 </body>
 </html>

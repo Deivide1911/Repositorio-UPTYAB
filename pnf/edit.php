@@ -1,5 +1,5 @@
 <?php 
-$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
+include("../control/conexion.php");
 $id = $_GET['id'];
 $consulta = $conexion->query("SELECT * FROM pnf where id='$id'");
 $select = mysqli_fetch_array($consulta);

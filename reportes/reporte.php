@@ -1,5 +1,5 @@
 <?php 
-$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
+include("../control/conexion.php");
 $consulta = $conexion->query("SELECT * FROM entradas order by fecha desc");
 include('../control/validacionmain.php');
 ?>

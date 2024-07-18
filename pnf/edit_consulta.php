@@ -1,5 +1,5 @@
 <?php 
-$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
+include("../control/conexion.php");
 if(isset($_POST['btn'])){
     $titulo = $_POST['titulo'];
     $trayecto = $_POST['trayecto'];

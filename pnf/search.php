@@ -1,5 +1,5 @@
 <?php
-$conexion = mysqli_connect("localhost","root","","proyectosdbnew");
+include("../control/conexion.php");
 include('../control/validacionmain.php');
 if(@$_POST['buscar']){
 $buscar = $_POST['buscar'];
@@ -112,7 +112,7 @@ $consulta = $conexion->query("    SELECT *
     </form>
 
     <a href="upload.php" class="linkupload">Subir mi proyecto</a>
-    <a href="inhabilitados.php" class="linkupload">Ver proyectos eliminados</a>
+    <a href="inhabilitados.php" class="linkupload">Ver proyectos inhabilitados</a>
     
     
     <table class="tablasearch">
@@ -136,7 +136,7 @@ $consulta = $conexion->query("    SELECT *
             <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
             <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
             <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
-            <td><a href="delete.php?id=<?php echo $mostrar['id']?>">Eliminar</a></td>
+            <td><a href="delete.php?id=<?php echo $mostrar['id']?>">Inhabilitar</a></td>
         </tr>
         <?php  } ?>
     </table>
