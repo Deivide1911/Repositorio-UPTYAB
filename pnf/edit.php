@@ -1,10 +1,12 @@
 <?php 
 include("../control/conexion.php");
 $id = $_GET['id'];
-$consulta = $conexion->query("SELECT * FROM pnf where id='$id'");
+$idpnf = $_GET['idpnf'];
+$direccion = $_GET['direccion'];
+$consulta = $conexion->query("SELECT * FROM pnf where idpnf='$idpnf'");
 $select = mysqli_fetch_array($consulta);
 $pnf = $select['pnf'];
-$sql = $conexion->query("SELECT * FROM $pnf");
+$sql = $conexion->query("SELECT * FROM $pnf where id='$id'");
 $mostrar = mysqli_fetch_array($sql);
 $titulo = $mostrar['titulo'];
 $trayecto = $mostrar['trayecto'];
@@ -20,7 +22,7 @@ $etiquetas = $mostrar['etiquetas'];
     <title>Editar</title>
 </head>
 <body>
-    <form action="edit_consulta.php" method ="post">
+    <form action="./controladores(admin)/edit_consulta.php" method ="post">
         <label for="titulo">Titulo</label>
         <input type="text" placeholder="Título" value="<?=$titulo?>" id="titulo" name="titulo">
         <br>
@@ -40,6 +42,6 @@ $etiquetas = $mostrar['etiquetas'];
         <br>
         <input type="submit" name="btn">
     </form>
-    <a href="main.php">Volver</a>
+    <a href="<?php echo $direccion ?>">Volver</a>
 </body>
 </html>

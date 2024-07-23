@@ -28,12 +28,15 @@ if($conexion){
                 }
                 else{
                     move_uploaded_file($ruta_tmp,$ruta);
-                    $consulta = $conexion->query("INSERT INTO $pnf (titulo,tipoproyecto,archivo,etiquetas,autores,trayecto,ruta,estado) values ('$titulo','$tipoproyecto','$archivo','$etiquetas','$autores','$trayecto','$ruta','Habilitado')");
-                    $consulta2 =$conexion->query("SELECT * FROM $pnf where titulo = '$titulo' and archivo = '$archivo'");
-                    $mostrar = mysqli_fetch_array($consulta2);
-                    $id = $mostrar['id'];
-                    $subiridproject = $conexion->query("INSERT INTO pnf (id,pnf) values ('$id','$pnf')");
-                    header("Location: felicidades.html");
+                    $consul_idpnf = $conexion->query("SELECT idpnf FROM pnf where pnf = '$pnf'");
+                    $mostrar = mysqli_fetch_array($consul_idpnf);
+                    $idpnf = $mostrar['idpnf'];
+                    $consulta = $conexion->query("INSERT INTO $pnf (titulo,tipoproyecto,archivo,etiquetas,autores,trayecto,ruta,estado,idpnf) values ('$titulo','$tipoproyecto','$archivo','$etiquetas','$autores','$trayecto','$ruta','Habilitado','$idpnf')");
+                    $id = $conexion->insert_id;
+                    date_default_timezone_set("America/Caracas");
+                    $hora_fecha = date('Y-m-d H:i:s');
+                    $consulta_fecha = $conexion->query("INSERT INTO fecha (id,idpnf,hora_fecha) values ('$id','$idpnf','$hora_fecha')");
+                    header("Location: felicidades.php?pnf=$pnf");
                 }
         }
         }

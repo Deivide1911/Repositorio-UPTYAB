@@ -1,6 +1,6 @@
 <?php 
 include("../control/conexion.php");
-$consulta = $conexion->query("SELECT * FROM entradas order by fecha desc");
+$consulta = $conexion->query("SELECT * FROM entradas order by idunic desc");
 include('../control/validacionmain.php');
 ?>
 <!DOCTYPE html>
@@ -17,43 +17,46 @@ include('../control/validacionmain.php');
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
 <body>
+
+
 <header class="logo">
         <a href="../pnf/main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
         <ul>
-            <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li>
+            <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
             <li>
         <ul class="contenido">
             <li><a href="../pnf/informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene Laboral</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
+            <li><a href="../pnf/administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
+            <li><a href="../pnf/agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
+            <li><a href="../pnf/enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
+            <li><a href="../pnf/higiene_laboral.php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene & Seguridad Laboral</a></li>
+            <li><a href="../pnf/avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
         </li>
+        <ul>
+        </ul>
+        
         </nav>
-        <a href="#" class="re">Nosotros</a>
-        <a href="#" class="re">Estadistica</a>
-        <a href="../reportes/reporte.php" class="re">Reportes</a>
-        <nav class="dropmenu">
+        <a href="../pnf/nosotros.php" class="re">Nosotros</a>
+        <a href="../pnf/estadisticas.php" class="re">Estadistica</a>
+        <a href="reporte.php" class="re">Reportes</a>
+        <nav class="dropmenu cerrarsesion">
         <a class="usericon"><i class="fa-solid fa-user"></i>
             Admin</a>
         <ul>
             <ul class="contenido">
-                <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
-                <li><a href="#"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
-                <li><a href="../pnf/upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
+            <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <li><a href="../pnf/configuracion.php"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+            <li><a href="../pnf/upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
             </ul>
         </ul>
         </nav>
     </header>
+
+
+
     <a href="../pnf/main.php" class="reportvolver">Volver</a>
-
-
-
-
-
     <?php 
         while($mostrar = mysqli_fetch_array($consulta)){
     ?>

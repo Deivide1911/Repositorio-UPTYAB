@@ -1,11 +1,12 @@
 <?php 
 include("../control/conexion.php");
-$pnf = $_GET['pnf'];
-$titulo = $_GET['titulo'];
-$archivo = $_GET['archivo'];
-$consulta = $conexion->query("SELECT * from $pnf where titulo = '$titulo' or archivo = '$archivo'");
-$consulta2 = $conexion->query("SELECT * from $pnf where titulo = '$titulo' and archivo = '$archivo'");
-$consulta3 =$conexion->query("SELECT * from $pnf where archivo = '$archivo'");
+if(@$_GET['pnf'] && @$_GET['titulo'] && @$_GET['archivo']){
+    $pnf = $_GET['pnf'];
+    $titulo = $_GET['titulo'];
+    $archivo = $_GET['archivo'];
+    $consulta = $conexion->query("SELECT * from $pnf where titulo = '$titulo' or archivo = '$archivo'");
+    $consulta2 = $conexion->query("SELECT * from $pnf where titulo = '$titulo' and archivo = '$archivo'");
+    $consulta3 =$conexion->query("SELECT * from $pnf where archivo = '$archivo'");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -31,24 +32,27 @@ $consulta3 =$conexion->query("SELECT * from $pnf where archivo = '$archivo'");
     <table>
         <tr>
             <th>Titulo</th>
+            <th>Trayecto</th>
             <th>Tipo de proyecto</th>
             <th>Autores</th>
             <th>Etiquetas</th>
             <th>Nombre del archivo</th>
+            <th>Estado</th>
         </tr>
     <?php 
         while($mostrar = mysqli_fetch_array($consulta)){
     ?>
     <tr>
         <td><?php echo $mostrar['titulo'] ?></td>
+        <td><?php echo $mostrar['trayecto'] ?></td>
         <td><?php echo $mostrar['tipoproyecto'] ?></td>
         <td><?php echo $mostrar['autores'] ?></td>
         <td><?php echo $mostrar['etiquetas'] ?></td>
         <td><?php echo $mostrar['archivo'] ?></td>
+        <td><?php echo $mostrar['estado'] ?></td>
         <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
         <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
         <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
-        <td><a href="delete.php?id=<?php echo $mostrar['id']?>">Inhabilitar</a></td>
     </tr>
     <?php 
      }
@@ -59,3 +63,21 @@ $consulta3 =$conexion->query("SELECT * from $pnf where archivo = '$archivo'");
     <a href="upload.php">Volver</a>
 </body>
 </html>
+<?php 
+} else{
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perdida de datos</title>
+</head>
+<body>
+    <h1>Se han perdido los datos, vuelve a subir tu archivo</h1>
+    <a href="upload.php">Volver</a>
+</body>
+</html>
+<?php 
+}
+?>

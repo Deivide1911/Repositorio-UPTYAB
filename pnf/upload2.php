@@ -15,7 +15,7 @@ include('../control/validacionmain.php');
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
 <body class="uploadbody">
-    <header class="logo">
+<header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
         <ul>
@@ -30,18 +30,21 @@ include('../control/validacionmain.php');
             <li><a href="#" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
         </li>
+        <ul>
+        </ul>
+        
         </nav>
-        <a href="#" class="re">Nosotros</a>
-        <a href="#" class="re">Estadistica</a>
+        <a href="nosotros.php" class="re">Nosotros</a>
+        <a href="estadisticas.php" class="re">Estadistica</a>
         <a href="../reportes/reporte.php" class="re">Reportes</a>
-        <nav class="dropmenu">
+        <nav class="dropmenu cerrarsesion">
         <a class="usericon"><i class="fa-solid fa-user"></i>
             Admin</a>
         <ul>
             <ul class="contenido">
-                <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
-                <li><a href="#"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
-                <li><a href="upload.html"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
+            <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+            <li><a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+            <li><a href="upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
             </ul>
         </ul>
         </nav>
@@ -72,7 +75,7 @@ include('../control/validacionmain.php');
             <input type="file" id="document" name="file" accept=".pdf">
         </div>
         <?php
-            include("upload2().php");
+            include("./controladores(admin)/upload2().php");
         ?>
         <label for="etiquetas">Etiquetas de su proyecto Ej. #Ambiental</label>
         <input type="text" placeholder="Ingrese etiquetas para encontrar facilmente su proyecto" name="etiquetas">

@@ -7,14 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../estilos/style.css">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./estilos/style.css">
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
 <body>
     
     <div class="logo">
-        <a href="../index.php"><img src="../img/logo.png" alt="logo" width="150px" height="100px"></a>
+        <a href="../index.php"><img src="./img/logo.png" alt="logo" width="150px" height="100px"></a>
         <h1>REPOSITORIO DE LA UPTYAB</h1>
     </div>
 
@@ -40,11 +40,11 @@
         <input type="checkbox" name="mostrar" id="mostrar">
         <label for="mostrar">Mostrar Contraseña</label>
         <input class="botonregreso" type="submit" name="btn" value="Registrar">
-        <a href="../index.php">Tengo cuenta</a>
+        <a href="index.php">Tengo cuenta</a>
     </form>
     <?php
-        include("../control/registro.php");
+        include("./control/registro.php");
     ?>
     </body>
-    <script src="../js/mostrar.js"></script>
+    <script src="./js/mostrar.js"></script>
     </html>

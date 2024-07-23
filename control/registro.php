@@ -15,7 +15,7 @@ if(isset($_POST['btn'])){
             $consulta2 = "INSERT INTO usuarioinformacion(usuarioinfoid,primernombre,segundonombre,primerapellido,segundoapellido,sexo,fecha ) VALUES ('$ci','$pnombre','$snombre','$papellido','$sapellido','$sexo','$fecha')";
             $res = mysqli_query($conexion,$consulta);
             $res2 = mysqli_query($conexion,$consulta2);
-            header('Location: ../pnf/msj.html');
+            header('Location: msj.html');
     }
     else if (empty($_POST['sexo'])){
         echo "<p style=color:red; class=text3>Debe elegir su sexo!</p>"; 

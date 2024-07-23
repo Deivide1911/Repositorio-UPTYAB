@@ -1,6 +1,28 @@
 <?php
 include("../control/conexion.php");
-$consulta = $conexion->query("SELECT * FROM informatica where estado = 'Inhabilitado' order by trayecto asc ");
+if(@$_GET['direccion']){
+    $direccion = $_GET['direccion'];
+}
+$consulta = $conexion->query(
+    "SELECT * FROM informatica 
+    where estado LIKE 'Inhabilitado' 
+    UNION
+    SELECT * FROM administracion
+    where estado LIKE 'Inhabilitado' 
+    UNION
+    SELECT * FROM agroalimentacion
+    where estado LIKE 'Inhabilitado' 
+    UNION
+    SELECT * FROM avanzada
+    where estado LIKE 'Inhabilitado' 
+    UNION
+    SELECT * FROM enfermeria
+    where estado LIKE 'Inhabilitado'
+    UNION
+    SELECT * FROM higiene_laboral
+    where estado LIKE 'Inhabilitado' 
+    order by trayecto asc
+");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -32,10 +54,10 @@ $consulta = $conexion->query("SELECT * FROM informatica where estado = 'Inhabili
             <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
             <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
             <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
-            <td><a href="recuperacion.php?id=<?php echo $mostrar['id']?>">Habilitar</a></td>
+            <td><a href="habilitar.php?id=<?php echo $mostrar['id']?>&direccion=inhabilitados">Habilitar</a></td>
         </tr>
         <?php  } ?>
     </table>
-    <a href="informatica.php">Ver proyectos</a>
+    <a href="<?php echo $direccion?>">Volver</a>
 </body>
 </html>

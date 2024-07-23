@@ -1,7 +1,7 @@
 <?php
 include("../control/conexion.php");
-$redireccion = 'search(usuario).php';
-include("../control/validacion(usuario).php");
+$redireccion = 'search.php';
+include("../control/validacion(admin).php");
 include('../control/validacionmain.php');
 if(strlen(@$_POST['buscar']) >= 1){
     $buscar = $_POST['buscar'];
@@ -104,51 +104,42 @@ else{
 <body>
 
 <header class="logo">
-        <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
+        <a href="main(usuario).php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
         <ul>
-            <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li>
+            <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
             <li>
-            <ul class="contenido">
-            <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
-            <li><a href="administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
-            <li><a href="agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
-            <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
-            <li><a href="higiene_laboral.php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene & Seguridad Laboral</a></li>
-            <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
+        <ul class="contenido">
+            <li><a href="informatica(usuario).php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
+            <li><a href="administracion(usuario).php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
+            <li><a href="agroalimentacion(usuario).php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
+            <li><a href="enfermeria(usuario).php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
+            <li><a href="higiene_laboral(usuario).php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene & Seguridad Laboral</a></li>
+            <li><a href="avanzada(usuario).php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
         </li>
         <ul>
         </ul>
         </nav>
-        <a href="#" class="re">Nosotros</a>
-        <a href="#" class="re">Estadistica</a>
-        <a href="../reportes/reporte.php" class="re">Reportes</a>
-        <nav class="dropmenu cerrarsesion">
+        <a href="nosotros(usuario).php" class="re">Nosotros</a>
+        <nav class="dropmenu">
         <a class="usericon"><i class="fa-solid fa-user"></i>
-            Admin</a>
+            Usuario</a>
         <ul>
             <ul class="contenido">
-            <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
-            <li><a href="#"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
-            <li><a href="upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
+                <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+                <li><a href="configuracion(usuario).php"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
             </ul>
         </ul>
         </nav>
-    
     </header>
 
-    <form action="search.php" method="POST" class="barradebusqueda">
+    <form action="search(usuario).php" method="POST" class="barradebusqueda">
         <fieldset class="fieldset">
         <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="buscador">
         <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
         </fieldset>
     </form>
-
-    <a href="upload.php" class="linkupload">Subir mi proyecto</a>
-    <a href="inhabilitados.php" class="linkupload">Ver proyectos inhabilitados</a>
-    
-    
     <table class="tablasearch">
         <tr>
             <th>Título</th>
@@ -174,9 +165,6 @@ else{
             <td><?php echo $nombrepnf['pnf_nombre']  ?></td>
             <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
             <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
-            <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
-            <td><a href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=search">Inhabilitar</a></td>
-        </tr>
         <?php  } ?>
     </table>
     
@@ -211,7 +199,6 @@ else{
     .linkupload:hover{
     color: blue;
 }
-
     
 
 </style>

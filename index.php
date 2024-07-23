@@ -26,11 +26,11 @@
         <input class="hola" type="password" name="contraseña" id="contraseña" placeholder="Ingresa tu Contraseña"
         required>
         <input class="boton" type="submit" value="Entrar" name="btn">
-        <a href="pnf/register.php">¿No tienes cuenta?</a>
+        <a href="register.php">¿No tienes cuenta?</a>
     </form>
     <?php
     include("./control/login.php");
-    include("./control/validar.php");
+    include("./control/validacion(index).php");
     ?>
     <footer>
         <div class="container">

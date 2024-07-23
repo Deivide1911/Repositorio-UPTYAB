@@ -1,8 +1,8 @@
 <?php
 include("../control/conexion.php");
-$redireccion = 'informatica(usuario).php';
+$redireccion = 'enfermeria(usuario).php';
 include("../control/validacion(usuario).php");
-$consulta = $conexion->query("SELECT * FROM informatica where estado = 'Habilitado' order by trayecto asc ");
+$consulta = $conexion->query("SELECT * FROM enfermeria where estado = 'Habilitado' order by trayecto asc ");
 include('../control/validacionmain.php');
 ?>
 <!DOCTYPE html>
@@ -63,10 +63,10 @@ include('../control/validacionmain.php');
 
     <div class="center">
         <a href="upload.php" class="linkupload">Subir mi proyecto</a>
-        <a href="inhabilitados.php?direccion=informatica.php" class="linkupload">Ver proyectos eliminados</a>
+        <a href="inhabilitados.php?direccion=enfermeria.php" class="linkupload">Ver proyectos eliminados</a>
     </div>
 
-    <h2>Informática</h2>
+    <h2>Enfermería</h2>
         <table class="tablasearch">
             <tr>
                 <th>Título</th>
@@ -88,7 +88,7 @@ include('../control/validacionmain.php');
                 <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
                 <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
                 <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
-                <td><a href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica">Inhabilitar</a></td>
+                <td><a href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=enfermeria">Inhabilitar</a></td>
             </tr>
             <?php  } ?>
         </table>
