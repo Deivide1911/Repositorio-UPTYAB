@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* Fuentes de letras y las variables que voy a utilizar en este caso colores */
+:root {
+    --login-bg: #f3f4ff;
+    --titulo: #3c29e7;
+    --button-bg: #366bdd;
+    --light-blue: #4447ee;
+    --image-bg: #dbe3ff;
+}
+/* Asignando la fuente, el tamaño y un fondo linea degradado */
+body{
+    margin: 0;
+    height: 150vh;
+    font-family: "Nunito", sans-serif;
+    background-image: linear-gradient(to top, #5569c7 0%, #c2dffb 100%);
+}
+/* logo */
+.logo{
+    background-color: #7cb5f6;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    color: white;
+    font-size: 30px;
+}
+/* Seccion del login + info */
+.login-container{
+    height: 43.45em;
+    width: 60em;
+    margin: 5em auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.login-info-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0.5rem;
+    background-color: var(--login-bg);
+    margin-bottom: 15em;
+    
+}
+/* Ajustes de las imagenes */
+.image-container{
+    width: 56.62%;
+    padding: 4.50rem;
+    background-color: var(--image-bg);
+    height: auto;
+}
+
+.logo-uptyab{
+    margin-top: 10px;
+    height: 70px;
+    width: 100px;
+}
+/* ////// */
+.titulo{
+    text-transform: capitalize;
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--titulo);
+}
+.login-info-container > p {
+    font-size: 1.25em;
+    margin-top: 1.5em;
+}
+/* Inputs */
+.inputs-container{
+    height: 55%;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+input, .btn{
+    width: 90%;
+    height: 3.125rem;
+    font-size: 1em;
+    margin: 10px;
+    padding: 7px;
+}
+input{
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    padding: 12px;
+}
+
+.box-text{
+    border: 1px solid transparent;
+}
+
+.box-text:hover{
+    border: 1px solid var(--button-bg);
+}
+/* boton */
+.btn{
+    width: 80%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 12px;
+}
+/* /////// */
+.inputs-container p{
+    margin: 0;
+
+}
+.span{
+    color: var(--light-blue);
+    cursor: pointer;
+}
+
+/* Responsive */
+@media screen and (max-width: 1000px) {
+    .image-container{
+        display: none;
+    }
+    .login-container{
+        border: 2px solid #674baf;
+        width: 70%;
+        margin-top: 3rem;
+    }
+    .login-info-container{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 660px){
+    .login-container{
+        width: 90%;
+    }
+}
+
+/* TEXTOS */
+
+.texto1{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 1.5px 1.5px black;
+}
+.sub-div{
+    width: 100%;
+}
+
+a{
+    font-style: none;
+    text-decoration: none;
+}
