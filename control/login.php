@@ -33,7 +33,8 @@ if($conexion){
             session_start();
             $_SESSION['sesion'] = 1;
             $_SESSION['rango'] = 1;
-            header("Location: ./pnf/main.php");
+            $_SESSION['id'] = $id;
+            header("Location: ../pnf/main.php");
         }
         else{
             echo "<p style=color:red;>Datos Incorrectos!</p>";

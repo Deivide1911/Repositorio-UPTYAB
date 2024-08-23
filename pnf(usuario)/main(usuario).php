@@ -60,7 +60,7 @@ $consulta = $conexion->query("SELECT * FROM (
         <ul>
             <ul class="contenido">
                 <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
-                <li><a href="configuracion(usuario).php"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+                <li><a href="configuracion(usuario).php?id=<?php echo $_SESSION['id'] ?>"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
             </ul>
         </ul>
         </nav>

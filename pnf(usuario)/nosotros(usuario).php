@@ -1,3 +1,7 @@
+<?php
+include("../control/validacion(admin).php");
+include('../control/validacionmain.php');
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,7 +34,6 @@
         </li>
         <ul>
         </ul>
-        
         </nav>
         <a href="nosotros(usuario).php" class="re">Nosotros</a>
         <nav class="dropmenu">
@@ -38,8 +41,8 @@
             Usuario</a>
         <ul>
             <ul class="contenido">
-            <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
-            <li><a href="configuracion(usuario).php"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+                <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
+                <li><a href="configuracion(usuario).php?id=<?php echo $_SESSION['id'] ?>"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
             </ul>
         </ul>
         </nav>

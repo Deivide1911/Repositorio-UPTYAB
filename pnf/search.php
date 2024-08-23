@@ -143,7 +143,10 @@ else{
         <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="buscador">
         <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
         </fieldset>
+        <br>
     </form>
+
+
 
     <a href="upload.php" class="linkupload">Subir mi proyecto</a>
     <a href="inhabilitados.php" class="linkupload">Ver proyectos inhabilitados</a>
@@ -179,6 +182,7 @@ else{
         </tr>
         <?php  } ?>
     </table>
+
     
 </body>
 <style>

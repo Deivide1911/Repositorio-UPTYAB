@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./estilos/style.css">
-    <link rel="icon" type="image/x-icon" href="../img/icon.png">
+    <link rel="icon" type="image/x-icon" href="./img/icon.png">
 </head>
 <body>
     
     <div class="logo">
-        <a href="../index.php"><img src="./img/logo.png" alt="logo" width="150px" height="100px"></a>
+        <a href="index.php"><img src="./img/logo.png" alt="logo" width="150px" height="100px"></a>
         <h1>REPOSITORIO DE LA UPTYAB</h1>
     </div>
 

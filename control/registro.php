@@ -2,7 +2,7 @@
 include("conexion.php");
 if($conexion){
 if(isset($_POST['btn'])){
-    if(strlen($_POST['pnombre']) > 1 && strlen($_POST['snombre']) > 1 && strlen($_POST['papellido']) > 1 && strlen($_POST['sapellido']) > 1 && strlen($_POST['fecha']) > 1 && strlen($_POST['ci']) > 1 && strlen($_POST['contrasena']) && isset($_POST['sexo'])){
+    if(strlen($_POST['pnombre']) > 1 && strlen($_POST['snombre']) > 1 && strlen($_POST['papellido']) > 1 && strlen($_POST['sapellido']) > 1 && strlen($_POST['fecha']) > 1 && strlen($_POST['ci']) > 1 && strlen($_POST['contrasena']) > 1 && isset($_POST['sexo'])){
             $pnombre = ucfirst(trim($_POST['pnombre']));
             $snombre = ucfirst(trim($_POST['snombre']));
             $papellido = ucfirst(trim($_POST['papellido']));
