@@ -48,7 +48,7 @@ include('../control/validacionmain.php');
         <ul>
             <ul class="contenido">
             <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
-            <li><a href="configuracion.php?"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+            <li><a href="configuracion.php?id=<?php echo $_SESSION['id']?>"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
             <li><a href="upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
             </ul>
         </ul>
@@ -87,7 +87,7 @@ include('../control/validacionmain.php');
                 <td><?php echo $mostrar['etiquetas'] ?></td>
                 <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
                 <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
-                <td><a href="edit.php?direccion=higiene_laboral.php&id=<?php echo $mostrar['id']?>&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
+                <td><a href="edit.php?direccion=higiene_laboral.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
                 <td><a href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=higiene_laboral">Inhabilitar</a></td>
             </tr>
             <?php  } ?>
