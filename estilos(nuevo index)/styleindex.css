@@ -27,7 +27,7 @@ body{
 }
 /* Seccion del login + info */
 .login-container{
-    height: 47.45em;
+    height: 25.45em;
     width: 60em;
     margin: 3em auto;
     display: flex;
@@ -50,7 +50,7 @@ body{
 .image-container{
     width: 30em;
     background-color: var(--image-bg);
-    height: 800px;
+    height: auto;
 }
 .logo-uptyab{
     margin-top: 10px;
@@ -102,17 +102,6 @@ input{
 .box-text:hover{
     border: 1px solid var(--button-bg);
 }
-
-.sex{
-    display: flex;
-    gap: 10px;
-}
-
-.sex1{
-    padding:0;
-    margin-top: -14px;
-
-}
 /* boton */
 .btn{
     width: 80%;
@@ -144,16 +133,23 @@ input{
     }
     .login-container{
         border: 2px solid #674baf;
-        width: 80%;
-        margin-top: 2rem;
+        width: 70%;
+        margin-top: 3rem;
     }
     .login-info-container{
         width: 100%;
     }
+    .texto1{
+        font-size: 40px;
+    }
+    .logo-uptyab{
+        height: 110px;
+        width: 180px;
+    }
 }
 @media screen and (max-width: 660px){
     .login-container{
-        width: 70%;
+        width: 90%;
     }
     .texto1{
         font-size: 20px;
@@ -172,6 +168,7 @@ input{
         width: 180px;
     }
 }
+
 /* TEXTOS */
 
 .texto1{

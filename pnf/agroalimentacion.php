@@ -87,7 +87,7 @@ include('../control/validacionmain.php');
                 <td><?php echo $mostrar['etiquetas'] ?></td>
                 <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
                 <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
-                <td><a href="edit.php?direccion=agroalimentacion.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
+                <td><a href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
                 <td><a href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=agroalimentacion">Inhabilitar</a></td>
             </tr>
             <?php  } ?>

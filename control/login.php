@@ -4,8 +4,8 @@ if($conexion){
     if(isset($_POST['btn'])){
         $id = $_POST['id'];
         $contraseña = $_POST['contraseña'];
-        $consulta = $conexion ->query("SELECT * FROM usuario where binary id='$id' and binary contraseña='$contraseña' and rango = 0");
-        $consulta_admin = $conexion ->query("SELECT * FROM usuario where binary id='$id' and binary contraseña='$contraseña' and rango=1");
+        $consulta = $conexion ->query("SELECT * FROM usuario where id='$id' and contraseña='$contraseña' and rango = 0");
+        $consulta_admin = $conexion ->query("SELECT * FROM usuario where id='$id' and contraseña='$contraseña' and rango=1");
         if($consulta->fetch_object()){
                 $select = $conexion->query("SELECT * FROM usuarioinformacion where usuarioinfoid='$id'");
                 $mostrar = mysqli_fetch_array($select);
@@ -37,7 +37,7 @@ if($conexion){
             header("Location: ../pnf/main.php");
         }
         else{
-            echo "<p style=color:red;>Datos Incorrectos!</p><br><a href=../index.php>Volver</a>";
+            echo "<p style=color:red;>Datos Incorrectos!</p>";
         }
 }
 }

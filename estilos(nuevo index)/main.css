@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+/* Fuentes de letras y las variables que voy a utilizar en este caso colores */
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    
+}
+/* El header */
+header {
+    background: #1944a1;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Animacion del nav etc */
+.nav-list {
+    list-style: none;
+    padding: 0;
+}
+
+.nav-list li {
+    display: inline;
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+    color: #0099ff;
+}
+
+.nav-list li::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: #296be7;
+    width: 0;
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-list li:hover::after {
+    width: 100%;
+}
+.dropmenu{
+    margin-left: 1%;
+    display: inline-block;
+    position: relative;
+}
+.contenido{
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+    background-color: #3b3edd;
+    text-align: center;
+    
+}
+.dropmenu:hover .contenido{
+    display: block;
+    position: absolute;
+}
+
+/* Valores para ahorrarme tiempo y logo*/
+h2 {
+    color: #ffffff;
+}
+.logo-uptyab{
+    width: 10%;
+    height: 10%;
+}
+/* Backgroud y configurancion del texto de bienvenida */
+.fondouni{
+    background: url(../images/ejemplo.png);
+    background-position: center;
+    background-size: 100%;
+    background-attachment: contain;
+    background-size: cover;
+}
+.parrafo{
+    text-align: center;
+    padding: 5px;
+    align-items: center;
+    margin: 12px;
+    font-size: 20px;
+    color: white;
+}
+.titulomain{
+    margin: 5px;
+    padding: 5px;
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.todo-2{
+    width: 100%;
+    background-color: #00000088;
+    margin: auto;
+    font-optical-sizing: auto;   
+    padding: 0px;
+}
+/* SLIDER LAS IMAGENES QUE SE MUEVEN DE LADO PS */
+.position{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 126.20%;
+    left: 50%;
+}
+.slider{
+    background-image: url(../images/slider1.png);
+    background-size: cover;
+    height: 70%;
+    width: 100%;
+    animation: animation 16s infinite;
+
+}
+@keyframes animation {
+    20%{
+        background-image: url(../images/slider6.png);
+        background-size: cover;
+    }
+    40%{
+        background-image: url(../images/slider5.png);
+        background-size: cover;
+    }
+    60%{
+        background-image: url(../images/slider4.png);
+        background-size: cover;
+    }
+    80%{
+        background-image: url(../images/slider3.png);
+        background-size: cover;
+    }
+    100%{
+        background-image: url(../images/slider2.png);
+        background-size: cover;
+    }
+    110%{
+        background-image: url(../images/slider1.png);
+        background-size: cover;
+    }
+}
+/* /////////// */

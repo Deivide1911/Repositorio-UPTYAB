@@ -8,15 +8,15 @@ include('./control/validacion(index).php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="estilos(nuevo index)/style.css">
-    
+    <link rel="stylesheet" href="estilos(nuevo index)/styleindex.css">
+    <link rel="icon" type="image/x-icon" href="images/icon.png">
 </head>
-<div class="logo">
-    <a href="index.php"><img src="images (nuevo index)/logosinfondo.png" alt="logo" class="logo-uptyab"></a>
+<header class="logo">
+    <a href="index.php"><img src="images (nuevo index)/logomin.png" alt="logo" class="logo-uptyab"></a>
     <div class="sub-div">
         <h2 class="texto1">REPOSITORIO UPTYAB</h2>
     </div>
-</div>
+</header>
 
 <body>
     <section class="login-container ">
@@ -27,11 +27,11 @@ include('./control/validacion(index).php');
                 <input type="password" placeholder="Cotraseña" name="contraseña" class="box-text">
                 <p>¿Olvidaste tu contraseña? <span class="span">Haz click</span></p>
                 <input type="submit" class="btn" name="btn">
-                <p>¿No tienes cuenta? <span class="span"><a href="./register.php">Registrate</a></span></p>
+                <p>¿No tienes cuenta? <span class="span"><a href="./register.html">Registrate</a></span></p>
             </div>
         </form>
         <aside>
-            <img src="images/desktop.png" alt="s" class="image-container">
+            <img src="images (nuevo index)/sad.gif" alt="s" class="image-container">
         </aside>
     </section>
 </body>
