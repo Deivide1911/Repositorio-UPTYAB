@@ -24,7 +24,7 @@ include('../control/validacionmain.php');
         <a href="main(usuario).php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
         <ul>
-            <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
+            <li><p class="re"><a><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
             <li>
         <ul class="contenido">
             <li><a href="informatica(usuario).php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
@@ -53,6 +53,7 @@ include('../control/validacionmain.php');
     <form action="search(usuario).php" method="POST" class="barradebusqueda">
         <fieldset class="fieldset">
         <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="buscador">
+        <input type="hidden" name="control" value="0">
         <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
         </fieldset>
     </form>
@@ -75,51 +76,11 @@ include('../control/validacionmain.php');
                 <td><?php echo $mostrar['tipoproyecto'] ?></td>
                 <td><?php echo $mostrar['autores'] ?></td>
                 <td><?php echo $mostrar['etiquetas'] ?></td>
-                <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-                <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
+                <td><a class=blueone href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
+                <td><a class=blueone href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
             </tr>
             <?php  } ?>
         </table>
     
 </body>
-<style>
-        /* No agarró los cambios en maincss.css los tuve que poner aqui */
-    /* search.php */
-.tablasearch{
-    font-family: "Urbanist", sans-serif;
-    font-size: 16px;
-    background-color: #e7e1e1;
-    padding: 10px;
-    text-align: center;
-    
-}
-.tablasearch td{
-    border-bottom: 1px solid black;
-    padding-top: 10px;
-}
-.tablasearch a{
-    color: blue;
-}
-
-.center{
-    display:flex;
-    flex-direction:column;
-    width:100%;
-    background-color: #4954b9;
-}
-
-.linkupload{
-    color: #e7e1e1;
-    margin:auto;
-    font-family: "Urbanist", sans-serif;
- }
-    .linkupload:hover{
-        color: blue;
-}
-h2{
-    color: #13112e;
-    margin: auto;
-    font-family: "Urbanist", sans-serif;
-}
-</style>
 </html>

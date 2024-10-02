@@ -19,7 +19,7 @@ if($conexion){
                 $_SESSION['sesion'] = 1;
                 $_SESSION['rango'] = 0;
                 $_SESSION['id'] = $id;
-                header("Location: ../pnf(usuario)/main(usuario).php");
+                header("Location: ./pnf(usuario)/main(usuario).php");
         }
         else if ($consulta_admin->fetch_object()){
             $select = $conexion->query("SELECT * FROM usuarioinformacion where usuarioinfoid='$id'");
@@ -34,10 +34,10 @@ if($conexion){
             $_SESSION['sesion'] = 1;
             $_SESSION['rango'] = 1;
             $_SESSION['id'] = $id;
-            header("Location: ../pnf/main.php");
+            header("Location: ./pnf/main.php");
         }
         else{
-            echo "<p style=color:red;>Datos Incorrectos!</p>";
+            echo "<p class='error' style=position:absolute color:red;>Datos Incorrectos!</p>";
         }
 }
 }

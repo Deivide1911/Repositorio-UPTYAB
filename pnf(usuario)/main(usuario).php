@@ -39,7 +39,7 @@ $consulta = $conexion->query("SELECT * FROM (
         <a href="main(usuario).php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
         <ul>
-            <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
+            <li><p class="re"><a><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
             <li>
         <ul class="contenido">
             <li><a href="informatica(usuario).php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
@@ -68,16 +68,14 @@ $consulta = $conexion->query("SELECT * FROM (
     <main class="fondouni">
     <article class="todo-2">
         <h3 class="titulomain">Bienvenidos al Repositorio de la Universidad Politécnica Territorial de Yaracuy Arístides Bastidas</h3>
-
         <p class="parrafo">El repositorio de la UPTYAB, es un espacio donde puedes ver y descargar archivos con fines de perservacion digital, busqueda de reseña historica y formentar la actividad academica e intelectual</p>
-
         <p class="parrafo">Con proyectos sociotecnologicos, proyectos comunitarios, etc</p>
     </article>
     </main>
-
     <form action="search(usuario).php" method="POST" class="barradebusqueda">
         <fieldset class="fieldset">
         <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="buscador">
+        <input type="hidden" name="control" value="0">
         <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
         </fieldset>
     </form>
@@ -120,8 +118,8 @@ $consulta = $conexion->query("SELECT * FROM (
             <td><?php echo $mostrar['autores'] ?></td>
             <td><?php echo $mostrar['etiquetas'] ?></td>
             <td><?php echo $nombrepnf['pnf_nombre']  ?></td>
-            <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-            <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
+            <td><a class="colors" href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
+            <td><a class="colors" href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
         </tr>
             <?php  } ?>
         </table>
@@ -129,9 +127,4 @@ $consulta = $conexion->query("SELECT * FROM (
         </div>
     </section>
 </body>
-<style>
-    a{
-        cursor:pointer;
-    }
-</style>
-</html>f
+</html>

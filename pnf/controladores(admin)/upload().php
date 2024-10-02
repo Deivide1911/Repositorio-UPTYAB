@@ -4,7 +4,7 @@ if($conexion){
     if(isset($_POST['btn'])){
         $archivo = $_FILES['file']['name'];
         $ruta_tmp = $_FILES['file']['tmp_name'];
-        $ruta = "../proyectos/".$archivo;
+        $ruta = "../../proyectos/".$archivo;
         $titulo = $_POST['titulo'];
         $trayecto = $_POST['trayecto'];
         $tipoproyecto = $_POST['tipoproyecto'];

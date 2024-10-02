@@ -10,9 +10,12 @@
 /* Asignando la fuente, el tamaño y un fondo linea degradado */
 body{
     margin: 0;
-    height: 150vh;
+    height: 100vh;
     font-family: "Nunito", sans-serif;
     background-image: linear-gradient(to top, #1d5685 0%, #a9ddff 100%);
+}
+.error{
+    color:red;
 }
 /* logo */
 .logo{
@@ -166,6 +169,9 @@ input{
     .logo-uptyab{
         height: 75px;
         width: 180px;
+    }
+    .error{
+        transform: translate(0,35px);
     }
 }
 

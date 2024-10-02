@@ -19,15 +19,15 @@ include('../control/validacionmain.php');
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
         <ul>
-            <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li>
+            <li><p class="re"><a><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li>
             <li>
         <ul class="contenido">
             <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene Laboral</a></li>
-            <li><a href="#" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
+            <li><a href="administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
+            <li><a href="agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
+            <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
+            <li><a href="higiene.php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene Laboral</a></li>
+            <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzada</a></li>
         </ul>
         </li>
         <ul>
@@ -35,7 +35,6 @@ include('../control/validacionmain.php');
         
         </nav>
         <a href="nosotros.php" class="re">Nosotros</a>
-        <a href="estadisticas.php" class="re">Estadistica</a>
         <a href="../reportes/reporte.php" class="re">Reportes</a>
         <nav class="dropmenu cerrarsesion">
         <a class="usericon"><i class="fa-solid fa-user"></i>
@@ -43,7 +42,7 @@ include('../control/validacionmain.php');
         <ul>
             <ul class="contenido">
             <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
-            <li><a href="configuracion.php"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+            <li><a href="configuracion.php?id=<?php echo $_SESSION['id']?>"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
             <li><a href="upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
             </ul>
         </ul>
@@ -66,7 +65,7 @@ include('../control/validacionmain.php');
 
         <label>Tipo de Proyecto</label>
         <select name="tipoproyecto" id="tipoproyecto">
-            <option>Sociotecnologico</option>
+            <option>Sociotecnológico</option>
             <option>Comunitario</option>
         </select>
 

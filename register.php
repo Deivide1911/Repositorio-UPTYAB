@@ -38,7 +38,7 @@ include('./control/validacion(index).php');
 
                 <input type="text" placeholder="Cédula" name="id" class="box-text">
                 <input type="password" placeholder="Contraseña" name="contraseña" class="box-text">
-                <p>¿Tienes cuenta? <span class="span"><a href="./login.php">Logueate</a></span></p>
+                <p>¿Tienes cuenta? <span class="span"><a href="index.php">Logueate</a></span></p>
                 <input type="submit" class="btn" name="btn">
                 
             </div>

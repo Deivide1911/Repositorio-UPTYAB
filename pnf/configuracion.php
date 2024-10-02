@@ -33,7 +33,7 @@
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
         <ul>
-            <li><p class="re"><a href="#" ><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
+            <li><p class="re"><a><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
             <li>
         <ul class="contenido">
             <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
@@ -49,7 +49,6 @@
         
         </nav>
         <a href="nosotros.php" class="re">Nosotros</a>
-        <a href="estadisticas.php" class="re">Estadistica</a>
         <a href="../reportes/reporte.php" class="re">Reportes</a>
         <nav class="dropmenu cerrarsesion">
         <a class="usericon"><i class="fa-solid fa-user"></i>
