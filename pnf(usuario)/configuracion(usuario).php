@@ -46,8 +46,6 @@
             <li><a href="avanzada(usuario).php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
         </li>
-        <ul>
-        </ul>
         </nav>
         <a href="nosotros(usuario).php" class="re">Nosotros</a>
         <nav class="dropmenu">

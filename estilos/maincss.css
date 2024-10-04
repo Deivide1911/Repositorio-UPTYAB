@@ -596,3 +596,34 @@ a:hover{
         justify-content: center;
         flex-direction: column;
     }
+
+    /* AQUI ES DESAPARECER LO DE REPORTES A UNA BUSQUEDA*/
+    .form-act{
+        display: normal;
+    }
+    .form-desac{
+        display: none;
+    }
+
+    .cont-flex{
+        display:flex;
+    }
+    .cont-reporte{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        flex-direction:column;
+    }
+
+    .btn-Report{
+        width:100px;
+        height:35px;
+        margin-top:10px;
+        cursor:pointer;
+    }
+    .div-center{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }

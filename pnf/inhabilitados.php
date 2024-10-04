@@ -53,8 +53,6 @@ $consulta = $conexion->query(
             <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
         </li>
-        <ul>
-        </ul>
         
         </nav>
         <a href="nosotros.php" class="re">Nosotros</a>

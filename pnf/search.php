@@ -35,8 +35,6 @@ include('../control/searchControl.php');
             <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
         </li>
-        <ul>
-        </ul>
         </nav>
         <a href="#" class="re">Nosotros</a>
         <a href="#" class="re">Estadistica</a>

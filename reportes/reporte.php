@@ -1,34 +1,7 @@
 <?php 
 include("../control/conexion.php");
 include('../control/validacionmain.php');
-if(isset($_POST['busq'])){
-    if(isset($_POST['mes']) && isset($_POST['dia'])){
-        $mes = $_POST['mes'];
-        $dia = $_POST['dia'];
-        $año = date('Y'); 
-        if($mes != 'a' && $dia != 'a'){
-        $consulta = $conexion->query("SELECT * FROM entradas WHERE MONTH(fecha) = '$mes' AND DAY(fecha) = '$dia' AND YEAR(fecha) = '$año'");
-        }
-        else if($mes != 'a' && $dia == 'a'){
-        $consulta = $conexion->query("SELECT * FROM entradas WHERE MONTH(fecha) = '$mes' AND YEAR(fecha) = '$año'");
-        }
-        else{
-            echo "Se deben completar los campos para realizar la búsqueda correctamente";
-            $consulta = $conexion->query("SELECT * FROM entradas order by idunic desc");
-        }
-    }
-    else if(isset($_POST['mes'])){
-        $mes = $_POST['mes'];
-        $año = date('Y'); 
-        $consulta = $conexion->query("SELECT * FROM entradas WHERE MONTH(fecha) = '$mes' AND YEAR(fecha) = '$año'");
-    }
-    else{
-        $consulta = $conexion->query("SELECT * FROM entradas order by idunic desc");
-    }
-}
-else{
-$consulta = $conexion->query("SELECT * FROM entradas order by idunic desc");
-}
+include("../control/reporteControl.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -42,10 +15,9 @@ $consulta = $conexion->query("SELECT * FROM entradas order by idunic desc");
     <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../estilos/maincss.css">
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </head>
 <body>
-
-
 <header class="logo">
         <a href="../pnf/main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -61,9 +33,6 @@ $consulta = $conexion->query("SELECT * FROM entradas order by idunic desc");
             <li><a href="../pnf/avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
         </li>
-        <ul>
-        </ul>
-        
         </nav>
         <a href="../pnf/nosotros.php" class="re">Nosotros</a>
         <a href="reporte.php" class="re">Reportes</a>
@@ -79,7 +48,7 @@ $consulta = $conexion->query("SELECT * FROM entradas order by idunic desc");
         </ul>
         </nav>
     </header>
-    <form action="reporte.php" method="POST">
+    <form action="reporte.php" method="POST" class="form-act">
         <div class="cont-busq-act">
                 <select name="mes" id="mes" class="filtro-reportes" onchange="actualizarDias()">
                     <option value="a">Buscar por mes</option>
@@ -100,21 +69,71 @@ $consulta = $conexion->query("SELECT * FROM entradas order by idunic desc");
                     <option value="a">Seleccione su día</option>
                 </select>
                 <input type="hidden" value="1" name="busq">
+                <input type="hidden" value="<?=$control?>" name="control" class="control">
                 <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
     </form>
-
+    <form action="reporte.php" method="POST" class="form-desac">
+            <div class="cont-reporte">
+                <div class="cont-flex">
+                   <label for="fecha_inicio">Fecha inicio:</label>
+                   <input type="date" name="fecha_inicio" id="fecha_inicio" required>
+                </div>
+            <p>Hasta: </p>
+                <div class="cont-flex">
+                    <label for="fecha_final">Fecha final:</label>
+                    <input type="date" name="fecha_final" id="fecha_final" required>
+                </div>
+                <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <input type="hidden" value="1" name="busq">
+            <input type="hidden" value="<?=$control?>" name="control" class="control">
+    </form>
+    <button class="btn-act">Cambiar modo de búsqueda</button>
     <div class="back">
         <a href="../pnf/main.php" class="reportvolver">Volver</a>
     </div>
-    <?php 
+        <?php 
+        // Validando si se consiguieron resultados
+        if($consulta ->num_rows > 0){
+        ?>
+        <table class="tablasearch" id="contenido">
+        <tr>
+            <th>Número</th>
+            <th>CI</th>
+            <th>Nombre y Apellido</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+        </tr>
+        <?php 
+        // Ciclo while para el array va a crear lo que contenga
         while($mostrar = mysqli_fetch_array($consulta)){
-    ?>
-    <p class="report"> <?php echo "El usuario ",$mostrar['nombre']," ",$mostrar['apellido']," (",$mostrar['id'],")"," ha ingresado el ",date('d',strtotime($mostrar['fecha'])),"-",date('m',strtotime($mostrar['fecha'])),"-",date('Y',strtotime($mostrar['fecha']))," a las ",$mostrar['hora']?></p>
+        ?>
+        <tr>
+            <td><?php echo $mostrar['idunic'] ?></td>
+            <td><?php echo $mostrar['id'] ?></td>
+            <td><?php echo $mostrar['nombre']." ".$mostrar['apellido']?></td>
+            <td><?php echo date('d-m-Y',strtotime($mostrar['fecha'])) ?></td>
+            <td><?php echo $mostrar['hora'] ?></td>
+        </tr>
     <?php 
         }
     ?>
-    
+    </table>
+    <div class="div-center">
+        <button class="btn-Report" id="btn" onclick="generarPDF()">Descargar PDF</button>
+    </div>
+    <?php
+        // De lo contrario hacer lo siguiente:
+        }
+    else{
+    ?>
+    <p class="report">No se encontraron resultados</p>
+    <?php 
+    }
+    ?>
 </body>
 <script src="../js/reportes.js"></script>
+<script src="../js/busquedaReportes.js"></script>
+<script src="../js/generarPDF.js"></script>
 </html>
