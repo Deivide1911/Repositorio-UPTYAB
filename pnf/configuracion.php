@@ -60,7 +60,7 @@
         </ul>
         </nav>
     </header>
-    <form class="todo" method="post">
+    <form class="todo" method="post" action="config.php">
         <h3>Edita tu cuenta</h3>
         <input class="hola" value="<?=$pnombre?>" type="text" name="pnombre" id="primer-nombre" placeholder="Ingresa tu Primer Nombre" required>
         <input class="hola" value="<?=$snombre?>"  type="text" name="snombre" id="segundo-nombre" placeholder="Ingresa tu Segundo Nombre" required>
@@ -88,9 +88,4 @@
     </form>
 </body>
 <script src="../js/mostrar.js"></script>
-<style>
-    .pers{
-        display:flex;
-    }
-</style>
 </html>

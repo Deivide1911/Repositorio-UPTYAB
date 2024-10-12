@@ -14,6 +14,7 @@ if(isset($_POST['btn'])){
         $consulta = $conexion->query("UPDATE usuario SET contraseña = '$contraseña' where id like '$id'");
         $consulta2 = $conexion->query("UPDATE usuarioinformacion SET primernombre = '$pnombre', segundonombre = '$snombre',primerapellido = '$papellido', segundoapellido = '$sapellido',fecha = '$fecha', sexo = '$sexo' where usuarioinfoid like '$id'");
         header("Location: exito.php");
+        $consulta3 = $conexion->query("UPDATE entradas SET nombre = '$pnombre',apellido = '$papellido',id='$id' where id like '$id'");
     }
     else{
         echo "Debes completar algún campo!";

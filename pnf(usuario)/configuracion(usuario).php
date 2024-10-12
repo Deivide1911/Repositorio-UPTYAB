@@ -87,9 +87,4 @@
     </form>
 </body>
 <script src="../js/mostrar.js"></script>
-<style>
-    .pers{
-        display:flex;
-    }
-</style>
 </html>

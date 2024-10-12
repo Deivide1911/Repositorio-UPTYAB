@@ -72,8 +72,10 @@ include('../control/validacionmain.php');
                 <th>Tipo de proyecto</th>
                 <th>Autores</th>
                 <th>Etiquetas</th>
-                <th>PDF</th>
+                <th>Ver</th>
                 <th>Descarga</th>
+                <th>Editar</th>
+                <th>Inhabilitar</th>
             </tr>
             <?php while($mostrar = mysqli_fetch_array($consulta)){
             ?>
@@ -86,7 +88,7 @@ include('../control/validacionmain.php');
                 <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
                 <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
                 <td><a class="blueone" href="edit.php?direccion=informatica.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
-                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica">Inhabilitar</a></td>
+                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a></td>
             </tr>
             <?php  } ?>
         </table>

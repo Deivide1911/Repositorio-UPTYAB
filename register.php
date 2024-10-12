@@ -42,8 +42,6 @@ include('./control/validacion(index).php');
                 <input type="submit" class="btn" name="btn">
                 
             </div>
-            
-            
         </form>
         <?php
             include("./control/registro.php");

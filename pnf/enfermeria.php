@@ -10,7 +10,7 @@ include('../control/validacionmain.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informática</title>
+    <title>Enfermería</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -63,7 +63,6 @@ include('../control/validacionmain.php');
         <a href="upload.php" class="linkupload">Subir mi proyecto</a>
         <a href="inhabilitados.php?direccion=enfermeria.php" class="linkupload">Ver proyectos eliminados</a>
     </div>
-
     <h2>Enfermería</h2>
         <table class="tablasearch">
             <tr>
@@ -86,7 +85,7 @@ include('../control/validacionmain.php');
                 <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
                 <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
                 <td><a class="blueone" href="edit.php?direccion=enfermeria.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
-                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=enfermeria">Inhabilitar</a></td>
+                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=enfermeria.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a></td>
             </tr>
             <?php  } ?>
         </table>

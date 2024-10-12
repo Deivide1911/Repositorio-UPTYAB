@@ -48,6 +48,7 @@ $consulta = $conexion->query("SELECT * FROM (
             <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
             <li><a href="higiene_laboral.php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene & Seguridad Laboral</a></li>
             <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
+            <li><a href="list_users.php" class="pnf"><i class="fa-solid fa-building-columns"></i>Lista de usuarios</a></li>
         </ul>
             </li>
         </nav>

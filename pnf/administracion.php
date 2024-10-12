@@ -10,7 +10,7 @@ include('../control/validacionmain.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informática</title>
+    <title>Administración</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -86,10 +86,9 @@ include('../control/validacionmain.php');
                 <td><a href="<?php echo $mostrar['ruta'] ?>" class="blueone" target="_blank">Ver</a></td>
                 <td><a href="<?php echo $mostrar['ruta'] ?>" class="blueone" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
                 <td><a class="blueone" href="edit.php?direccion=administracion.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
-                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=administracion">Inhabilitar</a></td>
+                <td><a class="blueone" href="inhabilitar.php?idpnf=<?php echo $mostrar['idpnf']?>&direccion=administracion.php&id=<?php echo $mostrar['id']?>">Inhabilitar</a></td>
             </tr>
             <?php  } ?>
         </table>
-    
 </body>
 </html>

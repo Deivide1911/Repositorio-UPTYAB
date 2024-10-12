@@ -10,7 +10,7 @@ include('../control/validacionmain.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informática</title>
+    <title>Avanzada</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -18,7 +18,6 @@ include('../control/validacionmain.php');
     <link rel="stylesheet" href="../estilos/maincss.css">
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
-
 <body>
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
@@ -86,7 +85,7 @@ include('../control/validacionmain.php');
                 <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
                 <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
                 <td><a class="blueone" href="edit.php?direccion=avanzada.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
-                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=avanzada">Inhabilitar</a></td>
+                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=avanzada.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a></td>
             </tr>
             <?php  } ?>
         </table>

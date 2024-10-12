@@ -1,7 +1,6 @@
 <?php
 include('../control/validacionmain.php');
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -80,7 +79,7 @@ include('../control/validacionmain.php');
             <label for="trayecto">Seleccione su trayecto</label>
                 <select name="trayecto" id="trayecto">
                     <option>1</option>
-                    <option >2</option>
+                    <option>2</option>
                     <option>3</option>
                     <option>4</option>
                 </select>

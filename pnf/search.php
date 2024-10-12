@@ -19,7 +19,6 @@ include('../control/searchControl.php');
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
 <body>
-
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -50,7 +49,6 @@ include('../control/searchControl.php');
             </ul>
         </ul>
         </nav>
-    
     </header>
 
     <form action="search.php" method="POST" class="barradebusqueda">

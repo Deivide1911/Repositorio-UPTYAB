@@ -90,7 +90,6 @@ include("../control/searchControl.php");
             <th>Etiquetas</th>
             <th>PNF</th>
             <th>PDF</th>
-            <th>Descarga</th>
         </tr>
         <?php while($mostrar = mysqli_fetch_array($consulta)){
             $idpnf = $mostrar['idpnf'];
@@ -104,8 +103,7 @@ include("../control/searchControl.php");
             <td><?php echo $mostrar['autores'] ?></td>
             <td><?php echo $mostrar['etiquetas'] ?></td>
             <td><?php echo $nombrepnf['pnf_nombre']  ?></td>
-            <td><a class=blueone href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-            <td><a class=blueone href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
+            <td><a class=blueone href="vistaprevia.php?ruta=<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
         <?php  } ?>
     </table>
     

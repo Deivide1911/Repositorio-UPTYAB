@@ -1,6 +1,5 @@
 <?php 
 include("conexion.php");
-if($conexion){
 if(isset($_POST['btn'])){
     if(strlen($_POST['pnombre']) > 1 && strlen($_POST['snombre']) > 1 && strlen($_POST['papellido']) > 1 && strlen($_POST['sapellido']) > 1 && strlen($_POST['fecha']) > 1 && strlen($_POST['ci']) > 1 && strlen($_POST['contrasena']) > 1 && isset($_POST['sexo'])){
             $pnombre = ucfirst(trim($_POST['pnombre']));
@@ -23,9 +22,5 @@ if(isset($_POST['btn'])){
     else{
         echo "<p class=text3>Debes rellenar todos los campos!</p>";
     }
-}
-}
-else{
-    echo "No se pudo conectar con la base de datos";
 }
 ?>

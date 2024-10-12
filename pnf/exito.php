@@ -1,16 +1,10 @@
-<?php
-include("../control/conexion.php");
-$redireccion = 'agroalimentacion(usuario).php';
-include("../control/validacion(usuario).php");
-$consulta = $conexion->query("SELECT * FROM agroalimentacion where estado = 'Habilitado' order by trayecto asc ");
-include('../control/validacionmain.php');
-?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agroalimentación</title>
+    <title>Los Cambios Se Han Guardado!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -34,7 +28,6 @@ include('../control/validacionmain.php');
             <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
         </li>
-        
         </nav>
         <a href="nosotros.php" class="re">Nosotros</a>
         <a href="../reportes/reporte.php" class="re">Reportes</a>
@@ -50,44 +43,9 @@ include('../control/validacionmain.php');
         </ul>
         </nav>
     </header>
-        <form action="search.php" method="POST" class="barradebusqueda">
-            <fieldset class="fieldset">
-            <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="buscador">
-            <input type="hidden" name="control" value="0">
-            <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </fieldset>
-        </form>
-
-    <div class="center">
-        <a href="upload.php" class="linkupload">Subir mi proyecto</a>
-        <a href="inhabilitados.php?direccion=agroalimentacion.php" class="linkupload">Ver proyectos eliminados</a>
-    </div>
-
-    <h2>Agroalimentación</h2>
-        <table class="tablasearch">
-            <tr>
-                <th>Título</th>
-                <th>Trayecto</th>
-                <th>Tipo de proyecto</th>
-                <th>Autores</th>
-                <th>Etiquetas</th>
-                <th>PDF</th>
-                <th>Descarga</th>
-            </tr>
-            <?php while($mostrar = mysqli_fetch_array($consulta)){
-            ?>
-            <tr>
-                <td><?php echo $mostrar['titulo'] ?></td>
-                <td><?php echo $mostrar['trayecto'] ?></td>
-                <td><?php echo $mostrar['tipoproyecto'] ?></td>
-                <td><?php echo $mostrar['autores'] ?></td>
-                <td><?php echo $mostrar['etiquetas'] ?></td>
-                <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-                <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
-                <td><a class="blueone" href="edit.php?direccion=agroalimentacion.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
-                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=agroalimentacion.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a></td>
-            </tr>
-            <?php  } ?>
-        </table>
+<div class="centrarfeli">
+    <h1 class="h1feli">Cambios Realizados!</h1>
+    <a class="afeli" href="main.php">Volver</a>
+</div> 
 </body>
 </html>

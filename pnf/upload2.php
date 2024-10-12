@@ -48,6 +48,7 @@ include('../control/validacionmain.php');
 
     <form class="upload" method="post" enctype="multipart/form-data">
         <h2>Formulario</h2>
+        <p>Sin alerta de plagio</p>
         <p>Título</p>
     <input type="text" name="titulo" placeholder="Ingrese el título del proyecto" required>
     <label for="pnfselect">PNF</label> 
@@ -88,6 +89,5 @@ include('../control/validacionmain.php');
         <br>
         <input type="submit" name="btn">
     </form>
-
 </body>
 </html>

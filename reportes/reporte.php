@@ -103,7 +103,8 @@ include("../control/reporteControl.php");
             <th>CI</th>
             <th>Nombre y Apellido</th>
             <th>Fecha</th>
-            <th>Hora</th>
+            <th>Hora Entrada</th>
+            <th>Hora Salida</th>
         </tr>
         <?php 
         // Ciclo while para el array va a crear lo que contenga
@@ -115,6 +116,7 @@ include("../control/reporteControl.php");
             <td><?php echo $mostrar['nombre']." ".$mostrar['apellido']?></td>
             <td><?php echo date('d-m-Y',strtotime($mostrar['fecha'])) ?></td>
             <td><?php echo $mostrar['hora'] ?></td>
+            <td><?= $mostrar['hora_salida'] == '' ? 'En línea' : $mostrar['hora_salida']?></td>
         </tr>
     <?php 
         }
