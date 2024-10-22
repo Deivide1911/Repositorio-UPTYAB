@@ -29,7 +29,7 @@ include('./control/validacion(index).php');
                 <input type="text" placeholder="Cedula" name="id" class="box-text">
                 <input type="password" placeholder="Cotraseña" name="contraseña" class="box-text">
                 <p>¿Olvidaste tu contraseña? <span class="span">Haz click</span></p>
-                <input type="submit" class="btn" name="btn">
+                <input type="submit" class="btn button" name="btn">
                 <p>¿No tienes cuenta? <span class="span"><a href="./register.php">Registrate</a></span></p>
             </div>
         </form>

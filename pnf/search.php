@@ -51,10 +51,10 @@ include('../control/searchControl.php');
         </nav>
     </header>
 
-    <form action="search.php" method="POST" class="barradebusqueda">
+    <form action="search.php" method="POST" class="brutalist-container">
         <fieldset class="fieldset">
-            <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="buscador">
-            <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="brutalist-input smooth-type">
+            
         </fieldset>
         <div class="cont-busq">
             <select name="pnf" id="pnf" class="busq">

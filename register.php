@@ -29,7 +29,7 @@ include('./control/validacion(index).php');
                 <input type="text" placeholder="Segundo Apellido" name="sappelido" class="box-text">
                 <input type="date" placeholder="Fecha de nacimiento" name="fecha" class="box-text">
                 <label for="">Ingresa tu sexo</label>
-                <div class="sex">
+                <div class="sex cntr">
                     <label for="hombre">Hombre</label>
                     <input type="radio" name="sexo" id="hombre" class="sex1">
                     <label for="mujer">Mujer</label>
@@ -39,7 +39,7 @@ include('./control/validacion(index).php');
                 <input type="text" placeholder="Cédula" name="id" class="box-text">
                 <input type="password" placeholder="Contraseña" name="contraseña" class="box-text">
                 <p>¿Tienes cuenta? <span class="span"><a href="index.php">Logueate</a></span></p>
-                <input type="submit" class="btn" name="btn">
+                <input type="submit" class="btn button" name="btn">
                 
             </div>
         </form>

@@ -66,7 +66,7 @@ $consulta = $conexion->query("SELECT * FROM (
         </ul>
         </nav>
     </header>
-    <main class="fondouni">
+    <main class="container">
     <article class="todo-2">
         <h3 class="titulomain">Bienvenidos al Repositorio de la Universidad Politécnica Territorial de Yaracuy Arístides Bastidas</h3>
 
@@ -76,13 +76,6 @@ $consulta = $conexion->query("SELECT * FROM (
     </article>
     </main>
 
-    <form action="search.php" method="post" class="barradebusqueda">
-        <fieldset class="fieldset">
-            <input type="text" name="buscar" id="search" placeholder="Buscar en el repositorio..." class="buscador">
-            <input type="hidden" name="control" value="0">
-            <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </fieldset>
-    </form>
     <section class="listarecientes">
         <h2 class="h2list">PNF</h2>
         <div class="sliderframe">
@@ -95,6 +88,15 @@ $consulta = $conexion->query("SELECT * FROM (
                 <li><a href="avanzada.php"><img src="../img/slider6.png" alt="Avanzada"></a></li>
             </ul>
         </div>
+    <div class="brutalist-container">
+    <input
+        placeholder="Busca tu proyecto..."
+        class="brutalist-input smooth-type"
+        type="text"
+    />
+    <label class="brutalist-label">Barra de busqueda</label>
+    </div>
+
         <div class="proyectosre">
             <h2 class="h2list proyectosre">Proyectos recientes</h2>
             <div class="list-list">
@@ -130,6 +132,6 @@ $consulta = $conexion->query("SELECT * FROM (
         </table>
             </div>
         </div>
-    </section>
-</body>
+
+        
 </html>
