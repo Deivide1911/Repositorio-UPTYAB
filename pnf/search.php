@@ -36,7 +36,6 @@ include('../control/searchControl.php');
         </li>
         </nav>
         <a href="#" class="re">Nosotros</a>
-        <a href="#" class="re">Estadistica</a>
         <a href="../reportes/reporte.php" class="re">Reportes</a>
         <nav class="dropmenu cerrarsesion">
         <a class="usericon"><i class="fa-solid fa-user"></i>
@@ -51,10 +50,12 @@ include('../control/searchControl.php');
         </nav>
     </header>
 
-    <form action="search.php" method="POST" class="brutalist-container">
+    <form action="search.php" method="POST" class="input-container">
         <fieldset class="fieldset">
-            <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="brutalist-input smooth-type">
-            
+            <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="input">
+            <span class="icon"> 
+    <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+     </span>
         </fieldset>
         <div class="cont-busq">
             <select name="pnf" id="pnf" class="busq">
@@ -84,8 +85,8 @@ include('../control/searchControl.php');
     </form>
     <div class="center-searchadmin">
         <button class="btn-act">Búsqueda Más Específica</button>
-        <a href="upload.php" class="blueone">Subir mi proyecto</a>
-        <a href="inhabilitados.php" class="blueone">Ver proyectos inhabilitados</a>
+        <a href="upload.php" class="colors">Subir mi proyecto</a>
+        <a href="inhabilitados.php" class="colors">Ver proyectos inhabilitados</a>
     </div>
     <table class="tablasearch">
         <tr>
@@ -110,10 +111,10 @@ include('../control/searchControl.php');
             <td><?php echo $mostrar['autores'] ?></td>
             <td><?php echo $mostrar['etiquetas'] ?></td>
             <td><?php echo $nombrepnf['pnf_nombre']  ?></td>
-            <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-            <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
-            <td><a class="blueone" href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
-            <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=search">Inhabilitar</a></td>
+            <td><a class="colors" href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
+            <td><a class="colors" href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
+            <td><a class="colors" href="edit.php?id=<?php echo $mostrar['id']?>">Editar</a></td>
+            <td><a class="colors" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=search">Inhabilitar</a></td>
         </tr>
         <?php  } ?>
     </table>
