@@ -19,7 +19,7 @@ include('./control/validacion(index).php');
 </header>
 
 <body>
-    <section class="login-container ">
+    <section class="login-container">
         <form class="login-info-container" method="post">
             <div class="inputs-container">
                 <h1 class="titulo">Iniciar Sesión</h1>
