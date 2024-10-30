@@ -20,24 +20,23 @@ include('./control/validacion(index).php');
 
 <body>
     <section class="login-container ">
-        <form action="./control/login.php" class="login-info-container" method="post">
+        <form class="login-info-container" method="post">
             <div class="inputs-container">
                 <h1 class="titulo">Registrate</h1>
-                <input type="text" placeholder="Primer Nombre" name="pnombre" class="box-text">
-                <input type="text" placeholder="Segundo Nombre" name="snombre" class="box-text">
-                <input type="text" placeholder="Primer Apellido" name="papellido" class="box-text">
-                <input type="text" placeholder="Segundo Apellido" name="sappelido" class="box-text">
-                <input type="date" placeholder="Fecha de nacimiento" name="fecha" class="box-text">
+                <input type="text" placeholder="Primer Nombre" name="pnombre" class="box-text" required>
+                <input type="text" placeholder="Segundo Nombre" name="snombre" class="box-text" required>
+                <input type="text" placeholder="Primer Apellido" name="papellido" class="box-text" required>
+                <input type="text" placeholder="Segundo Apellido" name="sapellido" class="box-text" required>
+                <input type="date" placeholder="Fecha de nacimiento" name="fecha" class="box-text" required>
                 <label for="">Ingresa tu sexo</label>
                 <div class="sex cntr">
                     <label for="hombre">Hombre</label>
-                    <input type="radio" name="sexo" id="hombre" class="sex1">
+                    <input type="radio" name="sexo" id="hombre" class="sex1" value="Hombre">
                     <label for="mujer">Mujer</label>
-                    <input type="radio" name="sexo" id="mujer" class="sex1">
+                    <input type="radio" name="sexo" id="mujer" class="sex1" value="Mujer">
                 </div>
-
-                <input type="text" placeholder="Cédula" name="id" class="box-text">
-                <input type="password" placeholder="Contraseña" name="contraseña" class="box-text">
+                <input type="text" placeholder="Cédula" name="ci" class="box-text" required>
+                <input type="password" placeholder="Contraseña" name="contraseña" class="box-text" required>
                 <p>¿Tienes cuenta? <span class="span"><a href="index.php">Logueate</a></span></p>
                 <input type="submit" class="btn button" name="btn">
                 
