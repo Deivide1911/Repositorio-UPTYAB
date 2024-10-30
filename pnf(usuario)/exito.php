@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("../control/validacionmain.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

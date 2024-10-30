@@ -1,5 +1,6 @@
 <?php 
 include("../control/conexion.php");
+include("../control/validacionmain.php");
 if(@$_GET['pnf'] && @$_GET['titulo'] && @$_GET['archivo']){
     $pnf = $_GET['pnf'];
     $titulo = $_GET['titulo'];

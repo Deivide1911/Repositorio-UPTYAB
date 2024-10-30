@@ -6,6 +6,7 @@ if(isset($_GET['ruta'])){
 else{
     echo "No se ha podido generar vista previa";
 }
+include("../control/validacionmain.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">

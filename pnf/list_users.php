@@ -9,6 +9,7 @@ $consulta2 = $conexion->query("SELECT * FROM usuarioinformacion");
 if($_SESSION['rango'] == 2){
     echo "No tienes los permisos suficientes para estar aquí";
 }
+include("../control/validacionmain.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">

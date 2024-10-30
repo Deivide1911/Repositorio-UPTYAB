@@ -23,6 +23,7 @@ $consulta = $conexion->query(
     where estado LIKE 'Inhabilitado' 
     order by trayecto asc
 ");
+include("../control/validacionmain.php");
 ?>
 <!DOCTYPE html>
 <html lang="es">
