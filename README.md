@@ -31,4 +31,5 @@ La creacion de este proyecto fue mediante una necesidad de los estudiante y medi
 --------------------------------------------------------------------------------------------------
 /////////////// Recursos ///////////////
 
-¡¡No necesitas recursos!! Solo un navegador donde poder acceder.
+Solo un navegador donde poder acceder.
+Y Xampp para la creacion de un servidor local.
