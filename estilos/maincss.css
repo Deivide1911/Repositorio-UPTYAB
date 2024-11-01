@@ -422,7 +422,6 @@ h2{
     font-family: "Urbanist", sans-serif;
     font-optical-sizing: auto;
     color: white;
-    box-shadow: 7px 13px 37px #818181;
 }
 .upload h2{
     display: flex;
@@ -448,10 +447,10 @@ h2{
 }
 .archivopdf:hover{
     background-color: #38408d;
-}
-.uploadbody{
-    background-image: url(https://i.pinimg.com/originals/0c/bf/2f/0cbf2f5c3fb37d033c0bc791ae196dbb.gif);
-}
+} 
+
+
+
 /* ////////////////////// */
 
 @keyframes slide {
@@ -475,7 +474,7 @@ h2{
 }
 
 a:hover{
-    color: #00e1ff;
+    color: #0099ff;
     text-decoration: underline;
 }
 

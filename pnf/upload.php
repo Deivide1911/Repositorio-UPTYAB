@@ -14,7 +14,8 @@ include('../control/validacionmain.php');
     <link rel="stylesheet" href="../estilos/maincss.css">
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
-<body class="uploadbody">
+<body class="containerupload">
+
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -86,6 +87,19 @@ include('../control/validacionmain.php');
             <br>
             <input type="submit" name="btn">
     </form>
-
+    
+    
 </body>
+<style>
+.containerupload {
+width: 100%;
+  height: 100%;
+ 
+  background-color: #313131;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px
+}
+
+</style>
 </html>

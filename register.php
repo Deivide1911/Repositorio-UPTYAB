@@ -46,7 +46,7 @@ include('./control/validacion(index).php');
             include("./control/registro.php");
         ?>
         <aside>
-            <img src="images (nuevo index)/resgi.gif" alt="s" class="image-container">
+            <img src="images (nuevo index)/resgi.jpg" alt="s" class="image-container">
         </aside>
     </section>
 </body>
