@@ -24,9 +24,9 @@ include('./control/validacion(index).php');
             <div class="inputs-container">
                 <h1 class="titulo">Registrate</h1>
                 <input type="text" placeholder="Primer Nombre" name="pnombre" class="box-text" required>
-                <input type="text" placeholder="Segundo Nombre" name="snombre" class="box-text" required>
+                <input type="text" placeholder="Segundo Nombre (Opcional)" name="snombre" class="box-text" >
                 <input type="text" placeholder="Primer Apellido" name="papellido" class="box-text" required>
-                <input type="text" placeholder="Segundo Apellido" name="sapellido" class="box-text" required>
+                <input type="text" placeholder="Segundo Apellido (Opcional)" name="sapellido" class="box-text" >
                 <input type="date" placeholder="Fecha de nacimiento" name="fecha" class="box-text" required>
                 <label for="">Ingresa tu sexo</label>
                 <div class="sex cntr">

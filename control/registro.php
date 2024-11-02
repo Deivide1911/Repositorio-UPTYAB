@@ -1,7 +1,7 @@
 <?php
 include("conexion.php");
 if (isset($_POST['btn'])) {
-    if (strlen($_POST['pnombre']) > 1 && strlen($_POST['snombre']) > 1 && strlen($_POST['papellido']) > 1 && strlen($_POST['sapellido']) > 1 && strlen($_POST['fecha']) > 1 && strlen($_POST['ci']) > 1 && strlen($_POST['contraseña']) > 1 && isset($_POST['sexo'])) {
+    if (strlen($_POST['pnombre']) >= 1 && strlen($_POST['papellido']) >= 1 && strlen($_POST['fecha']) >= 1 && strlen($_POST['ci']) >= 1 && strlen($_POST['contraseña']) >= 1 && isset($_POST['sexo'])) {
         $pnombre = ucfirst(trim($_POST['pnombre']));
         $snombre = ucfirst(trim($_POST['snombre']));
         $papellido = ucfirst(trim($_POST['papellido']));
@@ -29,7 +29,7 @@ if (isset($_POST['btn'])) {
     } else if (empty($_POST['sexo'])) {
         echo "<p style='color:red;' class='text3'>Debe elegir su sexo!</p>";
     } else {
-        echo "<p class='text3'>Debes rellenar todos los campos!</p>";
+        echo "<p style='color:red; position:absolute;margin:auto;margin-left:130px;'  class='text3'>Debes rellenar todos los campos!</p>";
     }
 }
 ?>

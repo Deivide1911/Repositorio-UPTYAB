@@ -66,35 +66,38 @@ include('../control/validacionmain.php');
         <a href="upload.php" class="linkupload">Subir mi proyecto</a>
         <a href="inhabilitados.php?direccion=informatica.php" class="linkupload">Ver proyectos eliminados</a>
     </div>
-
     <h2>Informática</h2>
-        <table class="tablasearch">
-            <tr>
-                <th>Título</th>
-                <th>Trayecto</th>
-                <th>Tipo de proyecto</th>
-                <th>Autores</th>
-                <th>Etiquetas</th>
-                <th>Ver</th>
-                <th>Descarga</th>
-                <th>Editar</th>
-                <th>Inhabilitar</th>
-            </tr>
             <?php while($mostrar = mysqli_fetch_array($consulta)){
             ?>
-            <tr>
-                <td><?php echo $mostrar['titulo'] ?></td>
-                <td><?php echo $mostrar['trayecto'] ?></td>
-                <td><?php echo $mostrar['tipoproyecto'] ?></td>
-                <td><?php echo $mostrar['autores'] ?></td>
-                <td><?php echo $mostrar['etiquetas'] ?></td>
-                <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-                <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
-                <td><a class="blueone" href="edit.php?direccion=informatica.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
-                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a></td>
-            </tr>
+                <div class="container-frames">
+                    <iframe class="pdf-thumbnail" src="<?php echo $mostrar['ruta']?>" scrolling="no"></iframe>
+                    <a class="blueone" target="_blank" href="<?php echo $mostrar['ruta']?>"><?php echo $mostrar['titulo']?></a>
+                    <p class="pnew">Autores: <?php echo $mostrar['autores']?></p>
+                    <p class="petiquetas"><?php echo $mostrar['etiquetas']?></p>
+                    <p></p>
+                    <a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a>
+                    <a class="blueone" href="edit.php?direccion=informatica.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a>
+                </div>
             <?php  } ?>
-        </table>
     
 </body>
+<style>
+    .blueone{
+        color:blue;
+        height:10px;
+        
+    }
+
+    .container-frames{
+        display:flex;
+    }
+
+    .pdf-thumbnail { 
+        width: 200px; /* Ajusta el tamaño de la miniatura */ 
+        height: 200px; /* Ajusta el tamaño de la miniatura */ 
+        border: 1px solid #ddd; /* Opcional: Añadir un borde */ 
+        overflow:hidden; 
+        pointer-events: none;
+        }
+</style>
 </html>
