@@ -63,9 +63,9 @@
     <form class="config-container" method="post" action="config.php">
         <h3>Edita tu cuenta</h3>
         <input class="inputios" value="<?=$pnombre?>" type="text" name="pnombre" id="primer-nombre" placeholder="Ingresa tu Primer Nombre" required>
-        <input class="inputios" value="<?=$snombre?>"  type="text" name="snombre" id="segundo-nombre" placeholder="Ingresa tu Segundo Nombre" required>
+        <input class="inputios" value="<?=$snombre?>"  type="text" name="snombre" id="segundo-nombre" placeholder="Segundo Nombre (En caso de no tener dejar así)" required>
         <input class="inputios" value="<?=$papellido?>"  type="text" name="papellido" id="primer-apellido" placeholder="Ingresa tu Primer Apellido" required>
-        <input class="inputios" value="<?=$sapellido?>"  type="text" name="sapellido" id="segundo-apellido" placeholder="Ingresa tu Segundo Apellido" required>
+        <input class="inputios" value="<?=$sapellido?>"  type="text" name="sapellido" id="segundo-apellido" placeholder="Segundo Apellido (En caso de no tener dejar así)" required>
         <input class="inputios" value="<?=$mostrar2['id']?>"  type="text" name="ci" id="cedula" placeholder="Ingresa tu Cedula" required readonly>
         <p class="parrafo">Seleccione su sexo</p>     
           <div class="mydict">

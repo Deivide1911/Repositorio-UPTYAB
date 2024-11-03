@@ -47,37 +47,65 @@ include('../control/validacionmain.php');
         </ul>
         </nav>
     </header>
-    <form action="./controladores(admin)/edit_consulta.php" method ="post" class="form-edit-container" class="upload">
-        <label for="titulo">Titulo</label>
-        <input type="text" placeholder="Título" value="<?=$titulo?>" id="titulo" name="titulo" class="input-edit">
-        <br>
-        <label for="trayecto">Trayecto</label>
-        <select name="trayecto">
-            <option value="1" <?= $trayecto == 1 ? 'selected' : '' ?>>1</option>
-            <option value="2" <?= $trayecto == 2 ? 'selected' : '' ?>>2</option>
-            <option value="3" <?= $trayecto == 3 ? 'selected' : '' ?>>3</option>
-            <option value="4" <?= $trayecto == 4 ? 'selected' : '' ?>>4</option>
-        </select>
-        <br>
-        <label for="tipo de proyecto">Tipo de proyecto</label>
-        <select name="tipoproyecto" value="<?=$tipoproyecto?>">
-            <option value="Sociotecnológico" <?= $tipoproyecto == 'Sociotecnológico' ? 'selected' : '' ?>>Sociotecnológico</option>
-            <option value="Comunitario" <?= $tipoproyecto == 'Comunitario' ? 'selected' : '' ?>>Comunitario</option>
-        </select>
-        <input type="hidden" name="direccion" value="<?=$direccion?>">
-        <br>
-        <label for="autores">Autores</label>
-        <input type="text" placeholder="Autores" value="<?=$autores?>"id="autores" name="autores" class="input-edit">
-        <br>
-        <label for="etiquetas">Etiquetas</label>
-        <input type="text" placeholder="Etiquetas" value="<?=$etiquetas?>" id="etiquetas" name="etiquetas" class="input-edit">
-        <input type="hidden" value=<?=$id?> name="id">
-        <input type="hidden" value=<?=$pnf?> name="pnf">
-        <br>
-        <input type="submit" name="btn">
-    </form>
+    <div class="divcenternew">
+        <form action="./controladores(admin)/edit_consulta.php" method ="post" class="uploadnew">
+            <label for="titulo">Titulo</label>
+            <input type="text" placeholder="Título" value="<?=$titulo?>" id="titulo" name="titulo" class="inputnew">
+            <br>
+            <label for="trayecto">Trayecto</label>
+            <select name="trayecto">
+                <option value="1" <?= $trayecto == 1 ? 'selected' : '' ?>>1</option>
+                <option value="2" <?= $trayecto == 2 ? 'selected' : '' ?>>2</option>
+                <option value="3" <?= $trayecto == 3 ? 'selected' : '' ?>>3</option>
+                <option value="4" <?= $trayecto == 4 ? 'selected' : '' ?>>4</option>
+            </select>
+            <br>
+            <label for="tipo de proyecto">Tipo de proyecto</label>
+            <select name="tipoproyecto" value="<?=$tipoproyecto?>">
+                <option value="Sociotecnológico" <?= $tipoproyecto == 'Sociotecnológico' ? 'selected' : '' ?>>Sociotecnológico</option>
+                <option value="Comunitario" <?= $tipoproyecto == 'Comunitario' ? 'selected' : '' ?>>Comunitario</option>
+            </select>
+            <input type="hidden" name="direccion" value="<?=$direccion?>">
+            <br>
+            <label for="autores">Autores</label>
+            <input type="text" placeholder="Autores" value="<?=$autores?>"id="autores" name="autores" class="inputnew">
+            <br>
+            <label for="etiquetas">Etiquetas</label>
+            <input type="text" placeholder="Etiquetas" value="<?=$etiquetas?>" id="etiquetas" name="etiquetas" class="inputnew">
+            <input type="hidden" value=<?=$id?> name="id">
+            <input type="hidden" value=<?=$pnf?> name="pnf">
+            <br>
+            <input type="submit" name="btn" class="btnnew">
+        </form>
+    </div>
     <div class="div-center">
         <a class="blueone margin-edit" href="<?php echo $direccion ?>">Volver</a>
     </div>
 </body>
+<style>
+    .inputnew{
+        width:350px;
+    }
+    .divcenternew{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
+    .btnnew{
+        width:75px;
+        height:35px;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .uploadnew{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+        margin-top:20px;
+        width:400px;
+        height:500px;
+    }
+</style>
 </html>

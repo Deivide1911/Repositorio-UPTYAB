@@ -126,13 +126,14 @@ $consulta = $conexion->query("SELECT * FROM (
             <td><?php echo $nombrepnf['pnf_nombre']  ?></td>
             <td><a href="<?php echo $mostrar['ruta'] ?>" target="_blank" class="colors">Ver</a></td>
             <td><a href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>" class="colors">Descargar</a></td>
-            <td><a href="edit.php?id=<?php echo $mostrar['id']?>" class="colors">Editar</a></td>
+            <td><a href="edit.php?direccion=main.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>" class="colors">Editar</a></td>
             <td><a href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=search" class="colors">Inhabilitar</a></td>
         </tr>
             <?php  } ?>
         </table>
             </div>
         </div>
+<<<<<<< HEAD
 
         <style>
             .bodymainanimacion{
@@ -157,4 +158,6 @@ $consulta = $conexion->query("SELECT * FROM (
         background-position: -5px -5px
         }
         </style>
+=======
+>>>>>>> 6b39f71b185f9cf8da97e8988fac2dbcca37f961
 </html>
