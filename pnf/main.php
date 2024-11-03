@@ -34,7 +34,7 @@ $consulta = $conexion->query("SELECT * FROM (
     <link rel="stylesheet" href="../estilos/maincss.css">
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
-<body>
+<body class="bodymainanimacion">
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -42,10 +42,10 @@ $consulta = $conexion->query("SELECT * FROM (
             <li><p class="re"><a><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
             <li>
         <ul class="contenido">
-            <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
-            <li><a href="administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
-            <li><a href="agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
-            <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
+            <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informática</a></li>
+            <li><a href="administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administración</a></li>
+            <li><a href="agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentación</a></li>
+            <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermería</a></li>
             <li><a href="higiene_laboral.php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene & Seguridad Laboral</a></li>
             <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
             <li><a href="list_users.php" class="pnf"><i class="fa-solid fa-building-columns"></i>Lista de usuarios</a></li>
@@ -60,7 +60,7 @@ $consulta = $conexion->query("SELECT * FROM (
         <ul>
             <ul class="contenido">
             <li><a href="../control/logout.php"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</a></li>
-            <li><a href="configuracion.php?id=<?php echo $_SESSION['id']?>"><i class="fa-solid fa-gear"></i> Configuracion</a></li>
+            <li><a href="configuracion.php?id=<?php echo $_SESSION['id']?>"><i class="fa-solid fa-gear"></i> Configuración</a></li>
             <li><a href="upload.php"><i class="fa-solid fa-file-arrow-up"></i> Subir Proyectos</a></li>
             </ul>
         </ul>
@@ -70,9 +70,9 @@ $consulta = $conexion->query("SELECT * FROM (
     <article class="todo-2">
         <h3 class="titulomain">Bienvenidos al Repositorio de la Universidad Politécnica Territorial de Yaracuy Arístides Bastidas</h3>
 
-        <p class="parrafo">El repositorio de la UPTYAB, es un espacio donde puedes ver y descargar archivos con fines de perservacion digital, busqueda de reseña historica y formentar la actividad academica e intelectual</p>
+        <p class="parrafo">El repositorio de la UPTYAB, es un espacio donde puedes ver y descargar archivos con fines de preservación digital, búsqueda de reseña histórica y fomentar la actividad académica e intelectual</p>
 
-        <p class="parrafo">Con proyectos sociotecnologicos, proyectos comunitarios, etc</p>
+        <p class="parrafo">Con proyectos socio tecnológicos, proyectos comunitarios, etc.</p>
     </article>
     </main>
 
@@ -89,7 +89,7 @@ $consulta = $conexion->query("SELECT * FROM (
             </ul>
         </div>
 
-    <form action="search.php" method="POST">
+    <form action="search.php" method="POST" class="searchfondo">
     <div class="input-container">
     <input type="text" name="text" class="input" placeholder="Busca tu proyecto">
     <span class="icon"> 
@@ -134,5 +134,27 @@ $consulta = $conexion->query("SELECT * FROM (
             </div>
         </div>
 
-        
+        <style>
+            .bodymainanimacion{
+            opacity: 0;
+            transform: translateY(0px);
+            animation: aparecer 1s forwards;
+            
+        }
+        @keyframes aparecer {
+    to {
+        opacity: 1; /* Hacer visible el texto */
+        transform: translateY(0); /* Regresar a la posición original */
+    }
+        }
+
+        .searchfondo{
+            /* Fondo */
+
+        background-color: #313131;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+        background-size: 30px 30px;
+        background-position: -5px -5px
+        }
+        </style>
 </html>

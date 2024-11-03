@@ -26,11 +26,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../estilos/maincss.css">
-    <link rel="stylesheet" href="../estilos/style.css">
+    
     
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
-<body>
+<body class="containerconfiguracion">
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -38,10 +38,10 @@
             <li><p class="re"><a><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
             <li>
         <ul class="contenido">
-            <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
-            <li><a href="administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
-            <li><a href="agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
-            <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
+            <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informática</a></li>
+            <li><a href="administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administración</a></li>
+            <li><a href="agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentación</a></li>
+            <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermería</a></li>
             <li><a href="higiene_laboral.php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene & Seguridad Laboral</a></li>
             <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
@@ -97,15 +97,15 @@
 <style>
     /* CONFIGURACION.PHP */
 .mostrarpass{
-  font-size: 1.5rem;
+  font-size: 15px;
   user-select:none;
   cursor:pointer;
-  margin-right:45px;
+  margin-right:100px;
 }
 .checknew{
   margin-left:90px;
-  width:30px;
-  height:30px;
+  width:20px;
+  height:20px;
   cursor:pointer;
 }
 .containernew{
@@ -115,8 +115,8 @@
   justify-content:center;
 }
 .check{
-  width:35px;
-  height:35px;
+  width:20px;
+  height:20px;
 }
 
 .config-container{
@@ -129,15 +129,25 @@
     max-width: 400px;
     width:400px;
     justify-content: center;
+    opacity: 0;
+            transform: translateY(20px);
+            animation: aparecer 1s forwards;
+            
+        }
+        @keyframes aparecer {
+    to {
+        opacity: 1; /* Hacer visible el texto */
+        transform: translateY(0); /* Regresar a la posición original */
+    }
+        }
 
-}
 .inputios {
  border: none;
- padding: 1rem;
+ padding: 10px;
  border-radius: 1rem;
  background: #e8e8e8;
- box-shadow: 20px 20px 60px #c5c5c5,
-		-20px -20px 60px #ffffff;
+ box-shadow: 5px 5px 40px #c5c5c5,
+		-5px -5px 40px #ffffff;
  transition: 0.3s;
  margin: 5px;
 }
@@ -346,6 +356,15 @@
 .sex:last-child span {
   border-radius: 0 .375em .375em 0;
 }
-
+/* Fondo */
+.containerconfiguracion {
+  width: 100%;
+  height: 100%;
+ 
+  background-color: #313131;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px
+}
 </style>
 </html>

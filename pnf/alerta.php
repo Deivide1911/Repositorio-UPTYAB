@@ -22,7 +22,7 @@ if(@$_GET['pnf'] && @$_GET['titulo'] && @$_GET['archivo']){
     <link rel="stylesheet" href="../estilos/maincss.css">
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
-<body>
+<body class="alertafondo">
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -30,10 +30,10 @@ if(@$_GET['pnf'] && @$_GET['titulo'] && @$_GET['archivo']){
             <li><p class="re"><a><i class="fa-solid fa-bars"></i> Selecciona un PNF</p></li></a>
             <li>
         <ul class="contenido">
-            <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informatica</a></li>
-            <li><a href="administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administracion</a></li>
-            <li><a href="agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentacion</a></li>
-            <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermeria</a></li>
+            <li><a href="informatica.php" class="pnf"><i class="fa-solid fa-laptop-code"></i> PNF Informática</a></li>
+            <li><a href="administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administración</a></li>
+            <li><a href="agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentación</a></li>
+            <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermería</a></li>
             <li><a href="higiene_laboral.php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene & Seguridad Laboral</a></li>
             <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzado</a></li>
         </ul>
@@ -54,19 +54,21 @@ if(@$_GET['pnf'] && @$_GET['titulo'] && @$_GET['archivo']){
         </ul>
         </nav>
     </header>
-    <h1>Alerta de plagio!</h1>
+    <section class="alertaanimacion">
+    <h1 class="alertah1">¡Alerta de plagio!</h1>
     <br>
     <?php 
         if($consulta2->fetch_object()){
-            echo "<h2>Su título y su nombre de archivo coinciden con los siguientes proyectos:</h2>";
+            echo "<h2 class=\"h2alerta\">Su título y su nombre de archivo coinciden con los siguientes proyectos:</h2>";
         }
         else if($consulta3->fetch_object()){
-            echo "<h2>Ups! su nombre de archivo coincide con los siguientes proyectos:</h2>";
+            echo "<h2 class=\"h2alerta\">¡Ups! su nombre de archivo coincide con los siguientes proyectos:</h2>";
         }
         else{
-            echo "<h2>Ups! su título coincide con los siguientes proyectos:</h2>";
+            echo "<h2 class=\"h2alerta\">¡Ups! su título coincide con los siguientes proyectos:</h2>";
         }
     ?>
+    </section>
     <table class="tablasearch">
         <tr>
             <th>Titulo</th>
@@ -96,10 +98,78 @@ if(@$_GET['pnf'] && @$_GET['titulo'] && @$_GET['archivo']){
      }
     ?>
     </table>
-    <label>¿Desea subir el proyecto? haga click <a class="blueone" href="upload2.php"> aquí</a></label> 
+    <section class="alertaanimacion"> 
+    <label class="alertalabel">¿Desea subir el proyecto? Haga click<a class="alertaetiqueta2" href="upload2.php"> Aquí</a></label> 
     <br>
-    <a href="upload.php">Volver</a>
+    <a href="upload.php" class="alertaetiqueta">Volver</a>
+    </section>
 </body>
+
+<style>
+.alertaanimacion{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecer 1s forwards;
+            
+        }
+        @keyframes aparecer {
+    to {
+        opacity: 1; /* Hacer visible el texto */
+        transform: translateY(0); /* Regresar a la posición original */
+    }
+        }
+
+.alertafondo{
+    background-color: #313131;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+    font-family: "Nunito", sans-serif;
+    
+}
+.alertah1{
+    color: #fefeff;
+    font-size: 60px;
+    background-color: #d75e5c;
+    display: flex;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+    
+}
+.alertaetiqueta{
+    color: #addaeb;
+    font-size: 20px;
+    margin: 0px 600px 600px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #3381ca;
+    padding: 10px;
+}
+.alertaetiqueta2{
+    color: #45d149;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+}
+.h2alerta{
+    color: #f2fcfb;
+    margin: 0;
+    display: flex;
+    background-color: #313131;
+    justify-content: center;
+}
+.alertalabel{
+    background-color: #fefeff;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+
+}
+</style>
+
 </html>
 <?php 
 } else{
@@ -115,6 +185,8 @@ if(@$_GET['pnf'] && @$_GET['titulo'] && @$_GET['archivo']){
     <h1>Se han perdido los datos, vuelve a subir tu archivo</h1>
     <a href="upload.php">Volver</a>
 </body>
+
+
 </html>
 <?php 
 }
