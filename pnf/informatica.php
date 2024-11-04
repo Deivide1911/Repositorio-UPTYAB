@@ -19,7 +19,7 @@ include('../control/validacionmain.php');
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
 
-<body>
+<body class="bodyinformatica">
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -62,18 +62,19 @@ include('../control/validacionmain.php');
             </fieldset>
         </form>
 
+    
+    <h2 class="h2informatica">Informática</h2>
     <div class="center">
         <a href="upload.php" class="linkupload">Subir mi proyecto</a>
         <a href="inhabilitados.php?direccion=informatica.php" class="linkupload">Ver proyectos eliminados</a>
     </div>
-    <h2>Informática</h2>
             <?php while($mostrar = mysqli_fetch_array($consulta)){
             ?>
                 <div class="container-frames">
                     <iframe class="pdf-thumbnail" src="<?php echo $mostrar['ruta']?>" scrolling="no"></iframe>
                     <a class="blueone" target="_blank" href="<?php echo $mostrar['ruta']?>"><?php echo $mostrar['titulo']?></a>
-                    <p class="pnew">Autores: <?php echo $mostrar['autores']?></p>
-                    <p class="petiquetas"><?php echo $mostrar['etiquetas']?></p>
+                    <p class="autores">Autores: <?php echo $mostrar['autores']?></p>
+                    <p class="etiquetasproyecto"><?php echo $mostrar['etiquetas']?></p>
                     <p></p>
                     <a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a>
                     <a class="blueone" href="edit.php?direccion=informatica.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a>
@@ -82,22 +83,54 @@ include('../control/validacionmain.php');
     
 </body>
 <style>
+    .bodyinformatica{
+    font-family: "Nunito", sans-serif;
+    }
+    .h2informatica{
+        color: white;
+        font-size: 40px;
+        margin: 0;
+        background-color: #44e3ff;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
     .blueone{
-        color:blue;
-        height:10px;
+        color: #44a2ff;
+        height: 10px;
         
     }
 
     .container-frames{
-        display:flex;
+        display: flex;
+        padding: 8px;
+        margin: 0;
     }
 
     .pdf-thumbnail { 
         width: 200px; /* Ajusta el tamaño de la miniatura */ 
         height: 200px; /* Ajusta el tamaño de la miniatura */ 
-        border: 1px solid #ddd; /* Opcional: Añadir un borde */ 
-        overflow:hidden; 
+        border: none; /* Opcional: Añadir un borde */ 
+        overflow: hidden; 
         pointer-events: none;
+        background-color: grey;
+        margin: 10px;
         }
+    iframe::-webkit-scrollbar {
+         display: none;
+        }
+    .autores{
+        color: grey;
+        display: flex;
+        
+        font-size: 13px
+    }
+    .etiquetasproyecto{
+        color: white;
+        background-color: #327fcc;
+        border-radius: 15px;
+    }
+/* Fondo */
+
 </style>
 </html>

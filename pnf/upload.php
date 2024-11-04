@@ -49,7 +49,7 @@ include('../control/validacionmain.php');
 
     <div class="upload-form-container">
     <form class="upload-form" method="post" enctype="multipart/form-data">
-        <h2 class="uplo">Formulario</h2>
+        <h2 class="upload-titulo"><i class="fa-regular fa-file-pdf"></i>  Sube tu proyecto</h2>
 
         <div class="upload-input-group">
         <label for="titulo">Título</label>
@@ -76,7 +76,7 @@ include('../control/validacionmain.php');
                 </select>
         </div>
 
-            <div class="">
+            <div class="upload-input-group">
                 <label for="file">Seleccione su documento (PDF)</label>
                 <input type="file" id="document" name="file" accept=".pdf">
             </div>
@@ -84,11 +84,16 @@ include('../control/validacionmain.php');
             <?php
                 include("./controladores(admin)/upload().php");
             ?>
+            <div class="upload-input-group"> 
             <label for="etiquetas">Etiquetas de su proyecto Ej. #Ambiental</label>
                 <input type="text" placeholder="Ingrese etiquetas para encontrar facilmente su proyecto" name="etiquetas">
+              </div>
+            <div class="upload-input-group"> 
             <label for="autores">Ingrese por favor los autores de este proyecto</label>
                 <input type="text" placeholder="Autores" name="autores">
+              </div>
             <br>
+            <div class="upload-input-group"> 
             <label for="trayecto">Seleccione su trayecto</label>
                 <select name="trayecto" id="trayecto">
                     <option>1</option>
@@ -96,7 +101,9 @@ include('../control/validacionmain.php');
                     <option>3</option>
                     <option>4</option>
                 </select>
+              </div>
             <br>
+
             <input type="submit" name="btn" class="upload-sign ">
     </form>
     </div>
@@ -104,6 +111,12 @@ include('../control/validacionmain.php');
 </body>
 <style>
     /* NUEVOS ESTILOS UPLOAD.PHP */
+.upload-titulo{
+  color: #fff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+}
 .containerupload {
   width: 100%;
   height: 100%;
@@ -151,11 +164,16 @@ include('../control/validacionmain.php');
   margin-top: 0.25rem;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .upload-input-group label {
   display: block;
-  color: rgba(156, 163, 175, 1);
+  color: white;
   margin-bottom: 4px;
 }
 
@@ -193,61 +211,22 @@ include('../control/validacionmain.php');
 }
 
 .upload-sign {
-  display: block;
-  width: 100%;
-  background-color: rgba(167, 139, 250, 1);
-  padding: 0.75rem;
-  text-align: center;
-  color: rgba(17, 24, 39, 1);
+  border-radius: 10px;
+  margin: 0px auto;
+  background: #cc7cff;
   border: none;
-  border-radius: 0.375rem;
-  font-weight: 600;
-}
-
-.upload-social-message {
-  display: flex;
-  align-items: center;
-  padding-top: 1rem;
-}
-
-.upload-line {
-  height: 1px;
-  flex: 1 1 0%;
-  background-color: rgba(55, 65, 81, 1);
-}
-
-.upload-social-message .message {
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: rgba(156, 163, 175, 1);
-}
-
-.upload-social-icons {
+  color: black;
+  max-width: 100%;
+  outline: none;
+  padding: 10px 60px;
+  text-align: center;
+  font-weight: 900;
   display: flex;
   justify-content: center;
 }
-
-.upload-social-icons .icon {
-  border-radius: 0.125rem;
-  padding: 0.75rem;
-  border: none;
-  background-color: transparent;
-  margin-left: 8px;
-}
-
-.upload-social-icons .icon svg {
-  height: 1.25rem;
-  width: 1.25rem;
-  fill: #fff;
-}
-
-.upload-signup {
-  text-align: center;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(156, 163, 175, 1);
+.upload-sign:hover{
+  color: white;
+  box-shadow: 0px 0px 10px 1px rgba(227,148,227,1);
 }
 
 </style>

@@ -15,7 +15,7 @@ include('../control/validacionmain.php');
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
     <title>Carga Completada!</title>
 </head>
-<body>
+<body class="bodyfelicidades container-felicidades">
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -52,12 +52,72 @@ include('../control/validacionmain.php');
             $pnf = $_GET['pnf'];
             $enlace = $pnf.'.php';
     ?>
-    <h1 class="h1feli">Archivo subido con éxito!</h1>
+    <h1 class="felicidadesh1">¡Archivo subido con éxito!</h1>
     <br>
-    <a class="afeli" href="<?php echo $enlace?>">Volver</a>
+    <a class="felicidadesa" href="<?php echo $enlace?>">Volver</a>
     <?php } else{?>
-        <a href="main.php" class="afeli">Volver a la página principal</a>";
+        <a href="main.php" class="felicidadesa">Volver a la página principal</a>";
     <?php } ?>
+    
     </div>
+    <style>
+        /* NUEVO ESTILOS FELICIDADES.PHP */
+.bodyfelicidades{
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.container-felicidades{
+    font-family: "Nunito", sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #639cd8;
+    opacity: 0;
+            transform: translateY(20px);
+            animation: aparecer 1s forwards;
+            
+        }
+        @keyframes aparecer {
+    to {
+        opacity: 1; /* Hacer visible el texto */
+        transform: translateY(0); /* Regresar a la posición original */
+    }
+        }
+.felicidadesh1{
+    color: white;
+    font-size: 60px;
+    margin: 0;
+    background-color: #0ed58d;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.felicidadesa{
+    color: white;
+    font-size: 40px;
+    margin: 0;
+    background-color: #0ed58d;
+    padding: 10px;
+    border-radius: 25px;
+}
+.felicidadesa:hover{
+    color: #3485a6;
+}
+
+/* Fondo */
+.container-felicidades {
+  width: 100%;
+  height: 100%;
+ 
+  background-color: #313131;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px
+}
+/* CONFETTI */
+
+</style>
 </body>
 </html>

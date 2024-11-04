@@ -146,8 +146,8 @@
  padding: 10px;
  border-radius: 1rem;
  background: #e8e8e8;
- box-shadow: 5px 5px 40px #c5c5c5,
-		-5px -5px 40px #ffffff;
+ box-shadow: 5px 5px 20px #c5c5c5,
+		-5px -5px 20px #ffffff;
  transition: 0.3s;
  margin: 5px;
 }

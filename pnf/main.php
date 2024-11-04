@@ -133,7 +133,6 @@ $consulta = $conexion->query("SELECT * FROM (
         </table>
             </div>
         </div>
-<<<<<<< HEAD
 
         <style>
             .bodymainanimacion{
@@ -158,6 +157,4 @@ $consulta = $conexion->query("SELECT * FROM (
         background-position: -5px -5px
         }
         </style>
-=======
->>>>>>> 6b39f71b185f9cf8da97e8988fac2dbcca37f961
 </html>
