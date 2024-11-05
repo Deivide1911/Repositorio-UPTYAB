@@ -72,12 +72,27 @@ include('../control/validacionmain.php');
             ?>
                 <div class="container-frames">
                     <iframe class="pdf-thumbnail" src="<?php echo $mostrar['ruta']?>" scrolling="no"></iframe>
-                    <a class="blueone" target="_blank" href="<?php echo $mostrar['ruta']?>"><?php echo $mostrar['titulo']?></a>
-                    <p class="autores">Autores: <?php echo $mostrar['autores']?></p>
+                    <div class="flexboxp-1">
                     <p class="etiquetasproyecto"><?php echo $mostrar['etiquetas']?></p>
+                    <p class="trayectoproyecto">Trayecto: <?php echo $mostrar['trayecto']?></p>
+                    <p class="tipodeproyecto">Tipo: <?php echo $mostrar['tipoproyecto']?></p>
+                    <hr>
+                    <a class="titulodeproyecto" target="_blank" href="<?php echo $mostrar['ruta']?>"><?php echo $mostrar['titulo']?></a>
+
+                    <div class="flexboxp-2">
+                    <p class="autores">Autores: <?php echo $mostrar['autores']?></p>
+                    
                     <p></p>
-                    <a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a>
-                    <a class="blueone" href="edit.php?direccion=informatica.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a>
+                    </div>
+                    
+                    </div>
+                    
+                    
+
+                    <div class="flexboxp-3">
+                    <a class="blueone2" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a>
+                    <a class="blueone1" href="edit.php?direccion=informatica.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a>
+                    </div>
                 </div>
             <?php  } ?>
     
@@ -85,6 +100,10 @@ include('../control/validacionmain.php');
 <style>
     .bodyinformatica{
     font-family: "Nunito", sans-serif;
+    background-color: #313131;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px
     }
     .h2informatica{
         color: white;
@@ -95,40 +114,115 @@ include('../control/validacionmain.php');
         display: flex;
         justify-content: center;
     }
-    .blueone{
-        color: #44a2ff;
+    .blueone1{
+        color: #ffffff;
         height: 10px;
-        
+        background-color: #32bb92;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        border-radius: 20px;
+        align-items: center;
     }
-
+    .blueone1:hover{
+        color: #186f9e;
+        box-shadow: 0px 0px 8px 0px rgba(110,250,143,1);
+    }
+    .blueone2{
+        color: #ffffff;
+        height: 10px;
+        background-color: #b83f3b;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 20px;
+    }
+    .blueone2:hover{
+        color: #efc7f2;
+        box-shadow: 0px 0px 8px 0px #eba7b2;
+    }
     .container-frames{
         display: flex;
         padding: 8px;
         margin: 0;
+        background-color: #f0f0f0;
     }
 
     .pdf-thumbnail { 
         width: 200px; /* Ajusta el tamaño de la miniatura */ 
-        height: 200px; /* Ajusta el tamaño de la miniatura */ 
+        height: 250px; /* Ajusta el tamaño de la miniatura */ 
         border: none; /* Opcional: Añadir un borde */ 
         overflow: hidden; 
         pointer-events: none;
         background-color: grey;
-        margin: 10px;
+        margin: 5px;
         }
     iframe::-webkit-scrollbar {
          display: none;
         }
+    .titulodeproyecto{
+        color: #0941db;
+        font-size: 19px;
+        margin: 0px;
+        text-decoration: double;
+    }
     .autores{
         color: grey;
-        display: flex;
+        margin: 10px;
+        font-size: 16px;
+        display: inline;
         
-        font-size: 13px
     }
     .etiquetasproyecto{
         color: white;
         background-color: #327fcc;
         border-radius: 15px;
+        display: flex;
+        margin: 0px 0px 0px 0;
+        padding: 5px;
+        font-size: 12px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        margin-right: 680px;
+    }
+    .trayectoproyecto{
+        color: white;
+        background-color: #a788e5;
+        border-radius: 15px;
+        display: flex;
+        margin: 0px 0px 0px 0;
+        padding: 5px;
+        font-size: 12px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        margin-right: 700px;
+        
+    }
+    .tipodeproyecto{
+        color: white;
+        background-color: #a2b4ea;
+        border-radius: 15px;
+        display: flex;
+        margin: 0px 0px 0px 0;
+        padding: 5px;
+        font-size: 12px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        margin-right: 700px;
+        
+    }
+    .flexboxp-1{
+        width: 70%;
+        margin-left: 15px;
+        
+    }
+    .flexboxp-2{
+        flex-direction: column;
+    }
+    .flexboxp-3{
+        display: flex;
+        margin: 15px;
     }
 /* Fondo */
 

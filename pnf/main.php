@@ -156,5 +156,10 @@ $consulta = $conexion->query("SELECT * FROM (
         background-size: 30px 30px;
         background-position: -5px -5px
         }
+        /* Para que no este blanco debajo del slider xd */
+        .sliderframe a{
+            
+            background-color: #313131;
+        }
         </style>
 </html>

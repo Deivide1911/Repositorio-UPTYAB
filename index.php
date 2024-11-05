@@ -38,4 +38,10 @@ include('./control/validacion(index).php');
         </aside>
     </section>
 </body>
+<style>
+    .texto1{
+     margin: 0;
+     margin-right: 140px;
+    }
+</style>
 </html>

@@ -153,6 +153,10 @@ input{
     height: 81px;
     width: 150px;
 }
+.texto1{
+     margin: 0;
+     margin-right: 140px;
+    }
     </style>
 </body>
 </html>
