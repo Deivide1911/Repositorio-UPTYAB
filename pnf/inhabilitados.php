@@ -72,7 +72,7 @@ include("../control/validacionmain.php");
     </header>
     <h2 class="h2informatica">Proyectos Inhabilitados</h2>
     <div class="volveredit">
-        <a class="blueone" href="<?php echo $direccion?>">Volver</a>
+        <a class="blueone" href="<?= $direccion?>">Volver</a>
     </div>
     <?php while($mostrar = mysqli_fetch_array($consulta)){
             ?>

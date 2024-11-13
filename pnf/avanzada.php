@@ -89,7 +89,7 @@ include('../control/validacionmain.php');
                     
 
                     <div class="flexboxp-3">
-                    <a class="blueone2" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a>
+                    <a class="blueone2" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=avanzada.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a>
                     <a class="blueone1" href="edit.php?direccion=informatica.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a>
                     </div>
                 </div>
