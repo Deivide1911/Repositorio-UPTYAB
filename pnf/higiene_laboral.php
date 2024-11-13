@@ -19,7 +19,7 @@ include('../control/validacionmain.php');
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
 
-<body>
+<body class="bodyinformatica">
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -62,37 +62,168 @@ include('../control/validacionmain.php');
             </fieldset>
         </form>
 
+    
+
+    <h2 class="h2informatica">Higiene & Seguridad Laboral</h2>
     <div class="center">
         <a href="upload.php" class="linkupload">Subir mi proyecto</a>
         <a href="inhabilitados.php?direccion=higiene_laboral.php" class="linkupload">Ver proyectos eliminados</a>
     </div>
-
-    <h2>Higiene & Seguridad Laboral</h2>
-        <table class="tablasearch">
-            <tr>
-                <th>Título</th>
-                <th>Trayecto</th>
-                <th>Tipo de proyecto</th>
-                <th>Autores</th>
-                <th>Etiquetas</th>
-                <th>PDF</th>
-                <th>Descarga</th>
-            </tr>
-            <?php while($mostrar = mysqli_fetch_array($consulta)){
+    <?php while($mostrar = mysqli_fetch_array($consulta)){
             ?>
-            <tr>
-                <td><?php echo $mostrar['titulo'] ?></td>
-                <td><?php echo $mostrar['trayecto'] ?></td>
-                <td><?php echo $mostrar['tipoproyecto'] ?></td>
-                <td><?php echo $mostrar['autores'] ?></td>
-                <td><?php echo $mostrar['etiquetas'] ?></td>
-                <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-                <td><a class="blueone" href="<?php echo $mostrar['ruta'] ?>" download="<?php echo $mostrar['archivo'] ?>">Descargar</a></td>
-                <td><a class="blueone" href="edit.php?direccion=higiene_laboral.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a></td>
-                <td><a class="blueone" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=higiene_laboral.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a></td>
-            </tr>
+                <div class="container-frames">
+                    <iframe class="pdf-thumbnail" src="<?php echo $mostrar['ruta']?>" scrolling="no"></iframe>
+                    <div class="flexboxp-1">
+                    <p class="etiquetasproyecto"><?php echo $mostrar['etiquetas']?></p>
+                    <p class="trayectoproyecto">Trayecto: <?php echo $mostrar['trayecto']?></p>
+                    <p class="tipodeproyecto">Tipo: <?php echo $mostrar['tipoproyecto']?></p>
+                    <hr>
+                    <a class="titulodeproyecto" target="_blank" href="<?php echo $mostrar['ruta']?>"><?php echo $mostrar['titulo']?></a>
+
+                    <div class="flexboxp-2">
+                    <p class="autores">Autores: <?php echo $mostrar['autores']?></p>
+                    
+                    <p></p>
+                    </div>
+                    
+                    </div>
+                    
+                    
+
+                    <div class="flexboxp-3">
+                    <a class="blueone2" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a>
+                    <a class="blueone1" href="edit.php?direccion=informatica.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a>
+                    </div>
+                </div>
             <?php  } ?>
-        </table>
     
 </body>
+<style>
+    .bodyinformatica{
+        font-family: "Nunito", sans-serif;
+        background-color: #313131;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+        background-size: 30px 30px;
+        background-position: -5px -5px
+    }
+    .h2informatica{
+        color: white;
+        font-size: 40px;
+        margin: 0;
+        background-color: #44e3ff;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .blueone1{
+        color: #ffffff;
+        height: 10px;
+        background-color: #32bb92;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        border-radius: 20px;
+        align-items: center;
+    }
+    .blueone1:hover{
+        color: #186f9e;
+        box-shadow: 0px 0px 8px 0px rgba(110,250,143,1);
+    }
+    .blueone2{
+        color: #ffffff;
+        height: 10px;
+        background-color: #b83f3b;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 20px;
+    }
+    .blueone2:hover{
+        color: #efc7f2;
+        box-shadow: 0px 0px 8px 0px #eba7b2;
+    }
+    .container-frames{
+        display: flex;
+        padding: 8px;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+
+    .pdf-thumbnail { 
+        width: 200px; /* Ajusta el tamaño de la miniatura */ 
+        height: 250px; /* Ajusta el tamaño de la miniatura */ 
+        border: none; /* Opcional: Añadir un borde */ 
+        overflow: hidden; 
+        pointer-events: none;
+        background-color: grey;
+        margin: 5px;
+        }
+    iframe::-webkit-scrollbar {
+         display: none;
+        }
+    .titulodeproyecto{
+        color: #0941db;
+        font-size: 19px;
+        margin: 0px;
+        text-decoration: double;
+    }
+    .autores{
+        color: grey;
+        margin: 10px;
+        font-size: 16px;
+        display: inline;
+        
+    }
+    .etiquetasproyecto{
+        color: white;
+        background-color: #327fcc;
+        border-radius: 15px;
+        display: flex;
+        margin: 0px 0px 0px 0;
+        padding: 5px;
+        font-size: 12px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        margin-right: 680px;
+    }
+    .trayectoproyecto{
+        color: white;
+        background-color: #a788e5;
+        border-radius: 15px;
+        display: flex;
+        margin: 0px 0px 0px 0;
+        padding: 5px;
+        font-size: 12px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        margin-right: 700px;
+        
+    }
+    .tipodeproyecto{
+        color: white;
+        background-color: #a2b4ea;
+        border-radius: 15px;
+        display: flex;
+        margin: 0px 0px 0px 0;
+        padding: 5px;
+        font-size: 12px;
+        margin-bottom: 5px;
+        margin-left: 0px;
+        margin-right: 700px;
+        
+    }
+    .flexboxp-1{
+        width: 70%;
+        margin-left: 15px;
+        
+    }
+    .flexboxp-2{
+        flex-direction: column;
+    }
+    .flexboxp-3{
+        display: flex;
+        margin: 15px;
+    }
+</style>
 </html>
