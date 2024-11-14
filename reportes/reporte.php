@@ -17,7 +17,7 @@ include("../control/reporteControl.php");
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 </head>
-<body>
+<body class="bodyreportes">
 <header class="logo">
         <a href="../pnf/main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -50,7 +50,7 @@ include("../control/reporteControl.php");
     </header>
     <form action="reporte.php" method="POST" class="form-act">
         <div class="cont-busq-act">
-                <select name="mes" id="mes" class="filtro-reportes" onchange="actualizarDias()">
+                <select name="mes" id="mes" class="custom-select" onchange="actualizarDias()">
                     <option value="a">Buscar por mes</option>
                     <option value="1">Enero</option>
                     <option value="2">Febrero</option>
@@ -65,39 +65,46 @@ include("../control/reporteControl.php");
                     <option value="11">Noviembre</option>
                     <option value="12">Diciembre</option>
                 </select>
-                <select name="dia" id="dia" class="filtro-reportes">
+                <select name="dia" id="dia" class="custom-select">
                     <option value="a">Seleccione su día</option>
                 </select>
                 <input type="hidden" value="1" name="busq">
                 <input type="hidden" value="<?=$control?>" name="control" class="control">
-                <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit" name="btn" class="searchboton"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
     </form>
     <form action="reporte.php" method="POST" class="form-desac">
             <div class="cont-reporte">
-                <div class="cont-flex">
+                <div class="container-fechainicioyfinal">
                    <label for="fecha_inicio">Fecha inicio:</label>
-                   <input type="date" name="fecha_inicio" id="fecha_inicio" required>
+                   <input type="date" name="fecha_inicio" id="fecha_inicio" class="input-fechainicioyfinal" required>
                 </div>
             <p>Hasta: </p>
-                <div class="cont-flex">
+                <div class="container-fechainicioyfinal">
                     <label for="fecha_final">Fecha final:</label>
-                    <input type="date" name="fecha_final" id="fecha_final" required>
+                    <input type="date" name="fecha_final" id="fecha_final" class="input-fechainicioyfinal" required>
                 </div>
-                <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button type="submit" name="btn" class="searchboton"><i class="fa-solid fa-magnifying-glass"></i></button>
             </div>
             <input type="hidden" value="1" name="busq">
             <input type="hidden" value="<?=$control?>" name="control" class="control">
     </form>
-    <button class="btn-act">Cambiar modo de búsqueda</button>
+    
+    <div class="div-center">
+        <button class="btn-act">Cambiar modo de búsqueda</button>
+        <button class="btn-act" id="btn" onclick="generarPDF()">Descargar PDF</button>
+    </div>
     <div class="back">
         <a href="../pnf/main.php" class="reportvolver">Volver</a>
     </div>
+    
         <?php 
         // Validando si se consiguieron resultados
         if($consulta ->num_rows > 0){
         ?>
-        <table class="tablasearch" id="contenido">
+        <div class="table-container">
+        <table class="styled-table" id="contenido">
+        <thead>
         <tr>
             <th>Número</th>
             <th>CI</th>
@@ -106,10 +113,12 @@ include("../control/reporteControl.php");
             <th>Hora Entrada</th>
             <th>Hora Salida</th>
         </tr>
+        </thead>
         <?php 
         // Ciclo while para el array va a crear lo que contenga
         while($mostrar = mysqli_fetch_array($consulta)){
         ?>
+        <tbody>
         <tr>
             <td><?php echo $mostrar['idunic'] ?></td>
             <td><?php echo $mostrar['id'] ?></td>
@@ -118,13 +127,13 @@ include("../control/reporteControl.php");
             <td><?php echo $mostrar['hora'] ?></td>
             <td><?= $mostrar['hora_salida'] == '' ? 'En línea' : $mostrar['hora_salida']?></td>
         </tr>
+        </tbody>
     <?php 
         }
     ?>
     </table>
-    <div class="div-center">
-        <button class="btn-Report" id="btn" onclick="generarPDF()">Descargar PDF</button>
     </div>
+    
     <?php
         // De lo contrario hacer lo siguiente:
         }
@@ -138,4 +147,96 @@ include("../control/reporteControl.php");
 <script src="../js/reportes.js"></script>
 <script src="../js/busquedaReportes.js"></script>
 <script src="../js/generarPDF.js"></script>
+<style>
+    /* DISEÑO NUEVO */
+    .bodyreportes{
+        font-family: "Nunito", sans-serif;
+        background-color: #313131;
+        background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+        background-size: 30px 30px;
+        background-position: -5px -5px;
+        color: #ffffff;
+        
+    }
+    .container-fechainicioyfinal{
+        display: flex;
+        
+    }
+    .input-fechainicioyfinal{
+        background-color: #0941db;
+        color: #ffffff;
+        border: none;
+        border-radius: 20px;
+        padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .searchboton{
+        padding: 9px;
+        border-radius: 10px;
+    }
+    .btn-act{
+        color: #ffffff;
+        background-color: #0941db;
+        border: none;
+        padding: 5px;
+        height: auto;
+        border-radius: 30px;
+    }
+    .custom-select{
+        color: #ffffff;
+        background-color: #0941db;
+        border: none;
+        padding: 5px;
+        height: auto;
+        border-radius: 30px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        
+    }
+    /* Nuevas tablas */
+    
+    .styled-table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #313131;
+    background-color: #ffffff;
+    opacity: 0;
+            transform: translateY(20px);
+            animation: aparecer 1s forwards;
+            
+        }
+        @keyframes aparecer {
+    to {
+        opacity: 1; /* Hacer visible el texto */
+        transform: translateY(0); /* Regresar a la posición original */
+    }
+}
+
+    .styled-table thead tr {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+    .styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+    .styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+    .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3; /* Color de fondo para filas pares */
+}
+
+    .styled-table tbody tr:hover {
+    background-color: #d1e7dd; /* Color de fondo al pasar el mouse */
+}
+</style>
 </html>

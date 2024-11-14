@@ -24,7 +24,7 @@ include("../control/validacionmain.php");
     <link rel="stylesheet" href="../estilos/maincss.css">
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
 </head>
-<body>
+<body class="bodyinformatica">
 <header class="logo">
         <a href="main.php"><img src="../img/logomin.png" alt="logo" width="150px" height="70px"></a>
         <nav class="dropmenu">
@@ -42,7 +42,7 @@ include("../control/validacionmain.php");
         </li>
         
         </nav>
-        <a href="../nosotros.php" class="re">Nosotros</a>
+        <a href="nosotros.php" class="re">Nosotros</a>
         <a href="../reportes/reporte.php" class="re">Reportes</a>
         <nav class="dropmenu cerrarsesion">
         <a class="usericon"><i class="fa-solid fa-user"></i>
@@ -56,17 +56,22 @@ include("../control/validacionmain.php");
         </ul>
         </nav>
     </header>
-    <table class="tablasearch">
+    <div class="table-container">
+    <table class="styled-table">
+        <thead>
         <tr>
             <th>Nombre</th>
             <th>Apellido</th>
             <th>C.I</th>
             <th>Admin</th>
+            <th>Quitar o dar permisos</th>
         </tr>
+        </thead>
         <?php 
         while($mostrar = mysqli_fetch_array($consulta2)){
               $mostrar2 = mysqli_fetch_array($consulta);
         ?>
+        <tbody>
         <tr>
             <td><?php echo $mostrar['primernombre']; ?></td>
             <td><?php echo $mostrar['primerapellido'] ?></td>
@@ -74,10 +79,12 @@ include("../control/validacionmain.php");
             <td><?php echo ($mostrar2['rango'] == 0) ? "No" : "Si";?></td>
             <td><a class="blueone" href="./controladores(admin)/rango().php?id=<?=$mostrar2['id']?>&rango=<?=$mostrar2['rango']?>"><?php echo ($mostrar2['rango'] == 0) ? "Dar Admin" : 'Quitar Admin';?></a></td>
         </tr>
+        </tbody>
         <?php 
             }
         ?>
     </table>
+    </div>
     <?php 
         if(isset($_GET['msj'])){
             $msj = $_GET['msj'];
@@ -94,4 +101,48 @@ include("../control/validacionmain.php");
         alert(`${msj.value}`);
     }
 </script>
+<style>
+    .bodyinformatica{
+    font-family: "Nunito", sans-serif;
+    background-color: #313131;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px
+    }
+    /* Nuevas tablas */
+    
+    .styled-table {
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #313131;
+    background-color: #ffffff;
+}
+    .styled-table a{
+        color: #4CAF50;
+        
+    }
+
+    .styled-table thead tr {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+    .styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+    .styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+    .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3; /* Color de fondo para filas pares */
+}
+
+    .styled-table tbody tr:hover {
+    background-color: #d1e7dd; /* Color de fondo al pasar el mouse */
+}
+</style>
 </html>
