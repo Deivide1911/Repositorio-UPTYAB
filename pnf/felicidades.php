@@ -13,7 +13,7 @@ include('../control/validacionmain.php');
     <link rel="stylesheet" href="../css/all.css">
     <link rel="stylesheet" href="../estilos/maincss.css">
     <link rel="icon" type="image/x-icon" href="../img/icon.png">
-    <title>Carga Completada!</title>
+    <title>¡Carga Completada!</title>
 </head>
 <body class="bodyfelicidades container-felicidades">
 <header class="logo">
