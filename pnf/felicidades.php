@@ -116,7 +116,6 @@ include('../control/validacionmain.php');
   background-size: 30px 30px;
   background-position: -5px -5px
 }
-/* CONFETTI */
 
 </style>
 </body>
