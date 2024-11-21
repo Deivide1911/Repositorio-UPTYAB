@@ -1,8 +1,5 @@
 <?php
 include("../control/conexion.php");
-if(@$_GET['direccion']){
-    $direccion = $_GET['direccion'];
-}
 $consulta = $conexion->query(
     "SELECT * FROM informatica 
     where estado LIKE 'Inhabilitado' 
@@ -72,7 +69,7 @@ include("../control/validacionmain.php");
     </header>
     <h2 class="h2informatica">Proyectos Inhabilitados</h2>
     <div class="volveredit">
-        <a class="blueone" href="<?= $direccion?>">Volver</a>
+        <a class="blueone" href="main.php">Volver</a>
     </div>
     <?php while($mostrar = mysqli_fetch_array($consulta)){
             ?>
