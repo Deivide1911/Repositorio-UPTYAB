@@ -84,7 +84,7 @@ $consulta = $conexion->query("SELECT * FROM (
                 <li><a href="administracion.php"><img src="../img/slider2.png" alt="Administración"></a></li>
                 <li><a href="agroalimentacion.php"><img src="../img/slider3.png" alt="Agroalimentación"></a></li>
                 <li><a href="enfermeria.php"><img src="../img/slider4.png" alt="Enfermería"></a></li>
-                <li><a href="higiene.php"><img src="../img/slider5.png" alt="Higiene & Seguridad Laboral"></a></li>
+                <li><a href="higiene_laboral.php"><img src="../img/slider5.png" alt="Higiene & Seguridad Laboral"></a></li>
                 <li><a href="avanzada.php"><img src="../img/slider6.png" alt="Avanzada"></a></li>
             </ul>
         </div>
@@ -120,157 +120,9 @@ $consulta = $conexion->query("SELECT * FROM (
                     
 
                     <div class="flexboxp-3">
-                    <a class="blueone2" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=informatica.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a>
+                    <a class="blueone2" href="inhabilitar.php?id=<?php echo $mostrar['id']?>&direccion=main.php&idpnf=<?php echo $mostrar['idpnf']?>">Inhabilitar</a>
                     <a class="blueone1" href="edit.php?direccion=informatica.php&&id=<?php echo $mostrar['id']?>&&idpnf=<?php echo $mostrar['idpnf']?>">Editar</a>
                     </div>
                 </div>
             <?php  } ?>
-
-        <style>
-            .bodymainanimacion{
-            opacity: 0;
-            transform: translateY(0px);
-            animation: aparecer 1s forwards;
-            
-        }
-        @keyframes aparecer {
-    to {
-        opacity: 1; /* Hacer visible el texto */
-        transform: translateY(0); /* Regresar a la posición original */
-    }
-        }
-
-        .searchfondo{
-            /* Fondo */
-
-        background-color: #313131;
-        background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-        background-size: 30px 30px;
-        background-position: -5px -5px
-        }
-        /* Para que no este blanco debajo del slider xd */
-        .sliderframe a{
-            
-            background-color: #313131;
-        }
-        .h2informatica{
-        color: white;
-        font-size: 40px;
-        margin: 0;
-        background-color: #1944a1;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-    .blueone1{
-        color: #ffffff;
-        height: 10px;
-        background-color: #32bb92;
-        padding: 20px;
-        display: flex;
-        flex-direction: row;
-        border-radius: 20px;
-        align-items: center;
-    }
-    .blueone1:hover{
-        color: #186f9e;
-        box-shadow: 0px 0px 8px 0px rgba(110,250,143,1);
-    }
-    .blueone2{
-        color: #ffffff;
-        height: 10px;
-        background-color: #b83f3b;
-        padding: 20px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        border-radius: 20px;
-    }
-    .blueone2:hover{
-        color: #efc7f2;
-        box-shadow: 0px 0px 8px 0px #eba7b2;
-    }
-    .container-frames{
-        display: flex;
-        padding: 8px;
-        margin: 0;
-        background-color: #f0f0f0;
-    }
-
-    .pdf-thumbnail { 
-        width: 200px; /* Ajusta el tamaño de la miniatura */ 
-        height: 250px; /* Ajusta el tamaño de la miniatura */ 
-        border: none; /* Opcional: Añadir un borde */ 
-        overflow: hidden; 
-        pointer-events: none;
-        background-color: grey;
-        margin: 5px;
-        }
-    iframe::-webkit-scrollbar {
-         display: none;
-        }
-    .titulodeproyecto{
-        color: #0941db;
-        font-size: 19px;
-        margin: 0px;
-        text-decoration: double;
-    }
-    .autores{
-        color: grey;
-        margin: 10px;
-        font-size: 16px;
-        display: inline;
-        
-    }
-    .etiquetasproyecto{
-        color: white;
-        background-color: #327fcc;
-        border-radius: 15px;
-        display: flex;
-        margin: 0px 0px 0px 0;
-        padding: 5px;
-        font-size: 12px;
-        margin-bottom: 5px;
-        margin-left: 0px;
-        margin-right: 680px;
-    }
-    .trayectoproyecto{
-        color: white;
-        background-color: #a788e5;
-        border-radius: 15px;
-        display: flex;
-        margin: 0px 0px 0px 0;
-        padding: 5px;
-        font-size: 12px;
-        margin-bottom: 5px;
-        margin-left: 0px;
-        margin-right: 700px;
-        
-    }
-    .tipodeproyecto{
-        color: white;
-        background-color: #a2b4ea;
-        border-radius: 15px;
-        display: flex;
-        margin: 0px 0px 0px 0;
-        padding: 5px;
-        font-size: 12px;
-        margin-bottom: 5px;
-        margin-left: 0px;
-        margin-right: 700px;
-        
-    }
-    .flexboxp-1{
-        width: 70%;
-        margin-left: 15px;
-        
-    }
-    .flexboxp-2{
-        flex-direction: column;
-    }
-    .flexboxp-3{
-        display: flex;
-        margin: 15px;
-    }
-        </style>
 </html>

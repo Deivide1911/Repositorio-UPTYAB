@@ -102,7 +102,7 @@ include("../control/reporteControl.php");
         // Validando si se consiguieron resultados
         if($consulta ->num_rows > 0){
         ?>
-        <div class="table-container">
+    <div class="table-container">
         <table class="styled-table" id="contenido">
         <thead>
         <tr>
@@ -147,96 +147,4 @@ include("../control/reporteControl.php");
 <script src="../js/reportes.js"></script>
 <script src="../js/busquedaReportes.js"></script>
 <script src="../js/generarPDF.js"></script>
-<style>
-    /* DISEÑO NUEVO */
-    .bodyreportes{
-        font-family: "Nunito", sans-serif;
-        background-color: #313131;
-        background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-        background-size: 30px 30px;
-        background-position: -5px -5px;
-        color: #ffffff;
-        
-    }
-    .container-fechainicioyfinal{
-        display: flex;
-        
-    }
-    .input-fechainicioyfinal{
-        background-color: #0941db;
-        color: #ffffff;
-        border: none;
-        border-radius: 20px;
-        padding: 5px;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-    .searchboton{
-        padding: 9px;
-        border-radius: 10px;
-    }
-    .btn-act{
-        color: #ffffff;
-        background-color: #0941db;
-        border: none;
-        padding: 5px;
-        height: auto;
-        border-radius: 30px;
-    }
-    .custom-select{
-        color: #ffffff;
-        background-color: #0941db;
-        border: none;
-        padding: 5px;
-        height: auto;
-        border-radius: 30px;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        
-    }
-    /* Nuevas tablas */
-    
-    .styled-table {
-    border-collapse: collapse;
-    width: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #313131;
-    background-color: #ffffff;
-    opacity: 0;
-            transform: translateY(20px);
-            animation: aparecer 1s forwards;
-            
-        }
-        @keyframes aparecer {
-    to {
-        opacity: 1; /* Hacer visible el texto */
-        transform: translateY(0); /* Regresar a la posición original */
-    }
-}
-
-    .styled-table thead tr {
-    background-color: #4CAF50;
-    color: #ffffff;
-}
-
-    .styled-table th, .styled-table td {
-    padding: 12px 15px;
-    text-align: left;
-}
-
-    .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-    .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3; /* Color de fondo para filas pares */
-}
-
-    .styled-table tbody tr:hover {
-    background-color: #d1e7dd; /* Color de fondo al pasar el mouse */
-}
-</style>
 </html>

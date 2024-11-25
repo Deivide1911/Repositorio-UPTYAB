@@ -63,64 +63,58 @@ $consulta = $conexion->query("SELECT * FROM (
         </ul>
         </nav>
     </header>
-    <main class="fondouni">
+    <main class="container">
     <article class="todo-2">
         <h3 class="titulomain">Bienvenidos al Repositorio de la Universidad Politécnica Territorial de Yaracuy Arístides Bastidas</h3>
-        <p class="parrafo">El repositorio de la UPTYAB, es un espacio donde puedes ver archivos con fines de perservacion digital, busqueda de reseña historica y formentar la actividad academica e intelectual</p>
-        <p class="parrafo">Con proyectos sociotecnologicos, proyectos comunitarios, etc</p>
+
+        <p class="parrafo">El repositorio de la UPTYAB, es un espacio donde puedes ver y descargar archivos con fines de preservación digital, búsqueda de reseña histórica y fomentar la actividad académica e intelectual</p>
+
+        <p class="parrafo">Con proyectos socio tecnológicos, proyectos comunitarios, etc.</p>
     </article>
     </main>
-    <form action="search(usuario).php" method="POST" class="barradebusqueda">
-        <fieldset class="fieldset">
-        <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="buscador">
-        <input type="hidden" name="control" value="0">
-        <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </fieldset>
-    </form>
+
     <section class="listarecientes">
         <h2 class="h2list">PNF</h2>
         <div class="sliderframe">
             <ul>
-                <li><a href="informatica.php"><img src="../img/slider1.png" alt=""></a></li>
-                <li><a href=""><img src="../img/slider2.png" alt=""></a></li>
-                <li><a href=""><img src="../img/slider3.png" alt=""></a></li>
-                <li><a href=""><img src="../img/slider4.png" alt=""></a></li>
-                <li><a href=""><img src="../img/slider5.png" alt=""></a></li>
-                <li><a href=""><img src="../img/slider6.png" alt=""></a></li>
+                <li><a href="informatica(usuario).php"><img src="../img/slider1.png" alt="Informática"></a></li>
+                <li><a href="administracion(usuario).php"><img src="../img/slider2.png" alt="Administración"></a></li>
+                <li><a href="agroalimentacion(usuario).php"><img src="../img/slider3.png" alt="Agroalimentación"></a></li>
+                <li><a href="enfermeria(usuario).php"><img src="../img/slider4.png" alt="Enfermería"></a></li>
+                <li><a href="higiene_laboral(usuario).php"><img src="../img/slider5.png" alt="Higiene & Seguridad Laboral"></a></li>
+                <li><a href="avanzada(usuario).php"><img src="../img/slider6.png" alt="Avanzada"></a></li>
             </ul>
         </div>
-        
-        <div class="proyectosre">
-            <h2 class="h2list proyectosre">Proyectos recientes</h2>
-            <div class="list-list">
-            <table class="tablasearch">
-            <tr>
-                <th>Título</th>
-                <th>Trayecto</th>
-                <th>Tipo de proyecto</th>
-                <th>Autores</th>
-                <th>Etiquetas</th>
-                <th>PNF</th>
-                <th>PDF</th>
-            </tr>
-            <?php while($mostrar = mysqli_fetch_array($consulta)){
-            $idpnf = $mostrar['idpnf'];
-            $consul_idpnf = $conexion->query("SELECT * FROM pnf where idpnf='$idpnf'");
-            $nombrepnf = mysqli_fetch_array($consul_idpnf);
-        ?>
-        <tr>
-            <td><?php echo $mostrar['titulo'] ?></td>
-            <td><?php echo $mostrar['trayecto'] ?></td>
-            <td><?php echo $mostrar['tipoproyecto'] ?></td>
-            <td><?php echo $mostrar['autores'] ?></td>
-            <td><?php echo $mostrar['etiquetas'] ?></td>
-            <td><?php echo $nombrepnf['pnf_nombre']  ?></td>
-            <td><a class="colors" href="vistaprevia.php?ruta=<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-        </tr>
+    <form action="search.php" method="POST" class="searchfondo">
+    <div class="input-container">
+    <input type="text" name="text" class="input" placeholder="Busca tu proyecto">
+    <span class="icon"> 
+    <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+     </span>
+     </form>
+    </div>
+    <h2 class="h2informatica">Proyectos Recientes</h2>
+    <?php while($mostrar = mysqli_fetch_array($consulta)){
+            ?>
+                <div class="container-frames">
+                    <iframe class="pdf-thumbnail" src="<?php echo $mostrar['ruta']?>" scrolling="no"></iframe>
+                    <div class="flexboxp-1">
+                    <p class="etiquetasproyecto"><?php echo $mostrar['etiquetas']?></p>
+                    <p class="trayectoproyecto">Trayecto: <?php echo $mostrar['trayecto']?></p>
+                    <p class="tipodeproyecto">Tipo: <?php echo $mostrar['tipoproyecto']?></p>
+                    <hr>
+                    <a class="titulodeproyecto" target="_blank" href="vistaprevia.php?ruta=<?php echo $mostrar['ruta'] ?>"><?php echo $mostrar['titulo']?></a>
+                    <div class="flexboxp-2">
+                    <p class="autores">Autores: <?php echo $mostrar['autores']?></p>
+                    <p></p>
+                    </div>
+                    </div>
             <?php  } ?>
-        </table>
-            </div>
-        </div>
-    </section>
 </body>
+<style>
+.container-frames{
+    display:flex;
+    flex-direction:column;
+}
+</style>
 </html>

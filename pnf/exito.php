@@ -53,49 +53,5 @@ include("../control/validacionmain.php");
     <a class="exitoa" href="main.php">Volver</a>
 </div> 
 </body>
-<style>
-/* NUEVO ESTILOS EXITO.PHP */
-.bodyexito{
-    margin: 0;
-    box-sizing: border-box;
-}
-.container-exito{
-    font-family: "Nunito", sans-serif;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    background-color: #639cd8;
-    opacity: 0;
-            transform: translateY(20px);
-            animation: aparecer 1s forwards;
-            
-        }
-        @keyframes aparecer {
-    to {
-        opacity: 1; /* Hacer visible el texto */
-        transform: translateY(0); /* Regresar a la posición original */
-    }
-        }
-.exitoh1{
-    color: #030706;
-    font-size: 60px;
-    margin: 0;
-}
-.exitoa{
-    color: #aee3ea;
-    font-size: 40px;
-}
 
-/* Fondo */
-.containerexito {
-  width: 100%;
-  height: 100%;
- 
-  background-color: #313131;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-  background-size: 30px 30px;
-  background-position: -5px -5px
-}
-</style>
 </html>

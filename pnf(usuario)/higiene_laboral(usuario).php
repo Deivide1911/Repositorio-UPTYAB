@@ -48,35 +48,41 @@ include('../control/validacionmain.php');
         </ul>
         </nav>
     </header>
-    <form action="search(usuario).php" method="POST" class="barradebusqueda">
-        <fieldset class="fieldset">
-        <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="buscador">
-        <input type="hidden" name="control" value="0">
-        <button type="submit" name="btn" class="botondebusqueda"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </fieldset>
-    </form>
-    <h2>Higiene y Seguridad Laboral </h2>
-        <table class="tablasearch">
-            <tr>
-                <th>Título</th>
-                <th>Trayecto</th>
-                <th>Tipo de proyecto</th>
-                <th>Autores</th>
-                <th>Etiquetas</th>
-                <th>PDF</th>
-            </tr>
-            <?php while($mostrar = mysqli_fetch_array($consulta)){
-            ?>
-            <tr>
-                <td><?php echo $mostrar['titulo'] ?></td>
-                <td><?php echo $mostrar['trayecto'] ?></td>
-                <td><?php echo $mostrar['tipoproyecto'] ?></td>
-                <td><?php echo $mostrar['autores'] ?></td>
-                <td><?php echo $mostrar['etiquetas'] ?></td>
-                <td><a class=blueone href="vistaprevia.php?ruta=<?php echo $mostrar['ruta'] ?>" target="_blank">Ver</a></td>
-            </tr>
-            <?php  } ?>
-        </table>
+    <form action="search.php" method="POST" class="input-container">
+            <fieldset class="fieldset">
+            <input type="search" placeholder="Buscar en el repositorio..." name="buscar" class="input">
+            <input type="hidden" name="control" value="0">
+            <span class="icon"> 
+            <svg width="19px" height="19px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path opacity="1" d="M14 5H20" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M14 8H17" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M21 11.5C21 16.75 16.75 21 11.5 21C6.25 21 2 16.75 2 11.5C2 6.25 6.25 2 11.5 2" stroke="#000" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> <path opacity="1" d="M22 22L20 20" stroke="#000" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+            </span>
+            </fieldset>
+        </form>
+
     
+
+    <h2 class="h2informatica">Higiene & Seguridad Laboral</h2>
+    <div class="center">
+        <a href="upload.php" class="linkupload">Subir mi proyecto</a>
+        <a href="inhabilitados.php?direccion=administracion.php" class="linkupload">Ver proyectos eliminados</a>
+    </div>
+    <?php while($mostrar = mysqli_fetch_array($consulta)){
+            ?>
+                <div class="container-frames">
+                    <iframe class="pdf-thumbnail" src="<?php echo $mostrar['ruta']?>" scrolling="no"></iframe>
+                    <div class="flexboxp-1">
+                    <p class="etiquetasproyecto"><?php echo $mostrar['etiquetas']?></p>
+                    <p class="trayectoproyecto">Trayecto: <?php echo $mostrar['trayecto']?></p>
+                    <p class="tipodeproyecto">Tipo: <?php echo $mostrar['tipoproyecto']?></p>
+                    <hr>
+                    <a class="titulodeproyecto" target="_blank" href="vistaprevia.php?ruta=<?php echo $mostrar['ruta'] ?>"><?php echo $mostrar['titulo']?></a>
+
+                    <div class="flexboxp-2">
+                    <p class="autores">Autores: <?php echo $mostrar['autores']?></p>
+                    
+                    <p></p>
+                    </div>
+                    
+                    </div>
+        <?php  } ?>
 </body>
 </html>

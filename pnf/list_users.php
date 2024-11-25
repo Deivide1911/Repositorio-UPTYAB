@@ -101,48 +101,5 @@ include("../control/validacionmain.php");
         alert(`${msj.value}`);
     }
 </script>
-<style>
-    .bodyinformatica{
-    font-family: "Nunito", sans-serif;
-    background-color: #313131;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-    background-size: 30px 30px;
-    background-position: -5px -5px
-    }
-    /* Nuevas tablas */
-    
-    .styled-table {
-    border-collapse: collapse;
-    width: 100%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    color: #313131;
-    background-color: #ffffff;
-}
-    .styled-table a{
-        color: #4CAF50;
-        
-    }
 
-    .styled-table thead tr {
-    background-color: #4CAF50;
-    color: #ffffff;
-}
-
-    .styled-table th, .styled-table td {
-    padding: 12px 15px;
-    text-align: left;
-}
-
-    .styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-    .styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3; /* Color de fondo para filas pares */
-}
-
-    .styled-table tbody tr:hover {
-    background-color: #d1e7dd; /* Color de fondo al pasar el mouse */
-}
-</style>
 </html>

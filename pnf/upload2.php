@@ -26,7 +26,7 @@ include('../control/validacionmain.php');
             <li><a href="administracion.php" class="pnf"><i class="fa-solid fa-user-tie"></i> PNF Administración</a></li>
             <li><a href="agroalimentacion.php" class="pnf"><i class="fa-solid fa-money-bill-wheat"></i> PNF Agroalimentación</a></li>
             <li><a href="enfermeria.php" class="pnf"><i class="fa-solid fa-user-nurse"></i> PNF Enfermería</a></li>
-            <li><a href="higiene.php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene Laboral</a></li>
+            <li><a href="higiene_laboral.php" class="pnf"><i class="fa-solid fa-hands-bubbles"></i> PNF Higiene Laboral</a></li>
             <li><a href="avanzada.php" class="pnf"><i class="fa-solid fa-building-columns"></i> PNF Avanzada</a></li>
         </ul>
         </li>
@@ -106,125 +106,5 @@ include('../control/validacionmain.php');
     </form>
     </div>
 </body>
-<style>
 
-    /* NUEVOS ESTILOS UPLOAD.PHP */
-.upload-titulo{
-  color: #fff;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-}
-.containerupload {
-  width: 100%;
-  height: 100%;
- 
-  background-color: #313131;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.171) 2px, transparent 0);
-  background-size: 30px 30px;
-  background-position: -5px -5px;
-  font-family: "Nunito", sans-serif;
-}
-/* NUEVO FROM */
-.upload-form-container {
-  width: 620px;
-  border-radius: 0.75rem;
-  background-color: rgba(17, 24, 39, 1);
-  padding: 2rem;
-  color: rgba(243, 244, 246, 1);
-  margin: auto;
-  opacity: 0;
-            transform: translateY(20px);
-            animation: aparecer 1s forwards;
-            
-        }
-        @keyframes aparecer {
-    to {
-        opacity: 1; /* Hacer visible el texto */
-        transform: translateY(0); /* Regresar a la posición original */
-    }
-        }
-
-
-
-.upload-title {
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
-.upload-form {
-  margin-top: 1.5rem;
-}
-
-.upload-input-group {
-  margin-top: 0.25rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.upload-input-group label {
-  display: block;
-  color: white;
-  margin-bottom: 4px;
-}
-
-.upload-input-group input {
-  width: 100%;
-  border-radius: 0.375rem;
-  border: 1px solid rgba(55, 65, 81, 1);
-  outline: 0;
-  background-color: rgba(17, 24, 39, 1);
-  padding: 0.75rem 1rem;
-  color: rgba(243, 244, 246, 1);
-}
-
-.upload-input-group input:focus {
-  border-color: rgba(167, 139, 250);
-}
-
-.upload-forgot {
-  display: flex;
-  justify-content: flex-end;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  color: rgba(156, 163, 175,1);
-  margin: 8px 0 14px 0;
-}
-
-.upload-forgot a,.upload-signup a {
-  color: rgba(243, 244, 246, 1);
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.upload-forgot a:hover, .upload-signup a:hover {
-  text-decoration: underline rgba(167, 139, 250, 1);
-}
-
-.upload-sign {
-  border-radius: 10px;
-  margin: 0px auto;
-  background: #cc7cff;
-  border: none;
-  color: black;
-  max-width: 100%;
-  outline: none;
-  padding: 10px 60px;
-  text-align: center;
-  font-weight: 900;
-  display: flex;
-  justify-content: center;
-}
-.upload-sign:hover{
-  color: white;
-  box-shadow: 0px 0px 10px 1px rgba(227,148,227,1);
-}
-</style>
 </html>
